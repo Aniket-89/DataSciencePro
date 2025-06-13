@@ -18,7 +18,7 @@ const Brief = () => {
             viewport={{ once: true }}
             className="relative p-8 bg-gray-100"
           > <h4 className='text-2xl font-semibold text-gray-900 mb-4'>
-            Who We Are
+            Values
           </h4>
             <div className="absolute top-0 left-0 transform -translate-y-1/2 translate-x-6">
               <svg className="w-12 h-12 text-gray-300" fill="currentColor" viewBox="0 0 24 24">

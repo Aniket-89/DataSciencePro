@@ -5,7 +5,7 @@ import { FaLinkedinIn, FaTwitter, FaGithub } from 'react-icons/fa';
 const team: TeamMemberType[] = [
   {
     name: 'Emily Zhang',
-    designation: 'Lead Data Engineer',
+    designation: 'Application Developer',
     brief: 'Expert in building data pipelines and ETL processes. Specialized in Apache Spark and Hadoop.',
     image: '/team/emily.jpg',
     socials: {
@@ -15,7 +15,7 @@ const team: TeamMemberType[] = [
   },
   {
     name: 'David Rodriguez',
-    designation: 'ML Research Scientist',
+    designation: 'AI Engineer',
     brief: 'Focuses on natural language processing and transformer models. Previously at OpenAI.',
     image: '/team/david.jpg',
     socials: {
@@ -25,7 +25,7 @@ const team: TeamMemberType[] = [
   },
   {
     name: 'Priya Patel',
-    designation: 'Data Analytics Lead',
+    designation: 'Full Stack Developer',
     brief: 'Expert in business intelligence and statistical analysis. Former consultant at McKinsey.',
     image: '/team/priya.jpg',
     socials: {
@@ -35,7 +35,7 @@ const team: TeamMemberType[] = [
   },
   {
     name: 'Alex Kim',
-    designation: 'Cloud Infrastructure Engineer',
+    designation: 'DevOps Engineer',
     brief: 'Specializes in DevOps and cloud architecture. AWS certified solutions architect.',
     image: '/team/alex.jpg',
     socials: {
@@ -50,7 +50,7 @@ export default function Team() {
     <section className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl tracking-tight font-light text-gray-900">Our Team</h2>
+          <h2 className="text-3xl tracking-tight font-semibold text-gray-900">Our Team</h2>
           <p className="mt-4 text-lg text-gray-500">The experts behind our success</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

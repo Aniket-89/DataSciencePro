@@ -20,10 +20,10 @@ const founders: FounderType[] = [
 
 export default function Founders() {
   return (
-    <section className="py-32 bg-gray-50">
+    <section className="py-28 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl tracking-tight font-light text-gray-900">Our Founders</h2>
+          <h2 className="text-3xl tracking-tight font-semibold text-gray-900">Our Founders</h2>
           <p className="mt-4 text-lg text-gray-500">Meet the minds behind our mission</p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

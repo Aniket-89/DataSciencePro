@@ -7,6 +7,7 @@ import {
   ClockIcon,
   ChevronDownIcon
 } from '@heroicons/react/24/outline';
+import { GrainyGradient2 } from '../assets/assets';
 
 // FAQ Data
 const faqs = [
@@ -96,7 +97,9 @@ const ContactPage = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="grainy-gradient py-20">
+      <section className="relative py-20">
+        <img src={GrainyGradient2} alt="" className='w-full h-fit bg-cover absolute top-0 right-0 -z-50 opacity-85'/>
+
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <motion.h1 
@@ -110,7 +113,7 @@ const ContactPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-gray-600 leading-relaxed"
+              className="text-xl text-gray-50 leading-relaxed"
             >
               Let's discuss how we can help transform your business with data science
             </motion.p>
@@ -319,13 +322,6 @@ const ContactPage = () => {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="h-96 bg-gray-100">
-        <div className="w-full h-full flex items-center justify-center text-gray-400">
-          [Map Integration Placeholder]
         </div>
       </section>
     </div>
