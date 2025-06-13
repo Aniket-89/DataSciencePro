@@ -1,0 +1,57 @@
+import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
+
+const Hero = () => {
+  return (
+    <section id="home" className="min-h-screen flex items-center bg-gray-50">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+              Transform Data into
+              <span className="block text-gray-600">Powerful Insights</span>
+            </h1>
+            <p className="text-xl text-gray-600 mb-8">
+              Leverage advanced analytics and machine learning to drive your business forward
+            </p>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <Link
+                to="contact"
+                smooth={true}
+                className="inline-block bg-gray-900 text-white px-8 py-3 hover:bg-gray-800 transition-colors cursor-pointer"
+              >
+                Get Started
+              </Link>
+            </motion.div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            <div className="relative h-[400px] lg:h-[500px] w-full">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                alt="Data Analytics Visualization"
+                className="object-cover w-full h-full"
+              />
+              <div className="absolute inset-0 bg-gray-900/10"></div>
+            </div>
+            <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-gray-200 -z-10"></div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
