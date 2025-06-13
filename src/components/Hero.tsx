@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-scroll';
 import { Link as RouterLink } from 'react-router-dom';
 
 const Hero = () => {
@@ -25,13 +24,12 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex gap-4"
             >
-              <Link
+              <RouterLink
                 to="/contact"
-                smooth={true}
                 className="inline-block bg-gray-900 text-white px-8 py-3 hover:bg-gray-800 hover:scale-105 transform transition-all duration-300 cursor-pointer hover:shadow-lg"
               >
                 Get Started
-              </Link>
+              </RouterLink>
               <RouterLink
                 to="/services"
                 className="inline-block bg-white text-gray-900 px-8 py-3 border-2 border-gray-900 hover:bg-gray-900 hover:text-white hover:scale-105 transform transition-all duration-300 cursor-pointer hover:shadow-lg"
