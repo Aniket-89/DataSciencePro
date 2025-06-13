@@ -15,8 +15,13 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#services" className="text-gray-400 hover:text-white transition-colors">
-                  Services
+                <a href="/services/machine-learning" className="text-gray-400 hover:text-white transition-colors">
+                  Machine Learning Solutions
+                </a>
+              </li>
+              <li>
+                <a href="/services/data-analysis" className="text-gray-400 hover:text-white transition-colors">
+                  Data Analysis Solutions
                 </a>
               </li>
               <li>
