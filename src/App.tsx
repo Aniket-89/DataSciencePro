@@ -5,6 +5,8 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
+import DataAnalysisPage from './pages/DataAnalysisPage';
+import MachineLearningPage from './pages/MachineLearningPage';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/data-analysis" element={<DataAnalysisPage />} />
+            <Route path="/services/machine-learning" element={<MachineLearningPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>

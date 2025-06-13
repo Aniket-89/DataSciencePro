@@ -26,6 +26,7 @@ const whyChooseUs = [
 const About = () => {
 	return (
 		<section id="about" className="py-20 bg-white font-sans">
+            
 			<div className="container mx-auto px-4">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -42,7 +43,7 @@ const About = () => {
 					</p>
 				</motion.div>
 
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+				<div className="grid grid-cols-1 place-content-center lg:grid-cols-2 gap-12">
 					<motion.div
 						initial={{ opacity: 0, x: -20 }}
 						whileInView={{ opacity: 1, x: 0 }}
