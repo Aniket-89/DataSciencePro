@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center bg-gray-50">
+    <section id="home" className="min-h-[90vh] flex items-center bg-gray-50">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div 
@@ -11,25 +12,32 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Transform Data into
-              <span className="block text-gray-600">Powerful Insights</span>
+            <h1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-6">
+              Transform Your Data into
+              <span className="block text-gray-600">Actionable Insights</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Leverage advanced analytics and machine learning to drive your business forward
+              Expert data science freelancer helping businesses unlock the power of their data through advanced analytics, machine learning, and business intelligence solutions.
             </p>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex gap-4"
             >
               <Link
                 to="contact"
                 smooth={true}
-                className="inline-block bg-gray-900 text-white px-8 py-3 hover:bg-gray-800 transition-colors cursor-pointer"
+                className="inline-block bg-gray-900 text-white px-8 py-3 hover:bg-gray-800 hover:scale-105 transform transition-all duration-300 cursor-pointer hover:shadow-lg"
               >
                 Get Started
               </Link>
+              <RouterLink
+                to="/services"
+                className="inline-block bg-white text-gray-900 px-8 py-3 border-2 border-gray-900 hover:bg-gray-900 hover:text-white hover:scale-105 transform transition-all duration-300 cursor-pointer hover:shadow-lg"
+              >
+                View Portfolio
+              </RouterLink>
             </motion.div>
           </motion.div>
           <motion.div

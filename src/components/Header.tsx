@@ -1,25 +1,30 @@
 import { useState } from 'react';
-import { Link } from 'react-scroll';
+import { Link, useLocation } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const menuItems = [
-    { name: 'Home', to: 'home' },
-    { name: 'About Us', to: 'about' },
-    { name: 'Services', to: 'services' },
-    { name: 'Contact Us', to: 'contact' },
+    { name: 'Home', to: '/' },
+    { name: 'About Us', to: '/about' },
+    { name: 'Services', to: '/services' },
+    { name: 'Contact Us', to: '/contact' },
   ];
+
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
 
   return (
     <header className="fixed w-full bg-white shadow-md z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Brand name */}
-          <div className="text-xl font-bold text-gray-900">
+          <Link to="/" className="text-xl font-bold text-gray-900">
             DataSciencePro
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
@@ -27,10 +32,11 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.to}
-                spy={true}
-                smooth={true}
-                offset={-64}
-                className="text-gray-600 hover:text-gray-900 cursor-pointer transition-colors"
+                className={
+                  isActive(item.to)
+                    ? 'text-gray-900 font-semibold hover:text-gray-900 transition-colors'
+                    : 'text-gray-600 hover:text-gray-900 transition-colors'
+                }
               >
                 {item.name}
               </Link>
@@ -60,11 +66,12 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.to}
-                  spy={true}
-                  smooth={true}
-                  offset={-64}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-gray-600 hover:text-gray-900 cursor-pointer transition-colors"
+                  className={
+                    isActive(item.to)
+                      ? 'text-gray-900 font-semibold hover:text-gray-900 transition-colors'
+                      : 'text-gray-600 hover:text-gray-900 transition-colors'
+                  }
                 >
                   {item.name}
                 </Link>

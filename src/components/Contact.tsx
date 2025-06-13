@@ -5,22 +5,25 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-center text-gray-900 mb-12"
+          className="text-center mb-16"
         >
-          Get in Touch
-        </motion.h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <h2 className="text-4xl font-semibold text-gray-900 mb-4">Get in Touch</h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Ready to transform your data? Contact us today to discuss your project.
+          </p>
+        </motion.div>
+
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white p-8 shadow-lg"
+            className="bg-white p-8 shadow-lg max-w-3xl mx-auto"
           >
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -32,7 +35,7 @@ const Contact = () => {
                     type="text"
                     id="name"
                     name="name"
-                    className="block w-full border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-gray-900 focus:ring-1 focus:ring-gray-900 shadow-sm"
+                    className="block w-full border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-gray-900 focus:ring-1 focus:ring-gray-900 "
                     placeholder="John Doe"
                   />
                 </div>
@@ -44,7 +47,7 @@ const Contact = () => {
                     type="email"
                     id="email"
                     name="email"
-                    className="block w-full border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-gray-900 focus:ring-1 focus:ring-gray-900 shadow-sm"
+                    className="block w-full border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-gray-900 focus:ring-1 focus:ring-gray-900 "
                     placeholder="john@example.com"
                   />
                 </div>
@@ -57,7 +60,7 @@ const Contact = () => {
                   type="text"
                   id="subject"
                   name="subject"
-                  className="block w-full border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-gray-900 focus:ring-1 focus:ring-gray-900 shadow-sm"
+                  className="block w-full border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-gray-900 focus:ring-1 focus:ring-gray-900 "
                   placeholder="How can we help?"
                 />
               </div>
@@ -69,7 +72,7 @@ const Contact = () => {
                   id="message"
                   name="message"
                   rows={6}
-                  className="block w-full border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-gray-900 focus:ring-1 focus:ring-gray-900 shadow-sm resize-none"
+                  className="block w-full border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-gray-900 focus:ring-1 focus:ring-gray-900  resize-none"
                   placeholder="Your message..."
                 />
               </div>
@@ -83,42 +86,6 @@ const Contact = () => {
               </div>
             </form>
           </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="lg:pl-12"
-          >
-            <div className="bg-white p-8 shadow-lg h-full">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">Contact Information</h3>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <EnvelopeIcon className="w-6 h-6 text-gray-900 mt-1" />
-                  <div>
-                    <p className="font-medium text-gray-900">Email</p>
-                    <p className="text-gray-600">contact@datasciencepro.com</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <PhoneIcon className="w-6 h-6 text-gray-900 mt-1" />
-                  <div>
-                    <p className="font-medium text-gray-900">Phone</p>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <MapPinIcon className="w-6 h-6 text-gray-900 mt-1" />
-                  <div>
-                    <p className="font-medium text-gray-900">Location</p>
-                    <p className="text-gray-600">123 Data Street<br />Analytics City, AC 12345</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
       </div>
     </section>
   );

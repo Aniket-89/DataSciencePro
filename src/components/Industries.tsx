@@ -3,34 +3,33 @@ import {
   FaIndustry, 
   FaHospital, 
   FaShoppingCart, 
-  FaUniversity, 
   FaChartLine, 
-  FaCar 
 } from 'react-icons/fa';
 
 const industries = [
-  { name: 'Manufacturing', icon: FaIndustry },
-  { name: 'Healthcare', icon: FaHospital },
-  { name: 'Retail', icon: FaShoppingCart },
-  { name: 'Education', icon: FaUniversity },
-  { name: 'Finance', icon: FaChartLine },
-  { name: 'Automotive', icon: FaCar },
+    { name: 'Healthcare', icon: FaHospital },
+    { name: 'Finance', icon: FaChartLine },
+    { name: 'E-commerce', icon: FaShoppingCart },
+    { name: 'Manufacturing', icon: FaIndustry },
 ];
 
 const Industries = () => {
   return (
-    <section id="industries" className="py-20 bg-gray-50">
+    <section id="industries" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-center text-gray-900 mb-12"
+          className="text-center mb-16"
         >
-          Industries We Serve
-        </motion.h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <h2 className="text-4xl font-semibold text-gray-900 mb-4">Industries We've Worked With</h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Diverse experience across various industries, delivering tailored data science solutions.
+          </p>
+        </motion.div>
+        <div className="flex flex-wrap gap-16 max-w-5xl justify-between mx-auto">
           {industries.map((industry, index) => (
             <motion.div
               key={industry.name}

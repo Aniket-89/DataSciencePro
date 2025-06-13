@@ -8,7 +8,11 @@ export default {
     extend: {
       borderRadius: {
         none: '0',
-      }
+      },
+      fontFamily: {
+        sans: ['Nunito Sans', 'sans-serif'],
+        mono: ['Roboto Mono', 'monospace'],
+      },
     },
   },
   plugins: [
