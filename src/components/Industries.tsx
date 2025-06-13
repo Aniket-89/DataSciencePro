@@ -2,34 +2,47 @@ import { motion } from 'framer-motion';
 import { 
   FaIndustry, 
   FaHospital, 
-  FaShoppingCart, 
   FaChartLine, 
+  FaShoppingCart 
 } from 'react-icons/fa';
 
 const industries = [
-    { name: 'Healthcare', icon: FaHospital },
-    { name: 'Finance', icon: FaChartLine },
-    { name: 'E-commerce', icon: FaShoppingCart },
-    { name: 'Manufacturing', icon: FaIndustry },
+  { 
+    name: 'Healthcare',
+    icon: FaHospital,
+    description: 'Optimizing patient care through data-driven insights'
+  },
+  { 
+    name: 'Finance',
+    icon: FaChartLine,
+    description: 'Advanced analytics for financial decision making'
+  },
+  { 
+    name: 'E-commerce',
+    icon: FaShoppingCart,
+    description: 'Smart retail solutions powered by data'
+  },
+  { 
+    name: 'Manufacturing',
+    icon: FaIndustry,
+    description: 'Improving efficiency with predictive analytics'
+  }
 ];
 
 const Industries = () => {
   return (
-    <section id="industries" className="py-32 bg-gray-50">
+    <section id="industries" className="py-32 bg-white">
       <div className="container mx-auto px-4">
-        <motion.div
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-4xl font-semibold text-center text-gray-900 mb-12"
         >
-          <h2 className="text-4xl font-semibold text-gray-900 mb-4">Industries We've Worked With</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Diverse experience across various industries, delivering tailored data science solutions.
-          </p>
-        </motion.div>
-        <div className="flex flex-wrap gap-16 max-w-5xl justify-between mx-auto">
+          Industries We Serve
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-6xl mx-auto">
           {industries.map((industry, index) => (
             <motion.div
               key={industry.name}
@@ -37,10 +50,13 @@ const Industries = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="flex flex-col items-center"
+              className="flex flex-col items-center text-center group"
             >
-              <industry.icon className="w-12 h-12 text-gray-900 mb-4" />
-              <h3 className="text-lg font-semibold text-gray-900 text-center">{industry.name}</h3>
+              <div className="bg-white p-6 rounded-full mb-6 group-hover:bg-gray-100 transition-colors duration-300">
+                <industry.icon className="w-12 h-12 text-gray-900" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">{industry.name}</h3>
+              <p className="text-gray-600">{industry.description}</p>
             </motion.div>
           ))}
         </div>
