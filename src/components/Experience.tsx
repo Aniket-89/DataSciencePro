@@ -49,7 +49,7 @@ const techStack = [
 
 const Experience = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-32 bg-white">
       <div className="container mx-auto px-4 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

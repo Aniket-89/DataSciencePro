@@ -4,7 +4,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-[90vh] flex items-center bg-gray-50">
+    <section id="home" className="min-h-[90vh] flex items-center bg-gray-50 py-32">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div 
