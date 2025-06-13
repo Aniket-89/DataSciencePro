@@ -26,7 +26,7 @@ const Hero = () => {
               className="flex gap-4"
             >
               <Link
-                to="contact"
+                to="/contact"
                 smooth={true}
                 className="inline-block bg-gray-900 text-white px-8 py-3 hover:bg-gray-800 hover:scale-105 transform transition-all duration-300 cursor-pointer hover:shadow-lg"
               >

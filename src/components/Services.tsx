@@ -15,6 +15,7 @@ const services = [
 			'Data Visualization',
 			'Performance Metrics & KPIs',
 		],
+		link: 'data-analysis',
 	},
 	{
 		title: 'Machine Learning Solutions',
@@ -27,6 +28,7 @@ const services = [
 			'Computer Vision Solutions',
 			'Automated Decision Systems',
 		],
+		link: 'machine-learning',
 	},
 ];
 
@@ -85,7 +87,7 @@ const Services = () => {
 								</div>
 
 								<Link
-									to={`/services#${service.title
+									to={`/services/${service.link
 										.toLowerCase()
 										.replace(/\s+/g, '-')}`}
 									className="inline-block bg-gray-900 text-white px-6 py-3 text-center hover:bg-gray-800 hover:scale-105 transform transition-all duration-300"
