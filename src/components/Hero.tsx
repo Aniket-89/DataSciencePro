@@ -6,18 +6,18 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-[90vh] w-full flex items-center py-32 bg-gray-100 relative overflow-hidden relative">
       <div className="container mx-auto max-w-7xl px-4 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl leading-thin md:text-6xl font-normal text-gray-900 mb-8">
-              Transform Your Data into, 
-              <span className="text-blue-600 pl-2"> Actionable Insights</span>
+            <h1 className="text-5xl leading-thin md:text-6xl font-normal text-primary mb-8 font-sans">
+              Data-Driven Insights for
+              <span className="text-[#27548A] text-5xl pl-2"> Smarter Decisions</span>
             </h1>
             <p className="text-xl text-gray-600 mb-12">
-              Expert data scientists helping businesses unlock the power of their data.
+              Unlock actionable market intelligence tailored to your industry. Our cutting-edge research, predictive analytics, and expert perspectives empower businesses to navigate trends, outpace competitors, and seize growth opportunities.
             </p>
             <motion.div
               initial={{ opacity: 0 }}
@@ -27,7 +27,7 @@ const Hero = () => {
             >
               <RouterLink
                 to="/contact"
-                className="inline-block bg-blue-600 text-white px-8 py-3 hover:bg-blue-500 transition-all duration-300 cursor-pointer"
+                className="inline-block bg-[#27548A] text-white px-8 py-3 hover:bg-blue-500 transition-all duration-300 cursor-pointer"
               >
                 Get Started
               </RouterLink>
@@ -45,7 +45,7 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative h-[320px] lg:h-[360px] w-full overflow-hidden rounded-lg">
+            <div className="relative h-[320px] lg:h-[320px] w-auto overflow-hidden rounded-lg">
               <img
                 src={Dashboard}
                 alt="Data Analytics Visualization"

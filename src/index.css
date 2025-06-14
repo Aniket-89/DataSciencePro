@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
 
+body {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+}
+
 .grainy-gradient {
   background: linear-gradient(to bottom right, rgb(249 250 251), rgb(190, 137, 190), rgb(37, 65, 119));
   position: relative;

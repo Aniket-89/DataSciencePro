@@ -11,7 +11,7 @@ const Banner = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-normal text-white mb-6"
+            className="text-4xl md:text-5xl font-normal text-accent mb-6"
           >
             Know More About Us
           </motion.h1>

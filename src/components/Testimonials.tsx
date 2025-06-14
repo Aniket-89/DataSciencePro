@@ -3,26 +3,34 @@ import { StarIcon } from '@heroicons/react/20/solid';
 
 const testimonials = [
 	{
-		name: 'Sarah Johnson',
-		role: 'CTO, TechCorp',
+		name: 'Jon Ben',
+		role: 'Director of Strategy',
 		content:
-			'DataSciencePro transformed our business with their machine learning solutions. The insights we gained were invaluable.',
+			"Your team’s analysis pinpointed untapped niches in the Latin American SaaS market, directly influencing our expansion roadmap.",
 		image:
 			'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&w=128&h=128&q=80',
 	},
 	{
-		name: 'Michael Chen',
-		role: 'Data Director, FinanceHub',
+		name: 'Gregg',
+		role: 'Market Access Director, Global Pharma Firm',
 		content:
-			'Their analytical expertise and professional approach made our data transformation journey smooth and successful.',
+			"our drug pricing forecast for emerging markets was spot-on. It enabled us to negotiate better distribution partnerships and avoid a $2M pricing misstep in Southeast Asia.",
 		image:
 			'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&w=128&h=128&q=80',
 	},
 	{
-		name: 'Emily Roberts',
-		role: 'CEO, HealthTech',
+		name: 'Tomer',
+		role: 'CMO, Fashion Retail Chain',
 		content:
-			'The insights provided by DataSciencePro helped us improve patient outcomes and optimize our operations.',
+			"We used your consumer sentiment data to redesign our loyalty program. Result? A 50% boost in repeat purchases among Gen Z shoppers—exactly as predicted.",
+		image:
+			'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=facearea&w=128&h=128&q=80',
+	},
+	{
+		name: 'Alex De Sousa',
+		role: 'COO, Digital Payments Platform',
+		content:
+		"The fintech regulatory risk assessment saved us 9 months of compliance headaches. Your team flagged state-level licensing hurdles we hadn’t even considered.",	
 		image:
 			'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=facearea&w=128&h=128&q=80',
 	},
@@ -41,7 +49,7 @@ const Testimonials = () => {
 				>
 					What Our Clients Say
 				</motion.h2>
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-7xl mx-auto">
+				<div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-8 max-w-7xl mx-auto">
 					{testimonials.map((testimonial, index) => (
 						<motion.div
 							key={testimonial.name}

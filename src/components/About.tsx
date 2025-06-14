@@ -25,7 +25,7 @@ const whyChooseUs = [
 
 const About = () => {
 	return (
-		<section id="about" className="py-20 bg-white font-sans">
+		<section id="about" className="py-20 bg-white">
             
 			<div className="container mx-auto px-4">
 				<motion.div
@@ -35,7 +35,7 @@ const About = () => {
 					viewport={{ once: true }}
 					className="text-center max-w-5xl mx-auto mb-16"
 				>
-					<h2 className="text-4xl font-semibold text-gray-900 mb-6 font-sans">
+					<h2 className="text-4xl font-semibold text-gray-900 mb-6">
 						About Us
 					</h2>
 					<p className="text-lg text-gray-600 leading-relaxed">
