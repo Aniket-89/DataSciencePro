@@ -11,7 +11,7 @@ const Header = () => {
   const servicesItems = [
     // { name: 'All Services', to: '/services' },
     { name: 'Data Analytics', to: '/services/data-analysis' },
-    { name: 'Machine Learning', to: '/services/machine-learning' }
+    { name: 'Market Research Report', to: '/services/machine-learning' }
   ];
 
   const menuItems = [
@@ -62,7 +62,7 @@ const Header = () => {
                     </button>
                     {/* Dropdown Menu */}
                     {isServicesOpen && (
-                      <div className="absolute top-full left-0 mt-1 w-48 bg-white shadow-lg">
+                      <div className="absolute top-full left-0 mt-1 w-52 bg-white shadow-lg">
                         {servicesItems.map((service) => (
                           <Link
                             key={service.name}

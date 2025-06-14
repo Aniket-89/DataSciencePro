@@ -3,8 +3,8 @@ import { Link as RouterLink } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-[90vh] flex items-center py-32 bg-gray-100 relative overflow-hidden relative">
-      <div className="container mx-auto px-4 py-16">
+    <section id="home" className="min-h-[90vh] w-full flex items-center py-32 bg-gray-100 relative overflow-hidden relative">
+      <div className="container mx-auto max-w-6xl px-4 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
