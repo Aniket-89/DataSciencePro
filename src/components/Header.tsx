@@ -18,6 +18,7 @@ const Header = () => {
     { name: 'Home', to: '/' },
     { name: 'About Us', to: '/about' },
     { name: 'Services', to: '#', hasDropdown: true },
+    { name: 'Reports', to: '/reports' },
     { name: 'Contact Us', to: '/contact' },
   ];
 
@@ -42,7 +43,7 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="text-xl font-semibold text-gray-900">
-              DataSciencePro
+              GEOFORESIGHT
             </Link>
 
             <nav className="hidden md:flex space-x-8">

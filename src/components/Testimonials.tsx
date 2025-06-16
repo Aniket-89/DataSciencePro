@@ -57,7 +57,7 @@ const Testimonials = () => {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: index * 0.2 }}
 							viewport={{ once: true }}
-							className="w-full bg-white p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow"
+							className="w-full bg-white p-4 md:p-6 shadow-lg hover:shadow-xl transition-shadow"
 						>
 							<div className="flex items-start space-x-4">
 								<img
@@ -69,7 +69,7 @@ const Testimonials = () => {
 									<h3 className="text-lg font-semibold text-gray-900 truncate">
 										{testimonial.name}
 									</h3>
-									<p className="text-gray-600 text-sm">{testimonial.role}</p>
+									<p className="text-gray-600 text-xs">{testimonial.role}</p>
 								</div>
 							</div>
 

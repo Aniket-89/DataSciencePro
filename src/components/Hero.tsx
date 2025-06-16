@@ -4,9 +4,9 @@ import { Dashboard } from '../assets/assets';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-[90vh] w-full flex items-center py-32 bg-gray-100 relative overflow-hidden relative">
+    <section id="home" className="min-h-[90vh] w-full flex items-center py-32 bg-[#F3F3E0] relative overflow-hidden relative">
       <div className="container mx-auto max-w-7xl px-4 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 justify-between items-center">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -45,11 +45,11 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative h-[320px] lg:h-[320px] w-auto overflow-hidden rounded-lg">
+            <div className="relative h-[320px] lg:h-[320px] w-fit overflow-hidden rounded-lg">
               <img
                 src={Dashboard}
                 alt="Data Analytics Visualization"
-                className="object-cover w-full h-full"
+                className="object-contain w-auto h-full"
               />
               <div className="absolute inset-0 bg-gray-900/10"></div>
             </div>

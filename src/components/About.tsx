@@ -3,23 +3,31 @@ import { CheckCircleIcon } from '@heroicons/react/24/solid';
 
 const whyChooseUs = [
 	{
-		title: 'Expert Knowledge',
+		title: '90% Primary Research-Driven',
 		description:
-			'Experienced professional with deep expertise in data science and analytics',
+			'Primary Research-First Approach',
 	},
 	{
-		title: 'Tailored Solutions',
+		title: '10-Year Predictive Models',
 		description:
-			'We create custom solutions that perfectly align with your business objectives',
+			'Specialized in emerging markets with a focus on Africa, Asia, and Latin America',
 	},
 	{
-		title: 'Advanced Technologies',
+		title: 'Actionable Insights, Not Just Data',
 		description:
-			'We leverage cutting-edge technologies and frameworks to deliver optimal results',
+			'Strategic Framework Competitor Analysis',
 	},
 	{
-		title: 'Proven Track Record',
-		description: 'Successfully delivered 150+ solutions across various industries',
+		title: '200+ Industries Covered Annually',
+		description: '10-Year Predictive Models Scenario Planning',
+	},
+	{
+		title: 'Scenario Planning Experts',
+		description: '10-Year Predictive Models Scenario Planning',
+	},
+	{
+		title: 'Free Analyst Briefing After Purchase',
+		description: '10-Year Predictive Models Scenario Planning',
 	},
 ];
 
@@ -79,16 +87,16 @@ const About = () => {
 									whileInView={{ opacity: 1, y: 0 }}
 									transition={{ duration: 0.5, delay: index * 0.1 }}
 									viewport={{ once: true }}
-									className="flex items-start space-x-4"
+									className="flex items-start space-x-4 justify between"
 								>
 									<CheckCircleIcon className="w-6 h-6 text-gray-900 mt-1 flex-shrink-0" />
 									<div>
 										<h4 className="text-lg text-gray-900 font-sans">
 											{item.title}
 										</h4>
-										<p className="text-gray-600 leading-relaxed">
+										{/* <p className="text-gray-600 leading-relaxed">
 											{item.description}
-										</p>
+										</p> */}
 									</div>
 								</motion.div>
 							))}

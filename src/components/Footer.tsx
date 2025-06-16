@@ -2,16 +2,16 @@ import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-white text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4">DataSciencePro</h3>
+          <div className='text-black'>
+            <h3 className="text-xl font-bold mb-4">GeoForesight</h3>
             <p className="text-gray-400">
               Transforming data into actionable insights for your business success.
             </p>
           </div>
-          <div>
+          <div className='text-black'>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
@@ -36,7 +36,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
+          <div className='text-black'>
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <ul className="space-y-2 text-gray-400">
               <li>contact@datasciencepro.com</li>
@@ -44,7 +44,7 @@ const Footer = () => {
               <li>123 Data Street, Analytics City</li>
             </ul>
           </div>
-          <div>
+          <div className='text-black'>
             <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
             <div className="flex space-x-4">
               <a

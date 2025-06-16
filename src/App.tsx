@@ -7,6 +7,7 @@ import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
 import DataAnalysisPage from './pages/DataAnalysisPage';
 import MachineLearningPage from './pages/MachineLearningPage';
+import ReportsPage from './pages/ReportsPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/services/data-analysis" element={<DataAnalysisPage />} />
             <Route path="/services/machine-learning" element={<MachineLearningPage />} />
+            <Route path="/reports" element={<ReportsPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>

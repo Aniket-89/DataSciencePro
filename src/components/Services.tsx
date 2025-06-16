@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 const services = [
 	{
-		title: 'Data Analytics & Insights',
+		title: 'Market Analysis',
 		description:
-			'Transform your raw data into actionable insights with our comprehensive data analytics solutions.',
+			'Dive deep with segment-specific forecasts, SWOT frameworks, and emerging opportunity mapping.',
 		icon: ChartBarIcon,
 		features: [
 			'Business Intelligence Dashboards',
@@ -18,9 +18,22 @@ const services = [
 		link: 'data-analysis',
 	},
 	{
-		title: 'Machine Learning Solutions',
+		title: 'Consultancy Services',
 		description:
-			'Leverage the power of machine learning to automate processes and make data-driven decisions.',
+			'Rigorous primary + secondary research validated by industry veterans.',
+		icon: CpuChipIcon,
+		features: [
+			'Custom ML Model Development',
+			'Natural Language Processing',
+			'Computer Vision Solutions',
+			'Automated Decision Systems',
+		],
+		link: 'machine-learning',
+	},
+	{
+		title: 'Custom Solutions',
+		description:
+			'From startups to Fortune 500, our reports adapt to your strategic needs.',
 		icon: CpuChipIcon,
 		features: [
 			'Custom ML Model Development',
@@ -47,11 +60,11 @@ const Services = () => {
 						Our Services
 					</h2>
 					<p className="text-lg text-gray-600">
-						Specialized data science solutions tailored to your business needs
+						Discover how Geoforesight Research and Marketing can help your business
 					</p>
 				</motion.div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
 					{services.map((service, index) => (
 						<motion.div
 							key={service.title}
@@ -90,7 +103,7 @@ const Services = () => {
 									to={`/services/${service.link
 										.toLowerCase()
 										.replace(/\s+/g, '-')}`}
-									className="inline-block bg-gray-900 text-white px-6 py-3 text-center hover:bg-gray-800 hover:scale-105 transform transition-all duration-300"
+									className="inline-block text-black border-2 border-black px-6 py-3 text-center hover:bg-gray-800 hover:text-white transition-all duration-300"
 								>
 									Learn More
 								</Link>

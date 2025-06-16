@@ -5,6 +5,7 @@ import Testimonials from '../components/Testimonials';
 import Industries from '../components/Industries';
 import About from '../components/About';
 import Contact from '../components/Contact';
+import CTA from '../components/CTA';
 
 
 const HomePage = () => {
@@ -17,6 +18,7 @@ const HomePage = () => {
       <Testimonials />
       <Industries />
       <Contact />
+      <CTA />
     </>
   );
 };
