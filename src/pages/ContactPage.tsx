@@ -105,7 +105,7 @@ const ContactPage = () => {
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-light text-gray-900 mb-6"
+              className="text-4xl md:text-5xl font-light text-[#183B4E] mb-6"
             >
               Get in Touch
             </motion.h1>
@@ -128,12 +128,12 @@ const ContactPage = () => {
             {/* Contact Information */}
             <div className="space-y-12">
               <div>
-                <h2 className="text-3xl font-light text-gray-900 mb-8">Contact Information</h2>
+                <h2 className="text-3xl font-medium text-[#183B4E] mb-8">Contact Information</h2>
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <MapPinIcon className="h-6 w-6 text-gray-900 mr-4 flex-shrink-0" />
+                    <MapPinIcon className="h-6 w-6 text-[#183B4E] mr-4 flex-shrink-0" />
                     <div>
-                      <h3 className="text-lg font-light text-gray-900 mb-1">Office Location</h3>
+                      <h3 className="text-lg font-normal text-[#183B4E] mb-1">Office Location</h3>
                       <p className="text-gray-600">
                         100 Innovation Drive<br />
                         Tech District<br />
@@ -142,23 +142,23 @@ const ContactPage = () => {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <PhoneIcon className="h-6 w-6 text-gray-900 mr-4 flex-shrink-0" />
+                    <PhoneIcon className="h-6 w-6 text-[#183B4E] mr-4 flex-shrink-0" />
                     <div>
-                      <h3 className="text-lg font-light text-gray-900 mb-1">Phone</h3>
+                      <h3 className="text-lg font-normal text-[#183B4E] mb-1">Phone</h3>
                       <p className="text-gray-600">+1 (555) 123-4567</p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <EnvelopeIcon className="h-6 w-6 text-gray-900 mr-4 flex-shrink-0" />
+                    <EnvelopeIcon className="h-6 w-6 text-[#183B4E] mr-4 flex-shrink-0" />
                     <div>
-                      <h3 className="text-lg font-light text-gray-900 mb-1">Email</h3>
+                      <h3 className="text-lg font-normal text-[#183B4E] mb-1">Email</h3>
                       <p className="text-gray-600">contact@datasciencepro.ai</p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <ClockIcon className="h-6 w-6 text-gray-900 mr-4 flex-shrink-0" />
+                    <ClockIcon className="h-6 w-6 text-[#183B4E] mr-4 flex-shrink-0" />
                     <div>
-                      <h3 className="text-lg font-light text-gray-900 mb-1">Business Hours</h3>
+                      <h3 className="text-lg font-normal text-[#183B4E] mb-1">Business Hours</h3>
                       <p className="text-gray-600">
                         Monday - Friday: 9:00 AM - 6:00 PM PST<br />
                         Saturday - Sunday: Closed
@@ -169,12 +169,12 @@ const ContactPage = () => {
               </div>
 
               <div>
-                <h2 className="text-3xl font-light text-gray-900 mb-6">Follow Us</h2>
+                <h2 className="text-3xl font-medium text-[#183B4E] mb-6">Follow Us</h2>
                 <div className="flex space-x-4">
                   {['LinkedIn', 'Twitter', 'GitHub'].map((social) => (
                     <button
                       key={social}
-                      className="px-4 py-2 bg-gray-50 text-gray-600 hover:bg-gray-100 transition-colors"
+                      className="px-4 py-2 bg-gray-900 text-gray-50 hover:bg-gray-100 hover:text-[#183B4E] cursor-pointer transition-colors"
                     >
                       {social}
                     </button>
@@ -185,7 +185,7 @@ const ContactPage = () => {
 
             {/* Contact Form */}
             <div className="bg-gray-50 p-8">
-              <h2 className="text-3xl font-light text-gray-900 mb-8">Send Us a Message</h2>
+              <h2 className="text-3xl font-light text-[#183B4E] mb-8">Send Us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-mono text-gray-600 mb-2">
@@ -196,7 +196,7 @@ const ContactPage = () => {
                     id="name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full p-2 bg-white text-gray-900 border border-gray-200 focus:outline-none focus:border-gray-900"
+                    className="w-full p-2 bg-white text-[#183B4E] border border-gray-200 focus:outline-none focus:border-[#183B4E]"
                     required
                   />
                 </div>
@@ -209,7 +209,7 @@ const ContactPage = () => {
                     id="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full p-2 bg-white text-gray-900 border border-gray-200 focus:outline-none focus:border-gray-900"
+                    className="w-full p-2 bg-white text-[#183B4E] border border-gray-200 focus:outline-none focus:border-[#183B4E]"
                     required
                   />
                 </div>
@@ -222,7 +222,7 @@ const ContactPage = () => {
                     id="company"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full p-2 bg-white text-gray-900 border border-gray-200 focus:outline-none focus:border-gray-900"
+                    className="w-full p-2 bg-white text-[#183B4E] border border-gray-200 focus:outline-none focus:border-[#183B4E]"
                   />
                 </div>
                 <div>
@@ -233,7 +233,7 @@ const ContactPage = () => {
                     id="service"
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full p-2 bg-white text-gray-900 border border-gray-200 focus:outline-none focus:border-gray-900"
+                    className="w-full p-2 bg-white text-[#183B4E] border border-gray-200 focus:outline-none focus:border-[#183B4E]"
                     required
                   >
                     <option value="">Select a service</option>
@@ -252,7 +252,7 @@ const ContactPage = () => {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={4}
-                    className="w-full p-2 bg-white text-gray-900 border border-gray-200 focus:outline-none focus:border-gray-900"
+                    className="w-full p-2 bg-white text-[#183B4E] border border-gray-200 focus:outline-none focus:border-[#183B4E]"
                     required
                   ></textarea>
                 </div>
@@ -262,7 +262,7 @@ const ContactPage = () => {
                   className={`w-full py-2 px-4 transition-colors ${
                     isSubmitting 
                       ? 'bg-gray-400 cursor-not-allowed' 
-                      : 'bg-gray-900 hover:bg-gray-800'
+                      : 'bg-[#27548A] cursor-pointer hover:bg-gray-800'
                   } text-white`}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -270,12 +270,12 @@ const ContactPage = () => {
 
                 {/* Status Messages */}
                 {submitStatus === 'success' && (
-                  <div className="mt-4 p-4 bg-gray-100 text-gray-900">
+                  <div className="mt-4 p-4 bg-gray-100 text-[#183B4E]">
                     Thank you for your message. We'll get back to you soon.
                   </div>
                 )}
                 {submitStatus === 'error' && (
-                  <div className="mt-4 p-4 bg-gray-100 text-gray-900">
+                  <div className="mt-4 p-4 bg-gray-100 text-[#183B4E]">
                     There was an error sending your message. Please try again.
                   </div>
                 )}
@@ -286,10 +286,10 @@ const ContactPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-32 bg-gray-50">
+      <section className="py-32 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-light text-gray-900 mb-12 text-center">
+            <h2 className="text-3xl font-light text-white mb-12 text-center">
               Frequently Asked Questions
             </h2>
             <div className="space-y-4">
@@ -306,7 +306,7 @@ const ContactPage = () => {
                     className="w-full flex items-center justify-between p-6 text-left"
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
                   >
-                    <span className="text-lg font-light text-gray-900">{faq.question}</span>
+                    <span className="text-lg font-medium text-[#183B4E]">{faq.question}</span>
                     <ChevronDownIcon 
                       className={`h-5 w-5 text-gray-600 transform transition-transform ${
                         openFaq === index ? 'rotate-180' : ''
@@ -315,7 +315,7 @@ const ContactPage = () => {
                   </button>
                   {openFaq === index && (
                     <div className="px-6 pb-6">
-                      <p className="text-gray-600">{faq.answer}</p>
+                      <p className="text-gray-600 font-normal">{faq.answer}</p>
                     </div>
                   )}
                 </motion.div>

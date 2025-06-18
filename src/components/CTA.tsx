@@ -28,7 +28,7 @@ const CTA = () => {
             >
               <Link
                 to="/contact"
-                className="inline-flex items-center px-8 py-3 bg-white text-gray-900 hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center px-8 py-3 bg-[#27548A] font-normal text-white hover:bg-blue-400 transition-colors"
               >
                 Book a Consultation
               </Link>
@@ -42,7 +42,7 @@ const CTA = () => {
             >
               <Link
                 to="/contact"
-                className="inline-flex items-center px-8 py-3 border border-white text-white hover:bg-white hover:text-gray-900 transition-colors"
+                className="inline-flex items-center px-8 py-3 border font-normal border-white text-white hover:bg-white hover:text-gray-900 transition-colors"
               >
                 Contact Us
               </Link>

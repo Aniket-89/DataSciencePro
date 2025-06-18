@@ -1,23 +1,24 @@
-import Hero from '../components/Hero';
-import Services from '../components/Services';
-import Experience from '../components/Experience';
-import Testimonials from '../components/Testimonials';
-import Industries from '../components/Industries';
-import About from '../components/About';
-import Contact from '../components/Contact';
+import Hero from '../components/home/Hero';
 import CTA from '../components/CTA';
-
+import ServicesOverview from '../components/home/ServicesOverview';
+import IndustriesGrid from '../components/home/IndustriesGrid';
+import LatestReports from '../components/home/LatestReports';
+import WhyChooseUs from '../components/home/WhyChooseUs';
+import FastFacts from '../components/home/FastFacts';
+import Testimonials from '../components/home/Testimonials';
+import About from '../components/home/About';
 
 const HomePage = () => {
   return (
     <>
       <Hero />
-      <About />
-      <Services />
-      <Experience />
+      <ServicesOverview />
+      <IndustriesGrid />
+      <LatestReports />
       <Testimonials />
-      <Industries />
-      <Contact />
+      <WhyChooseUs />
+      <About />
+      <FastFacts />
       <CTA />
     </>
   );
