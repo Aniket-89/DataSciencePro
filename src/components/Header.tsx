@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { PopupButton } from 'react-calendly';
 // import { ChatBubbleBottomCenterTextIcon } from '@heroicons/react/24/outline';
-import { Bars3Icon, XMarkIcon, ChevronDownIcon, ChatBubbleBottomCenterTextIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
