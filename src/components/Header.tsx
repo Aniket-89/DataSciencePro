@@ -47,7 +47,7 @@ const Header = () => {
         <div className="lg:max-w-[75vw] mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="text-xl font-semibold text-[#183B4E]">
-              <span className='text-[#DDA853]'>GEO</span>FORESIGHT
+              <span className='text-[#DDA853]'>DATA</span>BITZY
             </Link>
 
             <div className="hidden md:flex items-center space-x-8">
@@ -157,7 +157,7 @@ const Header = () => {
               className="text-xl font-semibold text-[#183B4E]"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <span className='text-[#DDA853]'>GEO</span>FORESIGHT
+              <span className='text-[#DDA853]'>DATA</span>BITZY
             </Link>
             <button
               onClick={() => setIsMobileMenuOpen(false)}
