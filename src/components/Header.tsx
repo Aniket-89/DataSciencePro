@@ -13,14 +13,14 @@ const Header = () => {
   const servicesItems = [
     // { name: 'All Services', to: '/services' },
     { name: 'Data Analytics', to: '/services/data-analysis' },
-    { name: 'Market Research Report', to: '/services/machine-learning' }
+    { name: 'Market Research Report', to: '/services/reports' }
   ];
 
   const menuItems = [
     { name: 'Home', to: '/' },
     { name: 'About Us', to: '/about' },
     { name: 'Services', to: '#', hasDropdown: true },
-    { name: 'Reports', to: '/reports' },
+    // { name: 'Reports', to: '/reports' },
     { name: 'Contact Us', to: '/contact' },
   ];
   // Close dropdown when clicking outside
@@ -117,7 +117,7 @@ const Header = () => {
                 url="https://www.calendly.com"
                 rootElement={root}
                 text="Book a Call"
-                className="px-6 py-2 bg-[#27548A] text-white hover:bg-blue-500 transition-colors rounded inline-flex items-center"
+                className="px-6 py-2 bg-[#27548A] text-white hover:bg-blue-500 transition-colors inline-flex items-center"
                 />
 
             </div>

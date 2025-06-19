@@ -144,7 +144,7 @@ const ReportCategories = () => {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-[#F3F3E0]">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

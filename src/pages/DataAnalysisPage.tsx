@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { CheckIcon } from '@heroicons/react/24/outline';
+import { GrainyGradient3 } from '../assets/assets';
 
 // Sample case studies data
 const caseStudies = [
@@ -80,13 +81,14 @@ export default function DataAnalysisPage() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="grainy-gradient py-20">
+      <section className="relative overflow-hidden py-20">
+        <img src={GrainyGradient3} alt="" className='absolute bottom-0 right-0 -z-10 object-cover' />
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-light text-gray-900 mb-6"
+              className="text-4xl md:text-5xl font-medium text-white mb-6"
             >
               Data Analytics & Insights
             </motion.h1>
@@ -94,7 +96,7 @@ export default function DataAnalysisPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-gray-600 leading-relaxed"
+              className="text-xl text-gray-50 leading-relaxed"
             >
               Transform your raw data into actionable insights with our comprehensive analytics solutions
             </motion.p>
