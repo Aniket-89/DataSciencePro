@@ -1,6 +1,6 @@
 import ReportHero from '../components/reports/ReportHero';
 import ReportCategories from '../components/reports/ReportCategories';
-import ReportGrid from '../components/reports/ReportGrid';
+// import ReportGrid from '../components/reports/ReportGrid';
 import ReportCTA from '../components/reports/ReportCTA';
 import { motion } from 'framer-motion';
 
