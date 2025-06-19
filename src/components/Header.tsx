@@ -114,7 +114,7 @@ const Header = () => {
                 Book a Call
               </Link> */}
               <PopupButton
-                url="https://calendly.com/aniketkumarg99/website-one-on-one"
+                url="https://www.calendly.com"
                 rootElement={root}
                 text="Book a Call"
                 className="px-6 py-2 bg-[#27548A] text-white hover:bg-blue-500 transition-colors rounded inline-flex items-center"
@@ -200,7 +200,7 @@ const Header = () => {
             Book a Call
           </Link> */}
           <PopupButton
-                url="https://calendly.com/aniketkumarg99/website-one-on-one"
+                url="https://calendly.com"
                 rootElement={root}
                 text="Book a Call"
                 className="flex mx-12 justify-center items-center py-4 px-4 my-2 bg-[#27548A] text-white hover:bg-[#122B3A] transition-colors"

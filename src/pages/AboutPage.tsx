@@ -1,11 +1,12 @@
 import Banner from '../components/about/Banner';
 import Brief from '../components/about/Brief';
 import Founders from '../components/about/Founders';
-import Team from '../components/about/Team';
+// import Team from '../components/about/Team';
 import WhatWeDo from '../components/about/WhatWeDo';
 import Stats from '../components/about/Stats';
 import WhyChooseUs from '../components/about/WhyChooseUs';
 import CTA from '../components/CTA';
+import FAQ from '../components/about/FAQ';
 
 const AboutPage = () => {
   return (
@@ -16,7 +17,8 @@ const AboutPage = () => {
       <Stats />
       <WhyChooseUs />
       <Founders />
-      <Team />
+      {/* <Team /> */}
+      <FAQ />
       <CTA />
     </div>
   );
