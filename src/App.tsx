@@ -8,6 +8,7 @@ import ContactPage from './pages/ContactPage';
 import DataAnalysisPage from './pages/DataAnalysisPage';
 import MachineLearningPage from './pages/MachineLearningPage';
 import ReportsPage from './pages/ReportsPage';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">
+        <ScrollToTop />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />

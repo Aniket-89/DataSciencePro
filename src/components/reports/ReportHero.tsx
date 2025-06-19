@@ -11,7 +11,7 @@ const ReportHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-light mb-6 text-[#183B4E]"
+            className="text-4xl md:text-5xl font-bold mb-6 text-[#183B4E]"
           >
             Market Research Reports
           </motion.h1>

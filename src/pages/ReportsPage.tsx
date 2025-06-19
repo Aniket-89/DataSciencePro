@@ -26,12 +26,12 @@ const ReportsPage = () => {
             viewport={{ once: true }}
             className="text-lg text-gray-600 text-center max-w-3xl mx-auto"
           >
-            At Geoforesight Research and Marketing, we transform complex market data into strategic roadmaps for businesses, investors, and policymakers. Our research goes beyond surface-level trends—we deliver granular, forward-looking intelligence that drives measurable outcomes.
+            At DATABITZY Research and Marketing, we transform complex market data into strategic roadmaps for businesses, investors, and policymakers. Our research goes beyond surface-level trends—we deliver granular, forward-looking intelligence that drives measurable outcomes.
           </motion.p>
         </div>
       </section>
       <ReportCategories />
-      <ReportGrid />
+      {/* <ReportGrid /> */}
       <ReportCTA />
     </div>
   );

@@ -15,9 +15,9 @@ const HomePage = () => {
       <ServicesOverview />
       <IndustriesGrid />
       {/* <LatestReports /> */}
+      <About />
       <Testimonials />
       <WhyChooseUs />
-      <About />
 \      <FastFacts />
       <CTA />
     </>

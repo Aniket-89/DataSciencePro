@@ -144,14 +144,14 @@ const ReportCategories = () => {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <section className="py-16 bg-[#F3F3E0]">
+    <section className="py-18 bg-[#F3F3E0]">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-3xl font-light text-[#183B4E} mb-12 text-center"
+          className="text-4xl font-bold text-[#183B4E} mb-12 text-center"
         >
           Industry Sectors
         </motion.h2>

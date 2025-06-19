@@ -35,7 +35,7 @@ const ReportCTA = () => {
           >
             <Link
               to="/contact"
-              className="px-8 py-3 bg-white text-gray-900 hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center px-8 py-3 bg-[#27548A] font-normal text-white hover:bg-blue-400 transition-colors"
             >
               Request Custom Report
             </Link>

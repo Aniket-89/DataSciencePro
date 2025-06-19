@@ -60,7 +60,7 @@ const Services = () => {
 						Our Services
 					</h2>
 					<p className="text-lg text-gray-600">
-						Discover how Geoforesight Research and Marketing can help your business
+						Discover how DATABITZY Research and Marketing can help your business
 					</p>
 				</motion.div>
 

@@ -24,7 +24,7 @@ const Brief = () => {
               </svg> */}
             </div>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Geoforesight Research and Marketing is a premier provider of strategic market intelligence and data-driven business solutions. 
+              DATABITZY is a premier provider of strategic market intelligence and data-driven business solutions. 
               We empower organizations of all sizes — from global enterprises to emerging SMEs — with insights that drive growth, reduce risk, 
               and uncover untapped opportunities in competitive markets.
             </p>

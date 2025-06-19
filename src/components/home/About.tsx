@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const About = () => {
 	return (
-		<section id="about" className="py-20 bg-[#F3F3E0]">
+		<section id="about" className="py-20 bg-white">
 			<div className="container mx-auto px-4">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -16,7 +16,7 @@ const About = () => {
 						Who We Are
 					</h2>
 					<p className="text-lg text-gray-600 leading-relaxed mb-8">
-						Geoforesight Research and Marketing is a premier provider of strategic market intelligence and data-driven business solutions. 
+						DATABITZY Research and Marketing is a premier provider of strategic market intelligence and data-driven business solutions. 
 						We help businesses—from emerging startups to global enterprises—make confident, evidence-based decisions in evolving markets.
 					</p>
 					<motion.div

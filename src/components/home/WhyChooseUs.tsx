@@ -24,7 +24,7 @@ const WhyChooseUs = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-light text-[#183B4E]">
-            Why Clients Choose Geoforesight
+            Why Clients Choose DATABITZY
           </h2>
         </motion.div>
 

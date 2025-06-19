@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { PopupButton } from 'react-calendly';
+
 
 const CTA = () => {
+  const root = document.getElementById('root') || document.body;
   return (
     <section className="py-24 bg-gray-900 text-white">
       <div className="container mx-auto px-4">
@@ -19,19 +22,25 @@ const CTA = () => {
             Schedule a consultation with our experts or reach out to learn more about how we can help your business succeed.
           </p>
           
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-6 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <Link
+              {/* <Link
                 to="/contact"
                 className="inline-flex items-center px-8 py-3 bg-[#27548A] font-normal text-white hover:bg-blue-400 transition-colors"
               >
                 Book a Consultation
-              </Link>
+              </Link> */}
+              <PopupButton
+                url="https://calendly.com/databitzy/30min"
+                rootElement={root}
+                text="Book a Call"
+                className="inline-flex items-center px-8 py-3 bg-[#27548A] font-normal text-white hover:bg-blue-400 transition-colors"
+                />
             </motion.div>
             
             <motion.div
@@ -42,7 +51,7 @@ const CTA = () => {
             >
               <Link
                 to="/contact"
-                className="inline-flex items-center px-8 py-3 border font-normal border-white text-white hover:bg-white hover:text-gray-900 transition-colors"
+                className="inline-flex items-center px-8 py-[0.7rem] border font-normal border-white text-white hover:bg-white hover:text-gray-900 transition-colors"
               >
                 Contact Us
               </Link>

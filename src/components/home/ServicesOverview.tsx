@@ -17,7 +17,7 @@ const services = [
       'Growth Opportunity Assessment',
       'Market Entry Strategies'
     ],
-    link: '/services/data-analysis'
+    link: '/services/reports'
   },
   {
     icon: PresentationChartLineIcon,
@@ -29,7 +29,7 @@ const services = [
       'Strategic Recommendations',
       'Trend Impact Analysis'
     ],
-    link: '/services/machine-learning'
+    link: '/services/reports'
   },
   {
     icon: WrenchScrewdriverIcon,

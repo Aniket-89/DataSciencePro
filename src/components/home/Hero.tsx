@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Link as RouterLink } from 'react-router-dom';
 import { Dashboard } from '../../assets/assets';
+import { PopupButton } from 'react-calendly';
 
 const Hero = () => {
+  const root = document.getElementById('root') || document.body;
   return (
     <section id="home" className="min-h-[90vh] w-full flex items-center py-32 bg-[#F3F3E0] relative overflow-hidden relative">
       <div className="container mx-auto max-w-7xl px-4 py-16">
@@ -25,14 +27,20 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex gap-4"
             >
-              <RouterLink
+              {/* <RouterLink
                 to="/contact"
                 className="inline-block bg-[#27548A] text-white font-normal px-4 lg:px-8 py-3 hover:bg-blue-500 transition-all duration-300 cursor-pointer"
               >
                 Book a Call
-              </RouterLink>
+              </RouterLink> */}
+              <PopupButton
+                url="https://calendly.com/databitzy/30min"
+                rootElement={root}
+                text="Book a Call"
+                className="px-6 py-2 bg-[#27548A] text-white hover:bg-blue-500 transition-colors inline-flex items-center"
+                />
               <RouterLink
-                to="/services"
+                to="/services/reports"
                 className="inline-block bg-white text-gray-900 font-normal px-2 lg:px-8 py-3 border-2 border-[#183B4E] hover:bg-[#183B4E] hover:text-white transform transition-all duration-300 cursor-pointer"
               >
                 View Services

@@ -14,7 +14,7 @@ export default {
         mono: ['IBM Plex Mono', 'monospace'],
       },
       colors: {
-        primary: '#183B4E',
+      primary: '#183B4E',
         secondary: '#DDA853',
         accent: '#27548A',
         neutral: '#F3F3E0',
