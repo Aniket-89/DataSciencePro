@@ -9,10 +9,6 @@ export default {
       borderRadius: {
         none: '0',
       },
-      fontFamily: {
-        sans: ['IBM Plex Sans', 'sans-serif'],
-        mono: ['IBM Plex Mono', 'monospace'],
-      },
       colors: {
       primary: '#183B4E',
         secondary: '#DDA853',

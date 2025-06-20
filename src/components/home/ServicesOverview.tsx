@@ -68,7 +68,7 @@ const ServicesOverview = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-semibold text-[#183B4E] mb-4 font-sans">
+          <h2 className="text-4xl font-semibold text-[#183B4E] mb-4">
             How We Help Businesses
           </h2>
         </motion.div>

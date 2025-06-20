@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { PopupButton } from 'react-calendly';
 // import { ChatBubbleBottomCenterTextIcon } from '@heroicons/react/24/outline';
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
+import { Logo } from '../assets/assets';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -46,9 +47,13 @@ const Header = () => {
       <header className="fixed w-full bg-white shadow-md z-40">
         <div className="lg:max-w-[75vw] mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <Link to="/" className="text-2xl font-semibold text-[#183B4E]">
-              <span className='text-[#DDA853]'>DATA</span>BITZY
-            </Link>
+            <div className="flex items-center">
+
+              <img src={Logo} alt="" className='size-10'/>
+              <Link to="/" className="text-xl md:text-2xl font-semibold text-[#14B8A6]">
+                <span className='text-[#27548A]'>DATA</span>BITZY
+              </Link>
+            </div>
 
             <div className="hidden md:flex items-center space-x-8">
               <nav className="flex items-center space-x-8">
@@ -151,14 +156,20 @@ const Header = () => {
           ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <div className="flex flex-col h-full justify-between pb-12">
+
           <div className="flex items-center justify-between p-4 border-b border-gray-200">
-            <Link
-              to="/"
-              className="text-xl font-semibold text-[#183B4E]"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              <span className='text-[#DDA853]'>DATA</span>BITZY
-            </Link>
+            <div className="flex items-center">
+
+              <img src={Logo} alt="" className='size-10'/>
+              <Link 
+                to="/" 
+                className="text-xl font-semibold text-[#14B8A6]"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span className='text-[#27548A]'>DATA</span>BITZY
+              </Link>
+            </div>
+            
             <button
               onClick={() => setIsMobileMenuOpen(false)}
               className="text-gray-600 hover:text-[#183B4E]"

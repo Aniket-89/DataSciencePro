@@ -14,7 +14,7 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl text-[#183B4E] leading-thin md:text-6xl font-normal text-primary mb-8 font-sans">
+            <h1 className="text-5xl text-[#183B4E] leading-thin md:text-6xl font-normal text-primary mb-8">
               Data-Driven Insights for
               <span className="text-[#27548A] text-5xl pl-2"> Smarter Decisions</span>
             </h1>

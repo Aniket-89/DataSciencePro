@@ -1,4 +1,6 @@
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { Logo } from '../assets/assets';
+
 
 const Footer = () => {
   return (
@@ -6,9 +8,13 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className='text-black'>
-            <h1 className="text-2xl font-bold text-[#183B4E]">
-              <span className='text-[#DDA853]'>DATA</span>BITZY
-            </h1>
+            <div className="flex items-center">
+
+              <img src={Logo} alt="" className='size-10'/>
+              <h1 className="text-2xl font-semibold text-[#14B8A6]">
+                <span className='text-[#27548A]'>DATA</span>BITZY
+              </h1>
+            </div>
             <p className="text-gray-600">
               Transforming data into actionable insights.
             </p>

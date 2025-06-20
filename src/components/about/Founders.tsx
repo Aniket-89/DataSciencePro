@@ -4,16 +4,16 @@ import type { FounderType } from '../../types/about';
 const founders: FounderType[] = [
   {
     name: 'Anmol Sharma',
-    designation: 'Chief Data Scientist & Co-founder',
+  designation: 'Co-founder | Chief Data Scientist',
     brief: "I'm a data-driven professional with expertise in Data Science, Machine Learning, and LLMs (Large Language Models). I build intelligent systems that uncover insights, automate decisions, and scale performance. From predictive analytics to LLM-powered solutions, I specialize in turning complex data into high-impact strategies that drive business growth.",
     skills: ['Deep Learning', 'Computer Vision', 'Neural Networks', 'PyTorch'],
     image: '/founders/sarah.jpg'
   },
   {
     name: 'Priya Roy',
-    designation: 'Senior ML Engineer & Co-founder',
+    designation: 'Co-founder | Business Strategist | Market Research Specialist',
     brief: 'As a co-founder, I bring global experience across APAC, the Middle East, North & South America, and Europe — helping companies uncover growth opportunities, strengthen client relationships, and drive measurable results. With a background in finance and a deep focus on data-driven decision-making, I’m now building a venture that delivers powerful research, intelligent websites, and scalable digital solutions for modern brands.',
-    skills: ['Cloud Architecture', 'Big Data', 'AWS', 'Kubernetes'],
+    skills: ['Sales & Growth Strategy', 'Financial Analytics', 'Global Market Strategy'],
     image: '/founders/michael.jpg'
   }
 ];

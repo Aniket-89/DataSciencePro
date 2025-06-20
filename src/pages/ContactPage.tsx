@@ -241,11 +241,13 @@ const ContactPage = () => {
                     <option value="machine-learning">Machine Learning</option>
                     <option value="business-intelligence">Business Intelligence</option>
                     <option value="consulting">Consulting</option>
+                    <option value="syndicated-market-research ">Syndicated Market Research </option>
+                    <option value="customise-market-research">Customise Market Research</option>
                   </select>
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-mono text-gray-600 mb-2">
-                    Message
+                    Please provide a brief summary of your requirements or goals.
                   </label>
                   <textarea
                     id="message"
