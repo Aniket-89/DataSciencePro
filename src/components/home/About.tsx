@@ -15,9 +15,15 @@ const About = () => {
 					<h2 className="text-4xl font-semibold text-[#183B4E] mb-6">
 						Who We Are
 					</h2>
-					<p className="text-lg text-gray-600 leading-relaxed mb-8">
-						DATABITZY Research and Marketing is a premier provider of strategic market intelligence and data-driven business solutions. 
-						We help businesses—from emerging startups to global enterprises—make confident, evidence-based decisions in evolving markets.
+					<p className="text-lg text-justify text-gray-600 leading-relaxed mb-8">
+						DATABITZY is a powerful service-driven platform that delivers data-powered insights, market intelligence, 
+						and tailored business solutions. We help organizations of all sizes—from agile startups to established enterprises—make smarter, 
+						faster, and more confident decisions in a rapidly evolving marketplace. 
+						<br />
+						<br />
+						Our platform offers a wide range of services including 
+						custom market research reports, competitive analysis, customer behavior insights, business forecasting, and end-to-end data solutions. 
+						At DATABITZY, we transform data into direction—empowering your business to lead with clarity and precision.
 					</p>
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}

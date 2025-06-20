@@ -21,6 +21,18 @@ const services = [
   },
   {
     icon: PresentationChartLineIcon,
+    title: 'Data Solutions',
+    description: 'Transform raw data into strategic insight through advanced analytics and predictive modeling.',
+    deliverables: [
+      'Predictive & Prescriptive Analytics',
+      'Real-time Market Monitoring Dashboards',
+      'Custom BI & Reporting Tools',
+      'Risk Scoring & Scenario Planning'
+    ],
+    link: '/services/data-analysis'
+  },
+  {
+    icon: PresentationChartLineIcon,
     title: 'Consultancy Services',
     description: 'Primary + secondary research validated by industry veterans',
     deliverables: [

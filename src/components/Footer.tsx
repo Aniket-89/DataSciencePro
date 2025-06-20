@@ -6,9 +6,11 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className='text-black'>
-            <h3 className="text-xl font-bold mb-4">DATABITZY</h3>
+            <h1 className="text-2xl font-bold text-[#183B4E]">
+              <span className='text-[#DDA853]'>DATA</span>BITZY
+            </h1>
             <p className="text-gray-600">
-              Transforming data into actionable insights for your business success.
+              Transforming data into actionable insights.
             </p>
           </div>
           <div className='text-black'>

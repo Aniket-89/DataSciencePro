@@ -46,7 +46,7 @@ const Header = () => {
       <header className="fixed w-full bg-white shadow-md z-40">
         <div className="lg:max-w-[75vw] mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <Link to="/" className="text-xl font-semibold text-[#183B4E]">
+            <Link to="/" className="text-2xl font-semibold text-[#183B4E]">
               <span className='text-[#DDA853]'>DATA</span>BITZY
             </Link>
 

@@ -5,14 +5,14 @@ const founders: FounderType[] = [
   {
     name: 'Anmol Sharma',
     designation: 'Chief Data Scientist & Co-founder',
-    brief: 'Ph.D. in Machine Learning from MIT with 12+ years of experience in developing AI solutions for Fortune 500 companies. Specialized in deep learning and computer vision.',
+    brief: "I'm a data-driven professional with expertise in Data Science, Machine Learning, and LLMs (Large Language Models). I build intelligent systems that uncover insights, automate decisions, and scale performance. From predictive analytics to LLM-powered solutions, I specialize in turning complex data into high-impact strategies that drive business growth.",
     skills: ['Deep Learning', 'Computer Vision', 'Neural Networks', 'PyTorch'],
     image: '/founders/sarah.jpg'
   },
   {
-    name: 'Tanya Sharma',
+    name: 'Priya Roy',
     designation: 'Senior ML Engineer & Co-founder',
-    brief: 'Former Lead Data Architect at Google with extensive experience in building scalable data infrastructure. Expert in cloud computing and distributed systems.',
+    brief: 'As a co-founder, I bring global experience across APAC, the Middle East, North & South America, and Europe — helping companies uncover growth opportunities, strengthen client relationships, and drive measurable results. With a background in finance and a deep focus on data-driven decision-making, I’m now building a venture that delivers powerful research, intelligent websites, and scalable digital solutions for modern brands.',
     skills: ['Cloud Architecture', 'Big Data', 'AWS', 'Kubernetes'],
     image: '/founders/michael.jpg'
   }
@@ -52,7 +52,7 @@ export default function Founders() {
                     {founder.skills.map(skill => (
                       <span
                         key={skill}
-                        className="px-3 py-1 bg-gray-50 text-gray-600 text-sm font-mono"
+                        className="px-3 py-1 bg-[#F3F3E0] text-gray-600 text-sm font-mono"
                       >
                         {skill}
                       </span>

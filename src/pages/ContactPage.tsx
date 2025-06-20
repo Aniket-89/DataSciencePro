@@ -13,11 +13,11 @@ import { GrainyGradient2 } from '../assets/assets';
 const faqs = [
   {
     question: "What services do you offer?",
-    answer: "We offer comprehensive data science solutions including data analytics, machine learning, business intelligence, and custom AI model development. Our services can be tailored to meet your specific business needs."
+    answer: "we offer two core services: Market Research Reports and Data Analytics Solutions. Our research reports provide in-depth industry analysis, market forecasts, and competitor insights tailored to strategic goals, while our analytics services turn raw data into actionable intelligence through predictive modeling, market monitoring, and risk assessment. Together, these solutions help businesses make smarter, data-driven decisions across sectors."
   },
   {
     question: "How long does a typical project take?",
-    answer: "Project timelines vary depending on scope and complexity. A typical data analytics project might take 4-8 weeks, while more complex machine learning solutions could take 3-6 months. We'll provide detailed timelines during our initial consultation."
+    answer: "Project timelines vary depending on scope and complexity. A typical data analytics project might take 1-3 weeks, while more complex machine learning solutions could take 3-6 months. We'll provide detailed timelines during our initial consultation."
   },
   {
     question: "Do you offer ongoing support?",
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     question: "What industries do you work with?",
-    answer: "We work across various industries including healthcare, finance, retail, manufacturing, and technology. Our solutions are adaptable to any industry that wants to leverage data for better decision-making."
+    answer: "We work across various industries including healthcare, finance, retail, manufacturing, market reasearch and technology. Our solutions are adaptable to any industry that wants to leverage data for better decision-making."
   }
 ];
 
@@ -152,7 +152,7 @@ const ContactPage = () => {
                     <EnvelopeIcon className="h-6 w-6 text-[#183B4E] mr-4 flex-shrink-0" />
                     <div>
                       <h3 className="text-lg font-normal text-[#183B4E] mb-1">Email</h3>
-                      <p className="text-gray-600">contact@datasciencepro.ai</p>
+                      <p className="text-gray-600">contact@databitzy.com</p>
                     </div>
                   </div>
                   <div className="flex items-start">

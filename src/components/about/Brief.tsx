@@ -24,9 +24,14 @@ const Brief = () => {
               </svg> */}
             </div>
             <p className="text-lg text-gray-700 leading-relaxed">
-              DATABITZY is a premier provider of strategic market intelligence and data-driven business solutions. 
-              We empower organizations of all sizes — from global enterprises to emerging SMEs — with insights that drive growth, reduce risk, 
-              and uncover untapped opportunities in competitive markets.
+              DATABITZY is a powerful service-driven platform that delivers data-powered insights, market intelligence, 
+              and tailored business solutions. We help organizations of all sizes—from agile startups to established enterprises—make smarter, 
+              faster, and more confident decisions in a rapidly evolving marketplace. 
+              <br />
+              <br />
+              Our platform offers a wide range of services including 
+              custom market research reports, competitive analysis, customer behavior insights, business forecasting, and end-to-end data solutions. 
+              At DATABITZY, we transform data into direction—empowering your business to lead with clarity and precision.
             </p>
           </motion.div>
 
