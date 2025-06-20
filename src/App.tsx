@@ -10,7 +10,6 @@ import MachineLearningPage from './pages/MachineLearningPage';
 import ReportsPage from './pages/ReportsPage';
 import ScrollToTop from './components/ScrollToTop';
 import TestimonialsPage from './pages/TestimonialsPage';
-import CalendlyWidget from './components/CalendlyWidget';
 
 function App() {
   return (
@@ -28,7 +27,6 @@ function App() {
             <Route path="/services/reports" element={<ReportsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
-            <Route path="/book" element={<CalendlyWidget />} />
           </Routes>
         </main>
         <Footer />

@@ -1,4 +1,3 @@
-import React from 'react';
 import { GrainyGradient2 } from '../assets/assets';
 import CTA from '../components/CTA';
 
