@@ -21,7 +21,7 @@ const Header = () => {
     { name: 'Home', to: '/' },
     { name: 'About Us', to: '/about' },
     { name: 'Services', to: '#', hasDropdown: true },
-    // { name: 'Reports', to: '/reports' },
+    { name: 'Testimonials', to: '/testimonials' },
     { name: 'Contact Us', to: '/contact' },
   ];
   // Close dropdown when clicking outside
@@ -59,41 +59,54 @@ const Header = () => {
               <nav className="flex items-center space-x-8">
                 {menuItems.map((item) => (
                   item.hasDropdown ? (
-                    <div key={item.name} className="relative" ref={servicesRef}>
-                      <button
-                        onClick={() => setIsServicesOpen(!isServicesOpen)}
-                        className={`flex items-center py-1 font-normal ${
-                          isActive('/services') || location.pathname.startsWith('/services/')
-                            ? 'text-[#183B4E] font-bold'
-                            : 'text-gray-600 hover:text-[#183B4E]'
-                        } transition-colors`}
-                      >
-                        {item.name}
-                        <ChevronDownIcon className={`ml-1 h-4 w-4 transform transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
-                      </button>
-                      {/* Dropdown Menu */}
-                      {isServicesOpen && (
-                        <div className="absolute top-full left-0 mt-1 w-52 bg-white shadow-lg">
-                          {servicesItems.map((service) => (
-                            <Link
-                              key={service.name}
-                              to={service.to}
-                              onClick={() => setIsServicesOpen(false)}
-                              className={`block px-4 py-2 font-normal ${
-                                isActive(service.to)
-                                  ? 'bg-gray-50 text-[#183B4E] font-bold'
-                                  : 'text-gray-600 hover:bg-gray-50 hover:text-[#183B4E]'
-                              } transition-colors`}
-                            >
-                              {service.name}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                      {(isActive('/services') || location.pathname.startsWith('/services/')) && (
-                        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#183B4E] transform" />
-                      )}
-                    </div>
+                    <div
+  key={item.name}
+  className="relative"
+  ref={servicesRef}
+  onMouseEnter={() => setIsServicesOpen(true)}
+  onMouseLeave={() => setIsServicesOpen(false)}
+>
+  <Link
+    to="/services"
+    className={`flex items-center py-1 font-normal ${
+      isActive('/services') || location.pathname.startsWith('/services/')
+        ? 'text-[#183B4E] font-bold'
+        : 'text-gray-600 hover:text-[#183B4E]'
+    } transition-colors`}
+  >
+    {item.name}
+    <ChevronDownIcon
+      className={`ml-1 h-4 w-4 transform transition-transform ${
+        isServicesOpen ? 'rotate-180' : ''
+      }`}
+    />
+  </Link>
+
+  {/* Dropdown */}
+  {isServicesOpen && (
+    <div className="absolute top-full left-0 mt-1 w-52 bg-white shadow-lg z-50">
+      {servicesItems.map((service) => (
+        <Link
+          key={service.name}
+          to={service.to}
+          onClick={() => setIsServicesOpen(false)}
+          className={`block px-4 py-2 font-normal ${
+            isActive(service.to)
+              ? 'bg-gray-50 text-[#183B4E] font-bold'
+              : 'text-gray-600 hover:bg-gray-50 hover:text-[#183B4E]'
+          } transition-colors`}
+        >
+          {service.name}
+        </Link>
+      ))}
+    </div>
+  )}
+
+  {(isActive('/services') || location.pathname.startsWith('/services/')) && (
+    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#183B4E] transform" />
+  )}
+</div>
+
                   ) : (
                     <Link
                       key={item.name}

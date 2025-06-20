@@ -40,7 +40,7 @@ const Hero = () => {
                 className="px-6 py-2 bg-[#27548A] text-white hover:bg-blue-500 transition-colors inline-flex items-center"
                 />
               <RouterLink
-                to="/services/reports"
+                to="/services"
                 className="inline-block bg-white text-gray-900 font-normal px-2 lg:px-8 py-3 border-2 border-[#183B4E] hover:bg-[#183B4E] hover:text-white transform transition-all duration-300 cursor-pointer"
               >
                 View Services
