@@ -31,18 +31,18 @@ const services = [
     ],
     link: '/services/data-analysis'
   },
-  {
-    icon: PresentationChartLineIcon,
-    title: 'Consultancy Services',
-    description: 'Primary + secondary research validated by industry veterans',
-    deliverables: [
-      'Industry Expert Interviews',
-      'Data Validation & Analysis',
-      'Strategic Recommendations',
-      'Trend Impact Analysis'
-    ],
-    link: '/services/reports'
-  },
+  // {
+  //   icon: PresentationChartLineIcon,
+  //   title: 'Consultancy Services',
+  //   description: 'Primary + secondary research validated by industry veterans',
+  //   deliverables: [
+  //     'Industry Expert Interviews',
+  //     'Data Validation & Analysis',
+  //     'Strategic Recommendations',
+  //     'Trend Impact Analysis'
+  //   ],
+  //   link: '/services/reports'
+  // },
   {
     icon: WrenchScrewdriverIcon,
     title: 'Custom Solutions',
