@@ -60,27 +60,27 @@ const Header = () => {
                 {menuItems.map((item) => (
                   item.hasDropdown ? (
                     <div
-  key={item.name}
-  className="relative"
-  ref={servicesRef}
-  onMouseEnter={() => setIsServicesOpen(true)}
-  onMouseLeave={() => setIsServicesOpen(false)}
->
-  <Link
-    to="/services"
-    className={`flex items-center py-1 font-normal ${
-      isActive('/services') || location.pathname.startsWith('/services/')
-        ? 'text-[#183B4E] font-bold'
-        : 'text-gray-600 hover:text-[#183B4E]'
-    } transition-colors`}
-  >
-    {item.name}
-    <ChevronDownIcon
-      className={`ml-1 h-4 w-4 transform transition-transform ${
-        isServicesOpen ? 'rotate-180' : ''
-      }`}
-    />
-  </Link>
+                      key={item.name}
+                      className="relative"
+                      ref={servicesRef}
+                      onMouseEnter={() => setIsServicesOpen(true)}
+                      onMouseLeave={() => setIsServicesOpen(false)}
+                    >
+                      <Link
+                        to="/services"
+                        className={`flex items-center h-full py-1 font-normal ${
+                          isActive('/services') || location.pathname.startsWith('/services/')
+                            ? 'text-[#183B4E] font-bold'
+                            : 'text-gray-600 hover:text-[#183B4E]'
+                        } transition-colors`}
+                      >
+                        {item.name}
+                        <ChevronDownIcon
+                          className={`ml-1 h-4 w-4 transform transition-transform ${
+                            isServicesOpen ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </Link>
 
   {/* Dropdown */}
   {isServicesOpen && (
