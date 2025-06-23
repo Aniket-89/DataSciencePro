@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -11,16 +12,36 @@ import ReportsPage from './pages/ReportsPage';
 import ScrollToTop from './components/ScrollToTop';
 import TestimonialsPage from './pages/TestimonialsPage';
 import IndustryPage from './pages/IndustryPage';
-// import ChatbotComp from './components/ChatbotComp';
+import ChatbotComp from './components/ChatbotComp';
+import { FaComments } from 'react-icons/fa';
+
 
 function App() {
+  const [chatbotOpen, setChatbotOpen] = useState(false);
+
   return (
     <Router>
       <div className="min-h-screen flex flex-col">
         <Header />
-        {/* <ChatbotComp /> */}
+        {chatbotOpen && (
+          <div className="fixed bottom-10 right-10 z-50 flex flex-col items-end">
+            <ChatbotComp onClose={() => setChatbotOpen(false)} />
+          </div>
+        )}
+        <button
+          className="fixed bottom-10 right-10 z-50 bg-[#27548A] text-white rounded-full shadow-lg p-4 hover:bg-[#183B4E] transition-colors focus:outline-none"
+          style={{ display: chatbotOpen ? 'none' : 'block' }}
+          onClick={() => setChatbotOpen(true)}
+          aria-label="Open Chatbot"
+        >
+            <span role="img" aria-label="chat">
+            <svg style={{ display: 'none' }} /> {/* fallback for SSR */}
+            {/* Import the chat icon at the top: import { FaComments } from 'react-icons/fa'; */}
+            <FaComments size={24} />
+            </span>
+        </button>
         <main className="flex-grow">
-        <ScrollToTop />
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
