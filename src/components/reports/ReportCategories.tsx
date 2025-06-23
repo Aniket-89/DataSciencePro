@@ -21,6 +21,7 @@ const industryData = [
   {
     icon: BuildingStorefrontIcon,
     title: 'Industrial Automation',
+    slug: 'industrial-automation',
     focus: 'Smart factories, robotics, predictive maintenance',
     deliverables: [
       'Adoption rates for cobots (collaborative robots) by industry',
@@ -31,6 +32,7 @@ const industryData = [
   {
     icon: BeakerIcon,
     title: 'Food, Beverages & Nutrition',
+    slug: 'food-beverages-nutrition',
     focus: 'Alt-protein, functional foods, sustainable packaging',
     deliverables: [
       'Consumer sentiment tracking for novel ingredients (e.g., cricket protein)',
@@ -41,6 +43,7 @@ const industryData = [
   {
     icon: BoltIcon,
     title: 'Energy & Power',
+    slug: 'energy-power',
     focus: 'Energy storage, microgrids, hydrogen economy',
     deliverables: [
       'Levelized cost comparisons (solar/wind/hydrogen)',
@@ -51,6 +54,7 @@ const industryData = [
   {
     icon: ShoppingBagIcon,
     title: 'Consumer & Retail',
+    slug: 'consumer-retail',
     focus: 'D2C strategies, experiential retail, Gen Z spending',
     deliverables: [
       'E-commerce vs. brick-and-mortar profitability models',
@@ -61,6 +65,7 @@ const industryData = [
   {
     icon: TruckIcon,
     title: 'Automotive',
+    slug: 'automotive',
     focus: 'EV charging ecosystems, autonomous trucking, V2X tech',
     deliverables: [
       'Battery chemistry adoption timelines (LFP vs. NMC)',
@@ -71,6 +76,7 @@ const industryData = [
   {
     icon: DeviceTabletIcon,
     title: 'Semiconductor & Electronics',
+    slug: 'semiconductor-electronics',
     focus: 'Chiplet design, compound semiconductors, 6G RF',
     deliverables: [
       'Fab capacity vs. demand gap analysis',
@@ -81,6 +87,7 @@ const industryData = [
   {
     icon: Square3Stack3DIcon,
     title: 'Agriculture',
+    slug: 'agriculture',
     focus: 'Precision agtech, carbon farming, biofertilizers',
     deliverables: [
       'Drone vs. satellite imagery cost-benefit studies',
@@ -91,6 +98,7 @@ const industryData = [
   {
     icon: RocketLaunchIcon,
     title: 'Aerospace & Defense',
+    slug: 'aerospace-defense',
     focus: 'Hypersonics, MRO digitization, space logistics',
     deliverables: [
       'Aftermarket parts pricing elasticity models',
@@ -101,6 +109,7 @@ const industryData = [
   {
     icon: GlobeAltIcon,
     title: 'ICT',
+    slug: 'ict',
     focus: 'AI governance, quantum networking, post-5G',
     deliverables: [
       'Enterprise AI adoption pain point analysis',
@@ -111,6 +120,7 @@ const industryData = [
   {
     icon: CubeIcon,
     title: 'Packaging & Transport',
+    slug: 'packaging-transport',
     focus: 'Reusable logistics, smart labels, bio-PET',
     deliverables: [
       'E-commerce packaging waste reduction solutions',
@@ -121,6 +131,7 @@ const industryData = [
   {
     icon: BuildingOfficeIcon,
     title: 'Construction',
+    slug: 'construction',
     focus: 'Modular housing, 3D printing, embodied carbon',
     deliverables: [
       'Cross-laminated timber vs. steel cost curves',
@@ -131,6 +142,7 @@ const industryData = [
   {
     icon: BanknotesIcon,
     title: 'BFSI',
+    slug: 'bfsi',
     focus: 'Embedded finance, parametric insurance, CBDCs',
     deliverables: [
       'Neobank churn rate predictors',
@@ -222,7 +234,7 @@ const ReportCategories = () => {
                     </ul>
                   </div>
                   <Link
-                    to='/contact'
+                    to={`/industry/${industryData[active].slug}`}
                     className="mt-6 inline-block px-6 py-2 bg-[#27548A] text-white hover:bg-blue-500 transition-colors"
                     >Learn More</Link>
                 </motion.div>

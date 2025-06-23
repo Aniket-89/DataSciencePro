@@ -10,6 +10,7 @@ import MachineLearningPage from './pages/MachineLearningPage';
 import ReportsPage from './pages/ReportsPage';
 import ScrollToTop from './components/ScrollToTop';
 import TestimonialsPage from './pages/TestimonialsPage';
+import IndustryPage from './pages/IndustryPage';
 // import ChatbotComp from './components/ChatbotComp';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path="/services/machine-learning" element={<MachineLearningPage />} />
             <Route path="/services/reports" element={<ReportsPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/industry/:slug" element={<IndustryPage />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
           </Routes>
         </main>
