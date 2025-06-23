@@ -44,8 +44,8 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed w-full bg-white shadow-md z-40">
-        <div className="lg:max-w-[75vw] mx-auto px-4">
+      <header className="fixed w-full bg-white shadow-md z-40 md:px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
 
@@ -55,8 +55,8 @@ const Header = () => {
               </Link>
             </div>
 
-            <div className="hidden md:flex items-center space-x-8">
-              <nav className="flex items-center space-x-8">
+            <div className="hidden lg:flex items-center gap-8 px-4">
+              <nav className="flex items-center gap-8">
                 {menuItems.map((item) => (
                   item.hasDropdown ? (
                     <div
@@ -81,6 +81,7 @@ const Header = () => {
                           }`}
                         />
                       </Link>
+
 
   {/* Dropdown */}
   {isServicesOpen && (
@@ -140,7 +141,7 @@ const Header = () => {
 
             </div>
 
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="text-gray-600 hover:text-[#183B4E]"

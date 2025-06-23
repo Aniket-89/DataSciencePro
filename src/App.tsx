@@ -10,12 +10,14 @@ import MachineLearningPage from './pages/MachineLearningPage';
 import ReportsPage from './pages/ReportsPage';
 import ScrollToTop from './components/ScrollToTop';
 import TestimonialsPage from './pages/TestimonialsPage';
+// import ChatbotComp from './components/ChatbotComp';
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen flex flex-col">
         <Header />
+        {/* <ChatbotComp /> */}
         <main className="flex-grow">
         <ScrollToTop />
           <Routes>
