@@ -2,7 +2,7 @@ export const industryReports = {
   semiconductors: {
     title: "Temperature Data Logger Market Report: Size, Trends & Forecast (2025–2034)",
     industry: "Semiconductors & Electronics",
-    slug: "semiconductors",
+    slug: "semiconductor-electronics",
     // image: "/images/industryReports/semiconductors.jpg",
     overview: "The Temperature Data Logger Market is expected to grow from USD XX.X million in 2025 to USD XX.X million by 2034, registering a CAGR of XX.X%. These devices track temperature fluctuations over time and are crucial for industries where temperature control is critical—such as pharmaceuticals, food, research, and manufacturing. Available with internal or external sensors, they support USB, wireless, and cloud-based solutions.",
     executiveSummary: "Market growth is driven by real-time cold chain tracking, regulatory requirements in healthcare and food sectors, and technological advancements such as IoT-enabled devices and cloud storage. Industries increasingly rely on these systems for maintaining product integrity and operational compliance.",
@@ -37,11 +37,10 @@ export const industryReports = {
       "Sep 2024: DicksonOne launched in EMEA."
     ],
     regionalOutlook: {
-      "North America":	"U.S., Canada, Mexico, Others",
-      "Europe":	"Germany, UK, France, Others",
-      "Asia Pacific":	"China, India, Japan, South Korea, Others",
-      "Central & South America":	"Brazil, Argentina, Colombia, Others",
-      "Middle East & Africa":	"Saudi Arabia, UAE, Others"
+      "North America":	"Leads the market; strong regulatory and tech infrastructure.",
+      "Europe":	"high adoption due to EU regulations; strong presence in Germany, UK, France.",
+      "Asia Pacific":	"Fast growth in China, India, Japan; driven by pharma and export industries.",
+      "Latin America & MEA":	"Emerging demand in urban healthcare and food sectors; slower rural adoption.",
     }
 
   },
