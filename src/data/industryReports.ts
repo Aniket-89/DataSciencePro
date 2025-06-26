@@ -1,5 +1,6 @@
 export const industryReports = {
-  semiconductors: {
+  semiconductors: [{
+    id: 'semiconductors-1',
     title: "Temperature Data Logger Market Report: Size, Trends & Forecast (2025–2034)",
     industry: "Semiconductors & Electronics",
     slug: "semiconductor-electronics",
@@ -44,6 +45,48 @@ export const industryReports = {
     }
 
   },
+
+  ],
+  automotive: [{
+    id: 'automotive-1',
+    title: "Electric Vehicle Battery Recycling Market Report: Size, Trends & Forecast (2025–2034)",
+    industry: "Automotive",
+    slug: "automotive",
+    // image: "/images/industryReports/automotive.jpg",
+    overview: "The Electric Vehicle Battery Recycling Market is projected to grow from USD XX.X million in 2025 to USD XX.X million by 2034, at a CAGR of XX.X%. This market focuses on the recycling of lithium-ion batteries used in electric vehicles (EVs), which is crucial for sustainability and resource recovery.",
+    executiveSummary: "The growth of the EV battery recycling market is driven by increasing EV adoption, stringent environmental regulations, and the need for sustainable resource management. The market is characterized by technological advancements in battery recycling processes and the establishment of dedicated recycling facilities.",
+    droc: {
+      drivers: "Rising EV adoption; government incentives; environmental regulations; resource scarcity.",
+      restraints: "High initial investment; complex recycling processes; limited consumer awareness.",
+      opportunities: "Technological advancements; partnerships with automakers; expansion into emerging markets.",
+      challenges: "Regulatory compliance; competition from new technologies; supply chain disruptions."
+    },
+    segmentation: {
+      type: ["Lithium-ion Batteries", "Lead-acid Batteries", "Nickel-metal Hydride Batteries"],
+      application: ["Passenger Vehicles", "Commercial Vehicles", "Two-wheelers"],
+      process: ["Hydrometallurgical", "Pyrometallurgical", "Direct Recycling"]
+    },
+    players: [
+        "Umicore N.V.", 
+        "Li-Cycle Corp.", 
+        "Redwood Materials Inc.", 
+        "American Battery Technology Company", 
+        "Battery Solutions LLC"
+    ],
+    recentDevelopments: [
+      "Nov 2024: Redwood Materials expands into Europe;",
+      "Oct 2024: Li-Cycle partners with Ford for battery recycling;",
+      "Sep 2024: Umicore opens new facility in Germany;",
+      "Aug 2024: American Battery Technology Company raises $50M for expansion."
+    ],
+    regionalOutlook: {
+      "North America":	"Strong growth due to EV adoption and regulatory support.",
+      "Europe":	"Leading region with stringent recycling laws and high EV penetration.",
+      "Asia Pacific":	"Rapidly growing market driven by China and Japan's EV policies.",
+      "Latin America & MEA":
+      "Emerging markets with increasing EV adoption; slower growth due to infrastructure challenges.",
+    }
+  }],
 };  // Add 11 more industries here..
 
 export const industryList = [

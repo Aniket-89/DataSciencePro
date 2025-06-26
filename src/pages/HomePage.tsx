@@ -18,7 +18,7 @@ const HomePage = () => {
       <About />
       <Testimonials />
       <WhyChooseUs />
-\      <FastFacts />
+      <FastFacts />
       <CTA />
     </>
   );

@@ -85,6 +85,11 @@ const flow: Record<string, FlowStep> = {
   collectLead: {
     message:
       'Thanks! Please drop your email or WhatsApp so we can follow up with the right expert.',
+    chatDisabled: false,
+    path: 'thankYou',
+  },
+  thankYou: {
+    message: 'Thank you for reaching out! Our team will follow up soon.',
     chatDisabled: true,
   },
 };
