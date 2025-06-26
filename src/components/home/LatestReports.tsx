@@ -51,7 +51,7 @@ const LatestReports = () => {
               className="p-6 bg-gray-50 group hover:bg-gray-100 transition-colors"
             >
               <Link
-                to="/industry/semiconductor-electronics"
+                to="/industry/semiconductors"
                 className="block text-[#183B4E] group-hover:text-gray-600 transition-colors"
               >
                 <h3 className="text-xl font-light mb-4">{report}</h3>

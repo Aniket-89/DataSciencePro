@@ -70,7 +70,7 @@ const IndustryPage = () => {
               </button>
             ))}
           </div>
-          <div className="bg-[#F3F3E0] p-12 min-h-[400px] rounded-none shadow-sm mb-8">
+          <div className="bg-[#F3F3E0] p-6 lg:p-12 min-h-[400px] rounded-none shadow-sm mb-8">
 
           {/* Report Description */}
           {activeTab === 'description' && (
