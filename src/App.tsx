@@ -52,7 +52,7 @@ function App() {
             <Route path="/services/machine-learning" element={<MachineLearningPage />} />
             <Route path="/services/reports" element={<ReportsPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/industry/:slug" element={<IndustryPage />}>
+            <Route path="/reports/:slug" element={<IndustryPage />}>
               <Route index element={<ReportsListPage />} />
               <Route path=":reportId" element={<ReportDetailPage />} />
             </Route>

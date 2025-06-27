@@ -33,7 +33,7 @@ const LatestReports = () => {
             viewport={{ once: true }}
           >
             <Link
-              to="/industry/semiconductors"
+              to="/reports/semiconductors"
               className="text-[#183B4E] hover:text-gray-600 transition-colors"
             >
               View All Reports →
@@ -52,7 +52,7 @@ const LatestReports = () => {
               className="p-6 bg-gray-50 group hover:bg-gray-100 transition-colors"
             >
               <Link
-                to={`/industry/${report.industrySlug}/${report.id}`}
+                to={`/reports/${report.industrySlug}/${report.id}`}
                 className="block text-[#183B4E] group-hover:text-gray-600 transition-colors"
               >
                 <h3 className="text-xl font-light mb-4">{report.title}</h3>

@@ -16,7 +16,7 @@ const ReportsListPage = () => {
         {reports.map((report, idx) => (
           <li key={idx} className="bg-white p-6 rounded-none shadow-sm border border-gray-200 flex flex-col gap-2">
             <Link
-              to={`/industry/${slug}/${report.id}`}
+              to={`/reports/${slug}/${report.slug}`}
               className="text-lg font-semibold text-[#27548A] hover:underline"
             >
               {report.title}

@@ -195,18 +195,36 @@ const Header = () => {
           <nav className="flex-1 px-4 py-6">
             <div className="flex flex-col space-y-4">
               {menuItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.to}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-lg py-2 relative ${
-                    isActive(item.to)
-                      ? 'text-[#183B4E] font-bold'
-                      : 'text-gray-600'
-                  } hover:text-[#183B4E] transition-colors`}
-                >
-                  {item.name}
-                </Link>
+                item.hasDropdown ? (
+                  <div key={item.name} className="flex flex-col">
+                    <span className="text-lg py-2 text-gray-600 font-semibold">{item.name}</span>
+                    <div className="ml-4 flex flex-col space-y-2">
+                      {servicesItems.map((service) => (
+                        <Link
+                          key={service.name}
+                          to={service.to}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className={`text-base py-1 pl-2 border-l-2 border-[#27548A] text-[#27548A] hover:underline`}
+                        >
+                          {service.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.to}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`text-lg py-2 relative ${
+                      isActive(item.to)
+                        ? 'text-[#183B4E] font-bold'
+                        : 'text-gray-600'
+                    } hover:text-[#183B4E] transition-colors`}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
             </div>
           </nav>

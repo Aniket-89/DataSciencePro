@@ -31,7 +31,7 @@ const IndustryCategoriesSidebar = () => {
               {industryList.map((item) => (
                 <li key={item.slug}>
                   <Link
-                    to={`/industry/${item.slug}`}
+                    to={`/reports/${item.slug}`}
                     className={`block px-3 py-2 rounded-none text-sm transition-colors
                       ${slug === item.slug
                           ? 'bg-[#E9F1FA] text-[#27548A] font-semibold'
@@ -54,7 +54,7 @@ const IndustryCategoriesSidebar = () => {
             {industryList.map((item) => (
               <li key={item.slug}>
                 <Link
-                  to={`/industry/${item.slug}`}
+                  to={`/reports/${item.slug}`}
                   className={`block px-3 py-2 rounded-none text-sm transition-colors
                     ${slug === item.slug
                         ? 'bg-[#E9F1FA] text-[#27548A] font-semibold'

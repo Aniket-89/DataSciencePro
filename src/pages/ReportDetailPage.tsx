@@ -10,8 +10,12 @@ const TABS = [
 ];
 
 const ReportDetailPage = () => {
-  const { slug } = useParams();
-  const report = industryReports[slug as keyof typeof industryReports]?.[0];
+  const { slug, reportId } = useParams();
+  const report =
+    industryReports[slug as keyof typeof industryReports]?.find(
+      (r) => r.slug === reportId
+
+    );
   const [activeTab, setActiveTab] = useState('description');
 
   if (!report) return <div className="p-8 text-center text-lg">Industry report not found.</div>;
