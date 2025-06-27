@@ -16,6 +16,7 @@ import { FaComments } from 'react-icons/fa';
 import IndustryPage from './pages/IndustryPage';
 import ReportsListPage from './pages/ReportsListPage';
 import ReportDetailPage from './pages/ReportDetailPage';
+import AddReportPage from './pages/AddReportPage';
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
               <Route path=":reportId" element={<ReportDetailPage />} />
             </Route>
             <Route path="/testimonials" element={<TestimonialsPage />} />
+            <Route path='/admin' element={<AddReportPage />} />
           </Routes>
         </main>
         <Footer />
