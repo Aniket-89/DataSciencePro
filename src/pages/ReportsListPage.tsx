@@ -5,10 +5,11 @@ import { db } from '../firebaseConfig';
 
 interface Report {
   id: string;
+  slug: string;
   title: string;
   overview: string;
   industry: string;
-  industryslug: string;
+  // industryslug: string;
 }
 
 const ReportsListPage = () => {
@@ -52,7 +53,7 @@ const ReportsListPage = () => {
         {reports.map((report) => (
           <li key={report.id} className="bg-white p-6 rounded-none shadow-sm border border-gray-200 flex flex-col gap-2">
             <Link
-              to={`/industry/${slug}/${report.id}`}
+              to={`/industry/${slug}/${report.slug}`}
               className="text-lg font-semibold text-[#27548A] hover:underline"
             >
               {report.title}

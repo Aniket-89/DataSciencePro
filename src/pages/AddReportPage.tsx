@@ -2,6 +2,22 @@ import { useState } from 'react';
 import { db } from '../firebaseConfig';
 import { collection, addDoc } from 'firebase/firestore';
 
+const industries = [
+  "Automotive",
+  "Semiconductors & Electronics",
+  "Consumer & Retail",
+  "Aerospace & Defense",
+  "Healthcare",
+  "Energy & Utilities",
+  "Construction",
+  "Agriculture",
+  "Telecommunication",
+  "IT & Software",
+  "Chemicals",
+  "Logistics",
+];
+
+
 const initialState: {
   slug: string;
   title: string;
@@ -47,9 +63,23 @@ const AddReportPage = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
   const { name, value } = e.target;
-  setForm({ ...form, [name]: value });
+  if (name.startsWith('droc.')) {
+    setForm(prev => ({ ...prev, droc: { ...prev.droc, [name.split('.')[1]]: value } }));
+  // } else if (name.startsWith('segmentation.')) {
+  //   setForm(prev => ({ ...prev, segmentation: { ...prev.segmentation, [name.split('.')[1]]: value } }));
+  // } else if (name.startsWith('regionalOutlook.')) {
+  //   setForm(prev => ({ ...prev, regionalOutlook: { ...prev.regionalOutlook, [name.split('.')[1]]: value } }));
+  } else if (name === 'industry') {
+    setForm(prev => ({
+      ...prev,
+      industry: value,
+      industryslug: value.toLowerCase().replace(/ & | /g, '-')
+    }));
+  } else {
+    setForm(prev => ({ ...prev, [name]: value }));
+  }
 };
 
   // const handleArrayChange = (name: string, value: string) => {
@@ -119,7 +149,21 @@ const AddReportPage = () => {
         required
       />
       <input name="title" value={form.title} onChange={handleChange} placeholder="Title" className="w-full border p-2" required />
-        <input name="industry" value={form.industry} onChange={handleChange} placeholder="Industry" className="w-full border p-2" required />
+      <select
+        name="industry"
+        value={form.industry}
+        onChange={handleChange}
+        className="w-full border p-2"
+        required
+      >
+        <option value="">Select Industry</option>
+        {industries.map((industry) => (
+          <option key={industry} value={industry}>
+            {industry}
+          </option>
+        ))}
+      </select>
+
         {/* <input name="industryslug" value={form.industryslug} onChange={handleChange} placeholder="Industry Slug (e.g. automotive)" className="w-full border p-2" required /> */}
         <textarea name="overview" value={form.overview} onChange={handleChange} placeholder="Overview" className="w-full border p-2" required />
         <textarea name="executiveSummary" value={form.executiveSummary} onChange={handleChange} placeholder="Executive Summary" className="w-full border p-2" required />
