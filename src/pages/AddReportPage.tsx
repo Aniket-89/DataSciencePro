@@ -137,23 +137,34 @@ const AddReportPage = () => {
 
 
   return (
-    <div className="max-w-2xl mx-auto p-8 bg-white rounded shadow">
-      <h1 className="text-2xl font-bold mb-6">Add New Report</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="w-full bg-[#F3F3E0]">
+
+    <div className="max-w-5xl mx-auto p-8 rounded my-12">
+  <h1 className="text-3xl font-bold text-[#183B4E] mb-6 border-b pb-2">Add New Report</h1>
+  <form onSubmit={handleSubmit} className="space-y-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-[#183B4E] rounded">
+        <h2 className="text-xl font-semibold mb-2 text-white">Title & Slug</h2>
       <input
         name="slug"
         value={form.slug}
         onChange={handleChange}
         placeholder="Slug (e.g. electric-vehicle-battery-market)"
-        className="w-full border p-2"
+        className="border p-3 rounded bg-white"
         required
       />
-      <input name="title" value={form.title} onChange={handleChange} placeholder="Title" className="w-full border p-2" required />
+      <input
+        name="title"
+        value={form.title}
+        onChange={handleChange}
+        placeholder="Title"
+        className="border p-3 rounded  bg-white"
+        required
+      />
       <select
         name="industry"
         value={form.industry}
         onChange={handleChange}
-        className="w-full border p-2"
+        className="border p-3 rounded  bg-white"
         required
       >
         <option value="">Select Industry</option>
@@ -163,112 +174,160 @@ const AddReportPage = () => {
           </option>
         ))}
       </select>
-
-        {/* <input name="industryslug" value={form.industryslug} onChange={handleChange} placeholder="Industry Slug (e.g. automotive)" className="w-full border p-2" required /> */}
-        <textarea name="overview" value={form.overview} onChange={handleChange} placeholder="Overview" className="w-full border p-2" required />
-        <textarea name="executiveSummary" value={form.executiveSummary} onChange={handleChange} placeholder="Executive Summary" className="w-full border p-2" required />
-        <div className="grid grid-cols-2 gap-2">
-          <input name="droc.drivers" value={form.droc.drivers} onChange={handleChange} placeholder="Drivers" className="border p-2" />
-          <input name="droc.restraints" value={form.droc.restraints} onChange={handleChange} placeholder="Restraints" className="border p-2" />
-          <input name="droc.opportunities" value={form.droc.opportunities} onChange={handleChange} placeholder="Opportunities" className="border p-2" />
-          <input name="droc.challenges" value={form.droc.challenges} onChange={handleChange} placeholder="Challenges" className="border p-2" />
-        </div>
-        <div className="grid grid-cols-2 gap-2">
-          <h2 className="font-semibold">Segmentation</h2>
-          {Object.entries(form.segmentation).map(([key, values], index) => (
-            <div key={index} className="mb-2 border p-2">
-              <input
-                type="text"
-                className="border p-1 w-full mb-1"
-                value={key}
-                disabled
-              />
-              <input
-                type="text"
-                className="border p-1 w-full"
-                placeholder="Comma separated values"
-                value={(values as string[]).join(', ')}
-                onChange={e =>
-                  updateSegmentationKey(key, e.target.value.split(',').map(s => s.trim()))
-                }
-              />
-              <button
-                type="button"
-                className="text-red-600 text-sm mt-1"
-                onClick={() => removeSegmentationKey(key)}
-              >
-                Remove
-              </button>
-            </div>
-          ))}
-
-          {/* Add New Segmentation */}
-          <div className="flex gap-2 my-2">
-            <input
-              type="text"
-              className="border p-1 flex-1"
-              placeholder="New Segmentation Key (e.g. By Type)"
-              onKeyDown={(e: any) => {
-                if (e.key === 'Enter' && e.target.value) {
-                  updateSegmentationKey(e.target.value, []);
-                  e.target.value = '';
-                  e.preventDefault();
-                }
-              }}
-            />
-          </div>
-
-        </div>
-        <textarea name="players" value={form.players} onChange={handleChange} placeholder="Players (comma separated)" className="w-full border p-2" />
-        <textarea name="recentDevelopments" value={form.recentDevelopments} onChange={handleChange} placeholder="Recent Developments (one per line)" className="w-full border p-2" />
-        <div className="grid grid-cols-2 gap-2">
-          <h2 className="font-semibold">Regional Outlook</h2>
-          {Object.entries(form.regionalOutlook).map(([region, text], index) => (
-            <div key={index} className="mb-2 border p-2">
-              <input
-                type="text"
-                className="border p-1 w-full mb-1"
-                value={region}
-                disabled
-              />
-              <textarea
-                className="border p-1 w-full"
-                placeholder="Outlook"
-                value={String(text)}
-                onChange={e => updateRegionalOutlook(region, e.target.value)}
-              />
-              <button
-                type="button"
-                className="text-red-600 text-sm mt-1"
-                onClick={() => removeRegionalOutlook(region)}
-              >
-                Remove
-              </button>
-            </div>
-          ))}
-
-          {/* Add New Region */}
-          <div className="flex gap-2 my-2">
-            <input
-              type="text"
-              className="border p-1 flex-1"
-              placeholder="New Region (e.g. North America)"
-              onKeyDown={(e: any) => {
-                if (e.key === 'Enter' && e.target.value) {
-                  updateRegionalOutlook(e.target.value, '');
-                  e.target.value = '';
-                  e.preventDefault();
-                }
-              }}
-            />
-          </div>
-
-        </div>
-        <button type="submit" className="bg-[#27548A] text-white px-6 py-2 rounded disabled:opacity-50" disabled={loading}>{loading ? 'Adding...' : 'Add Report'}</button>
-        {success && <div className="text-green-600">Report added successfully!</div>}
-        {error && <div className="text-red-600">{error}</div>}
-      </form>
     </div>
+        <div className="bg-[#183B4E] p-4 rounded mt-6">
+        <h2 className="text-xl font-semibold mb-2 text-white">Overview & Executive Summary</h2>
+    <textarea
+      name="overview"
+      value={form.overview}
+      onChange={handleChange}
+      placeholder="Overview"
+      className="w-full border p-3 rounded min-h-[100px]  bg-white"
+      required
+      />
+    <textarea
+      name="executiveSummary"
+      value={form.executiveSummary}
+      onChange={handleChange}
+      placeholder="Executive Summary"
+      className="w-full border p-3 rounded min-h-[100px] bg-white"
+      required
+    />
+      </div>
+
+    <div className='mt-6 bg-[#183B4E] p-4 rounded'>
+      <h2 className="text-xl font-semibold mb-2 text-white">DROC</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input name="droc.drivers" value={form.droc.drivers} onChange={handleChange} placeholder="Drivers" className="border p-2 rounded bg-white" />
+        <input name="droc.restraints" value={form.droc.restraints} onChange={handleChange} placeholder="Restraints" className="border p-2 rounded bg-white" />
+        <input name="droc.opportunities" value={form.droc.opportunities} onChange={handleChange} placeholder="Opportunities" className="border p-2 rounded bg-white" />
+        <input name="droc.challenges" value={form.droc.challenges} onChange={handleChange} placeholder="Challenges" className="border p-2 rounded bg-white" />
+      </div>
+    </div>
+
+    <div className="mt-6 bg-[#183B4E] p-4 rounded">
+      <h2 className="text-xl font-semibold mb-2 text-white">Segmentation</h2>
+      <div className="space-y-4">
+        {Object.entries(form.segmentation).map(([key, values], index) => (
+          <div key={index} className="border p-3 rounded bg-gray-50">
+            <input
+              type="text"
+              className="w-full font-semibold text-gray-700 mb-2 bg-white"
+              value={key}
+              disabled
+            />
+            <input
+              type="text"
+              className="w-full border p-2 rounded bg-white"
+              placeholder="Comma separated values"
+              value={(values as string[]).join(', ')}
+              onChange={e =>
+                updateSegmentationKey(key, e.target.value.split(',').map(s => s.trim()))
+              }
+            />
+            <button
+              type="button"
+              className="text-sm text-red-600 mt-1 bg-white"
+              onClick={() => removeSegmentationKey(key)}
+            >
+              Remove
+            </button>
+          </div>
+        ))}
+        <input
+          type="text"
+          className="border p-2 rounded w-full bg-white"
+          placeholder="New Segmentation Key (e.g. By Application)"
+          onKeyDown={(e: any) => {
+            if (e.key === 'Enter' && e.target.value) {
+              updateSegmentationKey(e.target.value, []);
+              e.target.value = '';
+              e.preventDefault();
+            }
+          }}
+        />
+      </div>
+    </div>
+
+    <div className="mt-6 bg-[#183B4E] p-4 rounded">
+      <h2 className="text-xl font-semibold mb-2 text-white">Key Players</h2>
+      <textarea
+        name="players"
+        value={form.players}
+        onChange={handleChange}
+        placeholder="Comma separated list of players"
+        className="w-full border p-3 rounded bg-white"
+      />
+    </div>
+
+    <div className="mt-6 bg-[#183B4E] p-4 rounded">
+      <h2 className="text-xl font-semibold mb-2 text-white">Recent Developments</h2>
+      <textarea
+        name="recentDevelopments"
+        value={form.recentDevelopments}
+        onChange={handleChange}
+        placeholder="One per line"
+        className="w-full border p-3 rounded min-h-[120px] bg-white"
+      />
+    </div>
+
+    <div className="mt-6 bg-[#183B4E] p-4 rounded">
+      <h2 className="text-xl font-semibold mb-2 text-white">Regional Outlook</h2>
+      <div className="space-y-4">
+        {Object.entries(form.regionalOutlook).map(([region, text], index) => (
+          <div key={index} className="border p-3 rounded bg-gray-50">
+            <input
+              type="text"
+              className="w-full font-semibold text-gray-700 mb-1 bg-white"
+              value={region}
+              disabled
+            />
+            <textarea
+              className="w-full border p-2 rounded bg-white"
+              placeholder="Outlook"
+              value={String(text)}
+              onChange={e => updateRegionalOutlook(region, e.target.value)}
+            />
+            <button
+              type="button"
+              className="text-sm text-red-600 mt-1 bg-white"
+              onClick={() => removeRegionalOutlook(region)}
+            >
+              Remove
+            </button>
+          </div>
+        ))}
+        <input
+          type="text"
+          className="border p-2 rounded w-full bg-white"
+          placeholder="New Region (e.g. North America)"
+          onKeyDown={(e: any) => {
+            if (e.key === 'Enter' && e.target.value) {
+              updateRegionalOutlook(e.target.value, '');
+              e.target.value = '';
+              e.preventDefault();
+            }
+          }}
+        />
+      </div>
+    </div>
+
+    <div className="pt-6">
+      <button
+        type="submit"
+        className="bg-[#DDA853] text-white px-6 py-3 rounded shadow hover:bg-[#183B4E] transition disabled:opacity-50"
+        disabled={loading}
+      >
+        {loading ? 'Adding...' : 'Add Report'}
+      </button>
+      {success && <div className="text-green-600 mt-2">✅ Report added successfully!</div>}
+      {error && <div className="text-red-600 mt-2">❌ {error}</div>}
+    </div>
+  </form>
+</div>
+</div>
+
+
   );
 };
 
