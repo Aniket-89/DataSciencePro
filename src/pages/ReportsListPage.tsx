@@ -9,7 +9,7 @@ interface Report {
   title: string;
   overview: string;
   industry: string;
-  // industryslug: string;
+  industryslug: string;
 }
 
 const ReportsListPage = () => {
