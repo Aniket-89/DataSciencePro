@@ -35,9 +35,9 @@ const AddReportPage = () => {
     }
   };
 
-  const handleArrayChange = (name: string, value: string) => {
-    setForm({ ...form, [name]: value });
-  };
+  // const handleArrayChange = (name: string, value: string) => {
+  //   setForm({ ...form, [name]: value });
+  // };
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
