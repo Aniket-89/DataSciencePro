@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { PopupButton } from 'react-calendly';
+import BookButton from './BookButton';
 
 
 const CTA = () => {
@@ -29,18 +30,7 @@ const CTA = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              {/* <Link
-                to="/contact"
-                className="inline-flex items-center px-8 py-3 bg-[#27548A] font-normal text-white hover:bg-blue-400 transition-colors"
-              >
-                Book a Consultation
-              </Link> */}
-              <PopupButton
-                url="https://calendly.com/databitzy/30min"
-                rootElement={root}
-                text="Book a Call"
-                className="inline-flex items-center px-8 py-3 bg-[#27548A] font-normal text-white hover:bg-blue-400 transition-colors"
-                />
+              <BookButton text='Book a Call' gradient={true} />
             </motion.div>
             
             <motion.div

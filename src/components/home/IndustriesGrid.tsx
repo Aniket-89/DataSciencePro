@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import {
   BuildingStorefrontIcon,
   BeakerIcon,
@@ -11,27 +11,27 @@ import {
   GlobeAltIcon,
   CubeIcon,
   BuildingOfficeIcon,
-  BanknotesIcon
-} from '@heroicons/react/24/outline';
+  BanknotesIcon,
+} from "@heroicons/react/24/outline";
 
 const industries = [
-  { icon: BuildingStorefrontIcon, name: 'Industrial Automation' },
-  { icon: BeakerIcon, name: 'Food, Beverages & Nutrition' },
-  { icon: BoltIcon, name: 'Energy & Power' },
-  { icon: ShoppingBagIcon, name: 'Consumer & Retail' },
-  { icon: TruckIcon, name: 'Automotive' },
-  { icon: DeviceTabletIcon, name: 'Semiconductors & Electronics' },
-  { icon: Square3Stack3DIcon, name: 'Agriculture' },
-  { icon: RocketLaunchIcon, name: 'Aerospace & Defense' },
-  { icon: GlobeAltIcon, name: 'ICT' },
-  { icon: CubeIcon, name: 'Packaging & Transport' },
-  { icon: BuildingOfficeIcon, name: 'Construction' },
-  { icon: BanknotesIcon, name: 'BFSI' }
+  { icon: BuildingStorefrontIcon, name: "Industrial Automation" },
+  { icon: BeakerIcon, name: "Food, Beverages & Nutrition" },
+  { icon: BoltIcon, name: "Energy & Power" },
+  { icon: ShoppingBagIcon, name: "Consumer & Retail" },
+  { icon: TruckIcon, name: "Automotive" },
+  { icon: DeviceTabletIcon, name: "Semiconductors & Electronics" },
+  { icon: Square3Stack3DIcon, name: "Agriculture" },
+  { icon: RocketLaunchIcon, name: "Aerospace & Defense" },
+  { icon: GlobeAltIcon, name: "ICT" },
+  { icon: CubeIcon, name: "Packaging & Transport" },
+  { icon: BuildingOfficeIcon, name: "Construction" },
+  { icon: BanknotesIcon, name: "BFSI" },
 ];
 
 const IndustriesGrid = () => {
   return (
-    <section className="py-24 bg-[#F3F3E0]">
+    <section className="py-24 bg-[#F3F3E0] m-2 rounded-3xl max-w-7xl mx-auto">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,17 +49,20 @@ const IndustriesGrid = () => {
           {industries.map((industry, index) => (
             <motion.div
               key={industry.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              initial={{ opacity: 0, scale: 0.5 }}
+              // animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.1,
+                ease: [0, 0.71, 0.2, 1.01],
+              }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="p-6 bg-white group flex items-center gap-2 hover:bg-gray-100 transition-colors"
+              className="p-6 rounded-3xl bg-white group flex items-center gap-2 hover:bg-gray-100 hover:shadow-lg transition-colors"
             >
-            <industry.icon className="h-10 w-10 text-gray-900 transform group-hover:scale-110 transition-transform" />
+              <industry.icon className="h-10 w-10 text-gray-900 transform group-hover:scale-110 transition-transform" />
 
-              <h3 className="text-[#183B4E] font-light">
-                {industry.name}
-              </h3>
+              <h3 className="text-[#183B4E] font-light">{industry.name}</h3>
             </motion.div>
           ))}
         </div>

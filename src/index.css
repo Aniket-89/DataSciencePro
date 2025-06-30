@@ -1,6 +1,4 @@
-
 @import "tailwindcss";
-
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -8,13 +6,23 @@ body {
   font-style: normal;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   font-style: bold;
 }
 
 .grainy-gradient {
-  background: linear-gradient(to bottom right, rgb(249 250 251), rgb(190, 137, 190), rgb(37, 65, 119));
+  background: linear-gradient(
+    to bottom right,
+    rgb(249 250 251),
+    rgb(190, 137, 190),
+    rgb(37, 65, 119)
+  );
   position: relative;
 }
 
@@ -23,8 +31,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   inset: 0;
   background: 
-    /* radial-gradient(at 50%, rgb(255 255 255 / 0.1), rgb(0 0 0 / 0.1)), */
-    url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="f"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" /></filter><rect width="100%" height="100%" filter="url(%23f)" opacity="0.075"/></svg>');
+    /* radial-gradient(at 50%, rgb(255 255 255 / 0.1), rgb(0 0 0 / 0.1)), */ url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="f"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" /></filter><rect width="100%" height="100%" filter="url(%23f)" opacity="0.075"/></svg>');
   mask: linear-gradient(white, white);
   mask-composite: source-in;
   -webkit-mask-composite: source-in;
@@ -50,4 +57,51 @@ h1, h2, h3, h4, h5, h6 {
   .container {
     padding: 0 4rem;
   }
+}
+
+.top-h1 {
+  font-size: clamp(2rem, 2vw + 1.5rem, 4rem);
+}
+
+.text-hero {
+  font-size: clamp(2rem, 2vw + 1.5rem, 4rem);
+}
+
+.text-h1 {
+  font-weight: 500;
+  line-height: 1;
+  font-family: PP Neue Montreal, sans-serif;
+  font-size: clamp(2rem, 1rem + 5vw, 6rem);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.gradient-hero {
+  background-image: linear-gradient(
+    to right bottom,
+    #e6e2ee,
+    #cac2e0,
+    #aba2d3,
+    #8a85c6,
+    #6569ba,
+    #5259aa,
+    #3d4a9a,
+    #273b8a,
+    #2a3374,
+    #292c5e,
+    #262549,
+    #211e36
+  );
+}
+
+.test-bg {
+  background-image: url("https://images.unsplash.com/photo-1609725236589-d987ffc8133a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.test-bg:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
 }

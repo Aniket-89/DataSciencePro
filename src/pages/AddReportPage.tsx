@@ -35,9 +35,7 @@ const AddReportPage = () => {
     }
   };
 
-  // const handleArrayChange = (name: string, value: string) => {
-  //   setForm({ ...form, [name]: value });
-  // };
+  // git a
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();

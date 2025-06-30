@@ -1,31 +1,57 @@
-import { motion } from 'framer-motion';
-import { Link as RouterLink } from 'react-router-dom';
-import { Dashboard } from '../../assets/assets';
-import { PopupButton } from 'react-calendly';
+import { motion } from "framer-motion";
+import { Link as RouterLink } from "react-router-dom";
+import Threads from "../../blocks/Backgrounds/Threads/Threads";
+import BookButton from "../BookButton";
+import SplitText from "../../blocks/TextAnimations/SplitText/SplitText";
 
 const Hero = () => {
-  const root = document.getElementById('root') || document.body;
   return (
-    <section id="home" className="min-h-[90vh] w-full flex items-center py-32 bg-[#F3F3E0] relative overflow-hidden relative">
+    <section
+      id="home"
+      className="rounded-3xl m-2 min-h-[90vh] flex items-center relative overflow-hidden relative"
+    >
+      <div className="absolute inset-0 -z-10 gradient-hero">
+        <div style={{ width: "100%", height: "800px", position: "relative" }}>
+          <Threads amplitude={1} distance={0} enableMouseInteraction={true} />
+        </div>
+      </div>
       <div className="container mx-auto max-w-7xl px-4 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-12 justify-between items-center">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl text-[#183B4E] leading-thin md:text-6xl font-normal text-primary mb-8">
-              Data-Driven Insights for
-              <span className="text-[#27548A] text-5xl pl-2"> Smarter Decisions</span>
+        <div className="w-full gap-12 justify-between items">
+          <motion.div className="z-50">
+            <h1 className="text-hero text-white text-center leading-thin md:text-6xl font-normal text-primary mb-8">
+              <motion.div
+                initial={{ opacity: 0, y: 300 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                Data-Driven Insights for{" "}
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 400 }}
+                animate={{ opacity: 0.8, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                Smarter Decisions
+              </motion.div>
             </h1>
-            <p className="text-xl text-gray-600 mb-12">
-              Unlock actionable market intelligence tailored to your industry. Our cutting-edge research, predictive analytics, and expert perspectives empower businesses to navigate trends, outpace competitors, and seize growth opportunities.
-            </p>
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex gap-4"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="text-xl text-gray-50 mb-12 text-center"
+            >
+              Unlock actionable market intelligence tailored to your industry.
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.4,
+                delay: 1.3,
+                scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+              }}
+              className="flex gap-4 justify-center"
             >
               {/* <RouterLink
                 to="/contact"
@@ -33,12 +59,7 @@ const Hero = () => {
               >
                 Book a Call
               </RouterLink> */}
-              <PopupButton
-                url="https://calendly.com/databitzy/30min"
-                rootElement={root}
-                text="Book a Call"
-                className="px-6 py-2 bg-[#27548A] text-white hover:bg-blue-500 transition-colors inline-flex items-center"
-                />
+              <BookButton text={"Book a call"} />
               <RouterLink
                 to="/services"
                 className="inline-block bg-white text-gray-900 font-normal px-2 lg:px-8 py-3 border-2 border-[#183B4E] hover:bg-[#183B4E] hover:text-white transform transition-all duration-300 cursor-pointer"
@@ -47,7 +68,7 @@ const Hero = () => {
               </RouterLink>
             </motion.div>
           </motion.div>
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -61,7 +82,7 @@ const Hero = () => {
               />
               <div className="absolute inset-0 bg-gray-900/10"></div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>

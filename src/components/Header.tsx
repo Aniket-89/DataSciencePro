@@ -1,189 +1,195 @@
-import { useState, useRef, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { PopupButton } from 'react-calendly';
+import { useState, useRef, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 // import { ChatBubbleBottomCenterTextIcon } from '@heroicons/react/24/outline';
-import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
-import { Logo } from '../assets/assets';
+import {
+  Bars3Icon,
+  XMarkIcon,
+  ChevronDownIcon,
+} from "@heroicons/react/24/outline";
+import { Logo } from "../assets/assets";
+import BookButton from "./BookButton";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
   const servicesRef = useRef<HTMLDivElement>(null);
-  
+
   const servicesItems = [
     // { name: 'All Services', to: '/services' },
-    { name: 'Data Analytics', to: '/services/data-analysis' },
-    { name: 'Market Research Report', to: '/services/reports' }
+    { name: "Data Analytics", to: "/services/data-analysis" },
+    { name: "Market Research Report", to: "/services/reports" },
   ];
 
   const menuItems = [
-    { name: 'Home', to: '/' },
-    { name: 'About Us', to: '/about' },
-    { name: 'Services', to: '#', hasDropdown: true },
-    { name: 'Testimonials', to: '/testimonials' },
-    { name: 'Contact Us', to: '/contact' },
+    { name: "Home", to: "/" },
+    { name: "About Us", to: "/about" },
+    { name: "Services", to: "#", hasDropdown: true },
+    // { name: 'Testimonials', to: '/testimonials' },
+    { name: "Contact Us", to: "/contact" },
   ];
   // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+      if (
+        servicesRef.current &&
+        !servicesRef.current.contains(event.target as Node)
+      ) {
         setIsServicesOpen(false);
       }
     }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const isActive = (path: string) => {
     return location.pathname === path;
   };
-  const root = document.getElementById("root");
-
-  if (!root) return null;
 
   return (
     <>
-      <header className="fixed w-full bg-white shadow-md z-40 md:px-4">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: 0.4 }}
+      >
+        <header
+          className="fixed left-1/2 -translate-x-1/2 top-4 mt-2 w-[95vw] max-w-7xl
+  rounded-[2rem] z-40 md:px-4
+  bg-white/30 backdrop-blur border-white/30 shadow-sm hover:shadow-lg
+  transition-all"
+        >
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="flex items-center justify-between h-16">
+              <div className="flex items-center">
+                <img src={Logo} alt="" className="size-16" />
+                <Link
+                  to="/"
+                  className="text-xl md:text-2xl font-semibold text-[#14B8A6]"
+                >
+                  <span className="text-[#27548A]">DATA</span>BITZY
+                </Link>
+              </div>
 
-              <img src={Logo} alt="" className='size-10'/>
-              <Link to="/" className="text-xl md:text-2xl font-semibold text-[#14B8A6]">
-                <span className='text-[#27548A]'>DATA</span>BITZY
-              </Link>
-            </div>
+              <div className="hidden lg:flex items-center gap-8 px-4">
+                <nav className="flex items-center gap-8">
+                  {menuItems.map((item) =>
+                    item.hasDropdown ? (
+                      <div
+                        key={item.name}
+                        className="relative"
+                        ref={servicesRef}
+                        onMouseEnter={() => setIsServicesOpen(true)}
+                        onMouseLeave={() => setIsServicesOpen(false)}
+                      >
+                        <Link
+                          to="/services"
+                          className={`flex items-center h-full py-1 font-bold ${
+                            isActive("/services") ||
+                            location.pathname.startsWith("/services/")
+                              ? "text-[#183B4E] "
+                              : "text-black hover:text-[#183B4E]"
+                          } transition-colors`}
+                        >
+                          {item.name}
+                          <ChevronDownIcon
+                            className={`ml-1 h-4 w-4 transform transition-transform ${
+                              isServicesOpen ? "rotate-180" : ""
+                            }`}
+                          />
+                        </Link>
 
-            <div className="hidden lg:flex items-center gap-8 px-4">
-              <nav className="flex items-center gap-8">
-                {menuItems.map((item) => (
-                  item.hasDropdown ? (
-                    <div
-                      key={item.name}
-                      className="relative"
-                      ref={servicesRef}
-                      onMouseEnter={() => setIsServicesOpen(true)}
-                      onMouseLeave={() => setIsServicesOpen(false)}
-                    >
+                        {/* Dropdown */}
+                        {isServicesOpen && (
+                          <div className="absolute top-full left-0 mt-1 w-52 backdrop-blur bg-white/30 shadow-lg z-50">
+                            {servicesItems.map((service) => (
+                              <Link
+                                key={service.name}
+                                to={service.to}
+                                onClick={() => setIsServicesOpen(false)}
+                                className={`block px-4 py-2 font-medium ${
+                                  isActive(service.to)
+                                    ? "bg-gray-50 text-[#183B4E] font-bold"
+                                    : "text-gray-600 hover:bg-gray-50 hover:text-[#183B4E]"
+                                } transition-colors`}
+                              >
+                                {service.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+
+                        {(isActive("/services") ||
+                          location.pathname.startsWith("/services/")) && (
+                          <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#183B4E] transform" />
+                        )}
+                      </div>
+                    ) : (
                       <Link
-                        to="/services"
-                        className={`flex items-center h-full py-1 font-normal ${
-                          isActive('/services') || location.pathname.startsWith('/services/')
-                            ? 'text-[#183B4E] font-bold'
-                            : 'text-gray-600 hover:text-[#183B4E]'
+                        key={item.name}
+                        to={item.to}
+                        className={`relative py-1 font-bold ${
+                          isActive(item.to)
+                            ? "text-[#DDA853] font-bold"
+                            : "text-black hover:text-[#183B4E]"
                         } transition-colors`}
                       >
                         {item.name}
-                        <ChevronDownIcon
-                          className={`ml-1 h-4 w-4 transform transition-transform ${
-                            isServicesOpen ? 'rotate-180' : ''
-                          }`}
-                        />
+                        {isActive(item.to) && (
+                          <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#183B4E] transform" />
+                        )}
                       </Link>
+                    )
+                  )}
+                </nav>
+                <BookButton text={"Book a call"} gradient={true} />
+              </div>
 
-
-  {/* Dropdown */}
-  {isServicesOpen && (
-    <div className="absolute top-full left-0 mt-1 w-52 bg-white shadow-lg z-50">
-      {servicesItems.map((service) => (
-        <Link
-          key={service.name}
-          to={service.to}
-          onClick={() => setIsServicesOpen(false)}
-          className={`block px-4 py-2 font-normal ${
-            isActive(service.to)
-              ? 'bg-gray-50 text-[#183B4E] font-bold'
-              : 'text-gray-600 hover:bg-gray-50 hover:text-[#183B4E]'
-          } transition-colors`}
-        >
-          {service.name}
-        </Link>
-      ))}
-    </div>
-  )}
-
-  {(isActive('/services') || location.pathname.startsWith('/services/')) && (
-    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#183B4E] transform" />
-  )}
-</div>
-
+              <div className="lg:hidden">
+                <button
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="text-gray-600 hover:text-[#183B4E]"
+                >
+                  {isMobileMenuOpen ? (
+                    <XMarkIcon className="h-6 w-6" />
                   ) : (
-                    <Link
-                      key={item.name}
-                      to={item.to}
-                      className={`relative py-1 font-normal ${
-                        isActive(item.to)
-                          ? 'text-[#183B4E] font-bold'
-                          : 'text-gray-600 hover:text-[#183B4E]'
-                      } transition-colors`}
-                    >
-                      {item.name}
-                      {isActive(item.to) && (
-                        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#183B4E] transform" />
-                      )}
-                    </Link>
-                  )
-                ))}
-              </nav>
-              {/* <Link
-                to="/contact"
-                className="px-6 py-2 bg-[#27548A] text-white hover:bg-blue-500 transition-colors"
-              ><ChatBubbleBottomCenterTextIcon className="h-5 w-5 inline-block mr-2" />
-                Book a Call
-              </Link> */}
-              <PopupButton
-                url="https://calendly.com/databitzy/30min"
-                rootElement={root}
-                text="Book a Call"
-                className="px-6 py-2 bg-[#27548A] text-white hover:bg-blue-500 transition-colors inline-flex items-center"
-                />
-
-            </div>
-
-            <div className="lg:hidden">
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-gray-600 hover:text-[#183B4E]"
-              >
-                {isMobileMenuOpen ? (
-                  <XMarkIcon className="h-6 w-6" />
-                ) : (
-                  <Bars3Icon className="h-6 w-6" />
-                )}
-              </button>
+                    <Bars3Icon className="h-6 w-6" />
+                  )}
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
+      </motion.div>
 
       {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 md:hidden z-40
-          ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+          ${
+            isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
         onClick={() => setIsMobileMenuOpen(false)}
       />
 
       {/* Mobile Menu Panel */}
       <div
         className={`fixed top-0 left-0 w-[95%] h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 md:hidden
-          ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+          ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         <div className="flex flex-col h-full justify-between pb-12">
-
           <div className="flex items-center justify-between p-4 border-b border-gray-200">
             <div className="flex items-center">
-
-              <img src={Logo} alt="" className='size-10'/>
-              <Link 
-                to="/" 
+              <img src={Logo} alt="" className="size-10" />
+              <Link
+                to="/"
                 className="text-xl font-semibold text-[#14B8A6]"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <span className='text-[#27548A]'>DATA</span>BITZY
+                <span className="text-[#27548A]">DATA</span>BITZY
               </Link>
             </div>
-            
+
             <button
               onClick={() => setIsMobileMenuOpen(false)}
               className="text-gray-600 hover:text-[#183B4E]"
@@ -194,10 +200,12 @@ const Header = () => {
 
           <nav className="flex-1 px-4 py-6">
             <div className="flex flex-col space-y-4">
-              {menuItems.map((item) => (
+              {menuItems.map((item) =>
                 item.hasDropdown ? (
                   <div key={item.name} className="flex flex-col">
-                    <span className="text-lg py-2 text-gray-600 font-semibold">{item.name}</span>
+                    <span className="text-lg py-2 text-gray-600 font-semibold">
+                      {item.name}
+                    </span>
                     <div className="ml-4 flex flex-col space-y-2">
                       {servicesItems.map((service) => (
                         <Link
@@ -218,14 +226,14 @@ const Header = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`text-lg py-2 relative ${
                       isActive(item.to)
-                        ? 'text-[#183B4E] font-bold'
-                        : 'text-gray-600'
+                        ? "text-[#183B4E] font-bold"
+                        : "text-gray-600"
                     } hover:text-[#183B4E] transition-colors`}
                   >
                     {item.name}
                   </Link>
                 )
-              ))}
+              )}
             </div>
           </nav>
           {/* <Link
@@ -242,12 +250,7 @@ const Header = () => {
               <ChatBubbleBottomCenterTextIcon className="h-5 w-5 inline-block mr-2" />
             Book a Call
           </Link> */}
-          <PopupButton
-                url="https://calendly.com/databitzy/30min"
-                rootElement={root}
-                text="Book a Call"
-                className="flex mx-12 justify-center items-center py-4 px-4 my-2 bg-[#27548A] text-white hover:bg-[#122B3A] transition-colors"
-                />
+          <BookButton text={"Book a call"} />
         </div>
       </div>
     </>
