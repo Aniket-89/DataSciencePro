@@ -6,7 +6,6 @@ import {
   PresentationChartLineIcon,
   WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline";
-import Card from "../Card";
 
 const services = [
   {

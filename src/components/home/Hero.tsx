@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link as RouterLink } from "react-router-dom";
 import Threads from "../../blocks/Backgrounds/Threads/Threads";
 import BookButton from "../BookButton";
-import SplitText from "../../blocks/TextAnimations/SplitText/SplitText";
+// import SplitText from "../../blocks/TextAnimations/SplitText/SplitText";
 
 const Hero = () => {
   return (

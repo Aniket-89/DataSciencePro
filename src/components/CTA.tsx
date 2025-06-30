@@ -1,15 +1,12 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { PopupButton } from 'react-calendly';
-import BookButton from './BookButton';
-
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import BookButton from "./BookButton";
 
 const CTA = () => {
-  const root = document.getElementById('root') || document.body;
   return (
     <section className="py-24 bg-gray-900 text-white">
       <div className="container mx-auto px-4">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -20,9 +17,10 @@ const CTA = () => {
             Ready to Transform Your Data Strategy?
           </h2>
           <p className="text-gray-300 text-lg mb-12 max-w-2xl mx-auto">
-            Schedule a consultation with our experts or reach out to learn more about how we can help your business succeed.
+            Schedule a consultation with our experts or reach out to learn more
+            about how we can help your business succeed.
           </p>
-          
+
           <div className="flex flex-wrap justify-center gap-6 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -30,9 +28,9 @@ const CTA = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <BookButton text='Book a Call' gradient={true} />
+              <BookButton text="Book a Call" gradient={true} />
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
