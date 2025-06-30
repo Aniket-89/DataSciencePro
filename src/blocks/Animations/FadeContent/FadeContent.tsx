@@ -2,7 +2,8 @@
 	Installed from https://reactbits.dev/ts/tailwind/
 */
 
-import { useRef, useEffect, useState, ReactNode } from "react";
+import { useRef, useEffect, useState } from "react";
+import type { ReactNode } from "react";
 
 interface FadeContentProps {
   children: ReactNode;
@@ -41,7 +42,7 @@ const FadeContent: React.FC<FadeContentProps> = ({
           }, delay);
         }
       },
-      { threshold },
+      { threshold }
     );
 
     observer.observe(element);
