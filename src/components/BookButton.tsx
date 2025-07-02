@@ -14,8 +14,8 @@ const BookButton: React.FC<BookButtonProps> = ({ text, color, gradient }) => {
       url="https://calendly.com/databitzy/30min"
       rootElement={root}
       text={text}
-      className={`px-6 rounded-3xl py-2 text-lg font-semibold text-white hover:bg-blue-500 transition-colors inline-flex items-center
-            ${color ? `bg-${color}` : "bg-[#27548A]"} +
+      className={`px-6 rounded-3xl py-2 max-w-fit text-sm md:text-lg font-semibold text-white hover:bg-blue-500 transition-colors items-center
+            ${color ? `bg-[${color}]` : "bg-[#27548A]"} +
             ${
               gradient
                 ? "bg-gradient-to-br to-[#183B4E] from-[#27548A] hover:from-[#183B4E] hover:to-[#27548A] "

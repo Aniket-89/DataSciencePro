@@ -6,6 +6,8 @@ import {
   PresentationChartLineIcon,
   WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline";
+import Card from "../Card";
+import Button from "../Button";
 
 const services = [
   {
@@ -76,23 +78,22 @@ const ServicesOverview = () => {
             How We Help Businesses
           </h2>
         </motion.div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <SpotlightCard
               key={index}
-              className="custom-spotlight-card bg-gradient-to-br from-[#183B4E] to-black flex flex-col justify-between bg-[#183B4E]"
+              className="custom-spotlight-card smoke-card bg-white  flex flex-col justify-between"
               spotlightColor="rgba(190, 122, 20, 0.49)"
             >
               <div className="mb-6">
                 <service.icon className="h-12 w-12 text-white transform group-hover:scale-110 transition-transform" />
               </div>
 
-              <h3 className="text-2xl font-medium text-white mb-4">
+              <h3 className="text-h3 font-bold text-[#183B4E] mb-4">
                 {service.title}
               </h3>
 
-              <p className="text-gray-100 font-normal mb-6">
+              <p className="text-gray-700 font-normal mb-6">
                 {service.description}
               </p>
 
@@ -105,25 +106,7 @@ const ServicesOverview = () => {
                 ))}
               </ul>
 
-              <Link
-                to={service.link}
-                className="inline-flex items-center font-medium group text-[#DDA853]"
-              >
-                Learn More
-                <svg
-                  className="w-4 h-4 ml-2 group-hover:translate-x-2 transform group-hover:translate-x-1 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
+              <Button to={service.link}>Learn more</Button>
             </SpotlightCard>
           ))}
         </div>

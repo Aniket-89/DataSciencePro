@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import BookButton from "./BookButton";
+import Button from "./Button";
 
 const CTA = () => {
   return (
-    <section className="py-24 bg-gray-900 text-white">
+    <section className="py-24 bg-gray-900 text-white rounded-3xl m-2">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,12 +37,7 @@ const CTA = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <Link
-                to="/contact"
-                className="inline-flex items-center px-8 py-[0.7rem] border font-normal border-white text-white hover:bg-white hover:text-gray-900 transition-colors"
-              >
-                Contact Us
-              </Link>
+              <Button to="/contact">Contact Us</Button>
             </motion.div>
           </div>
         </motion.div>

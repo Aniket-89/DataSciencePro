@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Link as RouterLink } from "react-router-dom";
 import Threads from "../../blocks/Backgrounds/Threads/Threads";
 import BookButton from "../BookButton";
+import Button from "../Button";
 // import SplitText from "../../blocks/TextAnimations/SplitText/SplitText";
 
 const Hero = () => {
@@ -53,19 +53,14 @@ const Hero = () => {
               }}
               className="flex gap-4 justify-center"
             >
+              <BookButton text={"Book a call"} color={"#DDA853"} />
               {/* <RouterLink
-                to="/contact"
-                className="inline-block bg-[#27548A] text-white font-normal px-4 lg:px-8 py-3 hover:bg-blue-500 transition-all duration-300 cursor-pointer"
-              >
-                Book a Call
-              </RouterLink> */}
-              <BookButton text={"Book a call"} />
-              <RouterLink
                 to="/services"
                 className="inline-block bg-white text-gray-900 font-normal px-2 lg:px-8 py-3 border-2 border-[#183B4E] hover:bg-[#183B4E] hover:text-white transform transition-all duration-300 cursor-pointer"
               >
                 View Services
-              </RouterLink>
+              </RouterLink> */}
+              <Button to="/services">View Services</Button>
             </motion.div>
           </motion.div>
           {/* <motion.div

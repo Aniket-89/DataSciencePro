@@ -50,18 +50,18 @@ const Header = () => {
   return (
     <>
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, delay: 0.4 }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.2, delay: 1 }}
       >
         <header
           className="fixed left-1/2 -translate-x-1/2 top-4 mt-2 w-[95vw] max-w-7xl
   rounded-[2rem] z-40 md:px-4
-  bg-white/30 backdrop-blur border-white/30 shadow-sm hover:shadow-lg
+  bg-white/60 backdrop-blur border-white/30 shadow-sm hover:shadow-lg
   transition-all"
         >
           <div className="max-w-7xl mx-auto px-4">
-            <div className="flex items-center justify-between h-16">
+            <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <img src={Logo} alt="" className="size-16" />
                 <Link
@@ -146,7 +146,7 @@ const Header = () => {
                 <BookButton text={"Book a call"} gradient={true} />
               </div>
 
-              <div className="lg:hidden">
+              <div className="lg:hidden grid">
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                   className="text-gray-600 hover:text-[#183B4E]"
@@ -165,7 +165,7 @@ const Header = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 md:hidden z-40
+        className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 lg:hidden z-40
           ${
             isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
@@ -174,7 +174,7 @@ const Header = () => {
 
       {/* Mobile Menu Panel */}
       <div
-        className={`fixed top-0 left-0 w-[95%] h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 md:hidden
+        className={`fixed top-0 left-0 w-[95%] h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 lg:hidden
           ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         <div className="flex flex-col h-full justify-between pb-12">

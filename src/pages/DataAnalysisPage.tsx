@@ -1,108 +1,64 @@
 import { motion } from "framer-motion";
-import { CheckIcon } from "@heroicons/react/24/outline";
-import { GrainyGradient3 } from "../assets/assets";
+import TopBanner from "../components/TopBanner";
+import ToolsSliderSection from "../components/ToolsSliderSection";
+import CTA from "../components/CTA";
+import SmallCard from "../components/SmallCard";
+import BentoCard from "../components/BentoCard";
+import { MarketGraph } from "../assets/assets";
 
 export default function DataAnalysisPage() {
   return (
     <div className="">
       {/* Hero Section */}
-      <section className="relative m-2 rounded-3xl overflow-hidden py-24">
-        <img
-          src={GrainyGradient3}
-          alt=""
-          className="absolute bottom-0 right-0 -z-10 object-cover"
-        />
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-medium text-white mb-6"
-            >
-              Data Analytics & Insights
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-xl text-gray-50 leading-relaxed"
-            >
-              Transform your raw data into actionable insights with our
-              comprehensive analytics solutions
-            </motion.p>
-          </div>
-        </div>
-      </section>
+      <TopBanner
+        title="Data Analytics & Insights"
+        subtitle="Transform your raw data into actionable insights with our comprehensive analytics solutions"
+      />
+
+      {/* Tools Slider */}
+      <ToolsSliderSection />
 
       {/* What We Offer Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center mb-10">
-            <h2 className="text-3xl font-light text-gray-900 mb-4">
-              What We Offer
-            </h2>
-          </div>
-          <div className="max-w-2xl mx-auto">
-            <ul className="space-y-6 text-lg text-gray-700">
-              <li className="flex items-start">
-                <CheckIcon className="h-6 w-6 text-purple-600 mr-3 flex-shrink-0" />
-                <span>
-                  End-to-end data analytics solutions for business insights
-                </span>
-              </li>
-              <li className="flex items-start">
-                <CheckIcon className="h-6 w-6 text-purple-600 mr-3 flex-shrink-0" />
-                <span>
-                  Building smart machine learning models to solve real-world
-                  problems
-                </span>
-              </li>
-              <li className="flex items-start">
-                <CheckIcon className="h-6 w-6 text-purple-600 mr-3 flex-shrink-0" />
-                <span>
-                  Creating automated workflows and dashboards using tools like
-                  Python, KNIME, and Power BI
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
 
-      {/* Testimonials Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center mb-10">
-            <h2 className="text-3xl font-light text-gray-900 mb-4">
-              💬 Testimonials
-            </h2>
+      <section className="py-12 md:py-24 rounded-3xl max-w-7xl m-2 lg:mx-auto bg-[#DDA853]">
+        <div className="container grid gap-3 mx-auto w-full">
+          <div className="max-w-2xl grid md:grid-cols-2 gap-2 w-full mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 120, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.3, delay: 0 }}
+              viewport={{ once: true }}
+              className="text-h1 flex flex-col items-center justify-center font-bold text-gray-900 mb-4"
+            >
+              <span className="font-bold">What</span>
+              <br />
+              <span className="text-gray-800">We</span>
+              <br />
+              <span className="text-gray-300">Offer</span>
+            </motion.div>
+            <SmallCard
+              text="End-to-end data analytics solutions for business insights"
+              color="bg-white"
+            />
           </div>
-          <div className="max-w-2xl mx-auto space-y-10">
-            <div className="bg-gray-50 p-8 rounded shadow-sm">
-              <div className="text-2xl mb-4">
-                ⭐ “His dashboards beautifully distill complex data.”
-              </div>
-              <div className="text-gray-700 text-right font-mono">
-                — Atmaram P., Power BI Dashboard{" "}
-                <span className="text-gray-400">(Sep 2023)</span>
-              </div>
-            </div>
-            <div className="bg-gray-50 p-8 rounded shadow-sm">
-              <div className="text-2xl mb-4">
-                ⭐ “Innovative thinking and proactive communication made our ML
-                project seamless.”
-              </div>
-              <div className="text-gray-700 text-right font-mono">
-                — Rohit Singh R., ML Algorithms{" "}
-                <span className="text-gray-400">(Sep 2023)</span>
-              </div>
-            </div>
+
+          <div className="max-w-2xl grid md:grid-cols-2 gap-3 mx-auto">
+            <SmallCard
+              text="Building smart machine learning models to solve real-world
+                  problems"
+              color="bg-red-100"
+            />
+            <SmallCard
+              text="Creating automated workflows and dashboards using tools like
+                  Python, KNIME, and Power BI"
+              color="bg-blue-100"
+            />
           </div>
         </div>
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-32 bg-gray-50">
+      <section className="py-32">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-light text-gray-900 mb-4">
@@ -169,14 +125,16 @@ export default function DataAnalysisPage() {
       </section>
 
       {/* Data Automation Tool Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-10">
-            <h2 className="text-3xl font-light text-gray-900 mb-4">
-              ⚙️ Data Automation Tool: Pull Algorithm
-            </h2>
-          </div>
-          <div className="max-w-3xl mx-auto bg-gray-50 p-10 rounded shadow-sm text-lg text-gray-700">
+      <section className="py-22 max-w-7xl rounded-3xl bg-[#dbeafe] m-2 xl:mx-auto">
+        <div className="container grid grid-cols-2 mx-auto px-4 ">
+          <h2 className="text-h3 text-gray-900 mb-4">
+            Data Automation Tool: <br />
+            <span className="text-hero text-nowrap font-bold">
+              Pull Algorithm
+            </span>
+          </h2>
+
+          <div className="max-w-3xl text-gray-900 mx-auto text-lg text-gray-700">
             <p className="mb-4">
               Developed a daily automation tool to pull and analyze Open
               Interest (OI) data for stock markets directly into Excel after
@@ -190,42 +148,33 @@ export default function DataAnalysisPage() {
         </div>
       </section>
 
-      {/* Tools & Technologies Section */}
-      <section className="py-24 bg-gray-50">
+      {/* Testimonials Section */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-10">
+          <div className="max-w-2xl mx-auto text-center mb-10">
             <h2 className="text-3xl font-light text-gray-900 mb-4">
-              🛠️ Tools & Technologies
+              💬 Testimonials
             </h2>
           </div>
-          <div className="max-w-3xl mx-auto text-lg text-gray-700 space-y-6">
-            <div>
-              <span className="font-semibold text-gray-900">
-                Languages/Frameworks:
-              </span>{" "}
-              Python, R, Flask, Django, TensorFlow, PyTorch, fastai
+          <div className="max-w-2xl mx-auto space-y-10">
+            <div className="bg-gray-50 p-8 rounded shadow-sm">
+              <div className="text-2xl mb-4">
+                ⭐ “His dashboards beautifully distill complex data.”
+              </div>
+              <div className="text-gray-700 text-right font-mono">
+                — Atmaram P., Power BI Dashboard{" "}
+                <span className="text-gray-400">(Sep 2023)</span>
+              </div>
             </div>
-            <div>
-              <span className="font-semibold text-gray-900">
-                ML Techniques:
-              </span>{" "}
-              CNN, DNN, FCRN, NLP, Clustering, Chatbots
-            </div>
-            <div>
-              <span className="font-semibold text-gray-900">
-                Visualization:
-              </span>{" "}
-              Power BI, Excel, Matplotlib, Seaborn
-            </div>
-            <div>
-              <span className="font-semibold text-gray-900">Libraries:</span>
-              Scikit-learn, MXNet, TfLite, Tesseract
-            </div>
-            <div>
-              <span className="font-semibold text-gray-900">
-                Specializations:
-              </span>{" "}
-              Image & Speech Processing, Model Deployment, Automation Tools
+            <div className="bg-gray-50 p-8 rounded shadow-sm">
+              <div className="text-2xl mb-4">
+                ⭐ “Innovative thinking and proactive communication made our ML
+                project seamless.”
+              </div>
+              <div className="text-gray-700 text-right font-mono">
+                — Rohit Singh R., ML Algorithms{" "}
+                <span className="text-gray-400">(Sep 2023)</span>
+              </div>
             </div>
           </div>
         </div>
@@ -235,12 +184,12 @@ export default function DataAnalysisPage() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-10">
-            <h2 className="text-3xl font-light text-gray-900 mb-4">
-              Sample Freelance Projects
+            <h2 className="text-h1 font-semibold text-gray-900 mb-4">
+              Projects
             </h2>
           </div>
-          <div className="max-w-3xl mx-auto space-y-10 text-lg text-gray-700">
-            <div className="bg-gray-50 p-8 rounded shadow-sm">
+          <div className="max-w-7xl min-h-screen grid lg:grid-cols-3 md:grid-cols-2 gap-2 mx-auto">
+            {/* <div className="bg-gray-50 p-8 rounded shadow-sm">
               <div className="flex items-center mb-2">
                 <span className="text-2xl mr-2">🧠</span>
                 <span className="font-semibold">
@@ -254,8 +203,43 @@ export default function DataAnalysisPage() {
               <a href="#" className="text-purple-700 underline">
                 [View project]
               </a>
-            </div>
-            <div className="bg-gray-50 p-8 rounded shadow-sm">
+            </div> */}
+            <BentoCard
+              title="Stock Market Prediction with KNIME"
+              industrySlug="Stock Market"
+              slug="#"
+              classname="lg:col-span-1 lg:row-span-1"
+              img={MarketGraph}
+            />
+            <BentoCard
+              title="Transportation Network Analysis"
+              industrySlug="Data Analysis"
+              slug="#"
+              classname="lg:col-span-2 lg:row-span-1"
+              img="https://img.freepik.com/free-photo/transport-logistics-products_23-2151541830.jpg"
+            />
+            <BentoCard
+              title="Marketing Campaign Optimization for P&G"
+              industrySlug="Data Analysis"
+              slug="#"
+              classname="lg:col-span-2 lg:row-span-1"
+              img="https://res.cloudinary.com/people-matters/image/upload/q_auto,f_auto/v1749120623/1749120621.jpg"
+            />
+            <BentoCard
+              title="Mode of Transport Prediction using GPS logs"
+              industrySlug="Data Analysis"
+              slug="#"
+              classname="lg:col-span-1 lg:row-span-1"
+              img="https://img.freepik.com/free-photo/traffic-vehicle-urban-reflections-city_1112-973.jpg"
+            />
+            <BentoCard
+              title="Adversarial ML for NLP & Image Processing"
+              industrySlug="Data Analysis"
+              slug="#"
+              classname="lg:col-span-3 md:col-span-2 row-span-1"
+              img="https://img.freepik.com/free-vector/gradient-brain-background_23-2150441899.jpg"
+            />
+            {/* <div className="bg-gray-50 p-8 rounded shadow-sm">
               <div className="flex items-center mb-2">
                 <span className="text-2xl mr-2">🏙️</span>
                 <span className="font-semibold">
@@ -314,13 +298,13 @@ export default function DataAnalysisPage() {
               <a href="#" className="text-purple-700 underline">
                 [Presentation]
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
 
       {/* Certification & Experience Section */}
-      <section className="py-24 bg-gray-50">
+      {/* <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-light text-gray-900 mb-4">
@@ -365,7 +349,7 @@ export default function DataAnalysisPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Summary Block Section */}
       <section className="py-16 bg-gray-900">
@@ -402,7 +386,7 @@ export default function DataAnalysisPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-gray-50">
+      {/* <section className="py-32 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-light text-gray-900 mb-6">
@@ -417,7 +401,8 @@ export default function DataAnalysisPage() {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
+      <CTA />
     </div>
   );
 }

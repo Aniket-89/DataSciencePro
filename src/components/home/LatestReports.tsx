@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { industryReports } from "../../data/industryReports";
+import BentoCard from "../BentoCard";
 
 // Flatten all reports with their industry slug for linking
 const allReports = Object.entries(industryReports).flatMap(
@@ -42,70 +43,36 @@ const LatestReports = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 min-h-screen">
-          <motion.div
-            key={reports[0].id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            viewport={{ once: true }}
-            className="p-6 bg-gray-50 rounded-3xl  group col-span-2 row-span-1 hover:bg-gray-100 transition-colors"
-          >
-            <Link
-              to={`/reports/${reports[0].industrySlug}/${reports[0].id}`}
-              className="block text-[#183B4E] group-hover:text-gray-600 transition-colors"
-            >
-              <h3 className="text-xl font-light mb-4">{reports[0].title}</h3>
-              <span className="text-sm">Read More →</span>
-            </Link>
-          </motion.div>
-          <motion.div
-            key={reports[0].id}
-            transition={{ duration: 0.1 }}
-            whileHover={{ scale: 0.96 }}
-            viewport={{ once: true }}
-            className="p-6 bg-gray-50 group test-bg overflow-hidden rounded-3xl col-span-1 row-span-1 hover:bg-gray-100 transition-colors"
-          >
-            <Link
-              to={`/reports/${reports[0].industrySlug}/${reports[0].id}`}
-              className="block text-[#183B4E] group-hover:text-gray-600 transition-colors"
-            >
-              <h3 className="text-xl font-light mb-4">{reports[0].title}</h3>
-              <span className="text-sm">Read More →</span>
-            </Link>
-          </motion.div>
-          <motion.div
-            key={reports[0].id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            viewport={{ once: true }}
-            className="p-6 bg-gray-50 group rounded-3xl col-span-1 row-span-1 hover:bg-gray-100 transition-colors"
-          >
-            <Link
-              to={`/reports/${reports[0].industrySlug}/${reports[0].id}`}
-              className="block text-[#183B4E] group-hover:text-gray-600 transition-colors"
-            >
-              <h3 className="text-xl font-light mb-4">{reports[0].title}</h3>
-              <span className="text-sm">Read More →</span>
-            </Link>
-          </motion.div>
-          <motion.div
-            key={reports[0].id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            viewport={{ once: true }}
-            className="p-6 bg-gray-50 group rounded-3xl col-span-2 row-span-1 hover:bg-gray-100 transition-colors"
-          >
-            <Link
-              to={`/reports/${reports[0].industrySlug}/${reports[0].id}`}
-              className="block text-[#183B4E] group-hover:text-gray-600 transition-colors"
-            >
-              <h3 className="text-xl font-light mb-4">{reports[0].title}</h3>
-              <span className="text-sm">Read More →</span>
-            </Link>
-          </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 min-h-screen">
+          <BentoCard
+            title={reports[0].title}
+            slug={reports[0].slug}
+            industrySlug={reports[0].industrySlug}
+            color="#183B4E"
+            classname="col-span-2 row-span-1"
+          />
+          <BentoCard
+            title={reports[1].title}
+            slug={reports[1].slug}
+            industrySlug={reports[1].industrySlug}
+            color="#183B4E"
+            classname="col-span-1 row-span-1"
+          />
+          <BentoCard
+            title={reports[2].title}
+            slug={reports[2].slug}
+            industrySlug={reports[2].industrySlug}
+            color="#183B4E"
+            classname="col-span-1 row-span-1"
+          />
+
+          <BentoCard
+            title={reports[3].title}
+            slug={reports[3].slug}
+            industrySlug={reports[3].industrySlug}
+            color="#183B4E"
+            classname="col-span-2 row-span-1"
+          />
         </div>
       </div>
     </section>

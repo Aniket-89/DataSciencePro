@@ -1,13 +1,16 @@
-import ReportHero from '../components/reports/ReportHero';
-import ReportCategories from '../components/reports/ReportCategories';
+import ReportCategories from "../components/reports/ReportCategories";
 // import ReportGrid from '../components/reports/ReportGrid';
-import ReportCTA from '../components/reports/ReportCTA';
-import { motion } from 'framer-motion';
+import ReportCTA from "../components/reports/ReportCTA";
+import { motion } from "framer-motion";
+import TopBanner from "../components/TopBanner";
 
 const ReportsPage = () => {
   return (
-    <div className="pt-16">
-      <ReportHero />
+    <div className="">
+      <TopBanner
+        title="Market Research Reports"
+        subtitle="Access comprehensive industry ananlyses, market forecasts, and strategic insights across multiple sectors."
+      />
       <section className="py-16 bg-white my-24">
         <div className="container mx-auto px-4 max-w-4xl">
           <motion.h2
@@ -26,7 +29,11 @@ const ReportsPage = () => {
             viewport={{ once: true }}
             className="text-lg text-gray-600 text-center max-w-3xl mx-auto"
           >
-            At DATABITZY Research and Marketing, we transform complex market data into strategic roadmaps for businesses, investors, and policymakers. Our research goes beyond surface-level trends—we deliver granular, forward-looking intelligence that drives measurable outcomes.
+            At DATABITZY Research and Marketing, we transform complex market
+            data into strategic roadmaps for businesses, investors, and
+            policymakers. Our research goes beyond surface-level trends—we
+            deliver granular, forward-looking intelligence that drives
+            measurable outcomes.
           </motion.p>
         </div>
       </section>
