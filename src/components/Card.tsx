@@ -1,5 +1,3 @@
-import SpotlightCard from "../blocks/Components/SpotlightCard/SpotlightCard";
-
 const Card = () => {
   return (
     <div className="smoke-card">

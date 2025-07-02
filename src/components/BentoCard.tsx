@@ -46,7 +46,9 @@ const BentoCard: React.FC<Report> = ({
         />
         {/* Overlay: slide up from bottom on hover */}
         <div
-          className="absolute left-0 backdrop-blur bottom-0 w-full h-0 bg-black/30 z-10 opacity-100 group-hover:h-full transition-all ease-in-out duration-500 pointer-events-none"
+          className={`absolute left-0 backdrop-blur bottom-0 w-full h-0 bg-${
+            color ? color : "black"
+          }/30 z-10 opacity-100 group-hover:h-full transition-all ease-in-out duration-500 pointer-events-none`}
           style={{ transitionProperty: "height, background-color" }}
         ></div>
         <div className="relative z-20 translate-y-10 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-transform duration-400 ease-in-out  flex flex-col justify-between h-full group">

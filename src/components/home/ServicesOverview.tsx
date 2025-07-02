@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import SpotlightCard from "../../blocks/Components/SpotlightCard/SpotlightCard";
 import {
   ChartBarIcon,
   PresentationChartLineIcon,
   WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline";
-import Card from "../Card";
 import Button from "../Button";
 
 const services = [

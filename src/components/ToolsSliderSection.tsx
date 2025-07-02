@@ -8,7 +8,6 @@ import {
   SiPytorch,
   SiFastapi,
   //   SiMicrosoftexcel,
-  SiTableau,
   SiScikitlearn,
   //   SiApachemxnet,
 } from "react-icons/si";

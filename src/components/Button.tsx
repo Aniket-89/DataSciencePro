@@ -7,7 +7,7 @@ type ButtonProps = {
   vibe?: "primary" | "secondary";
 };
 
-const Button: React.FC<ButtonProps> = ({ to, children, className, vibe }) => {
+const Button: React.FC<ButtonProps> = ({ to, children, className }) => {
   return (
     <Link
       to={to}

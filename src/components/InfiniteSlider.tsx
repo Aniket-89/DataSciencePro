@@ -21,7 +21,7 @@ const InfiniteSlider: React.FC<InfiniteSliderProps> = ({
 
     let animationFrame: number;
     let start: number | null = null;
-    let scrollLeft = 0;
+    // let scrollLeft = 0;
 
     const animate = (timestamp: number) => {
       if (start === null) start = timestamp;
