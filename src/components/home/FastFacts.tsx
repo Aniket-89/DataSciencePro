@@ -15,7 +15,7 @@ const stats = [
 
 const FastFacts = () => {
   return (
-    <section className="py-24 bg-[#F3F3E0] m-2 my-12 rounded-3xl max-w-7xl mx-auto">
+    <section className="py-24 bg-[#183B4E] m-2 my-12 rounded-3xl max-w-[1600px] xl:mx-auto">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -24,12 +24,12 @@ const FastFacts = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-medium text-[#183B4E]">
+          <h2 className="text-h1 font-medium text-white">
             Quick Facts About DATABITZY
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-8 max-w-7xl mx-auto">
           {stats.map((stat, index) => (
             <div key={index} className="text-center p-8 transition-colors">
               {/* <div className="text-4xl mb-4 transform transition-transform">
@@ -41,10 +41,14 @@ const FastFacts = () => {
                 separator=","
                 direction="up"
                 duration={1}
-                className="count-up-text text-5xl mb-4 font-semibold text-[#183B4E] transform transition-transform"
+                className="count-up-text text-h1 mb-4 font-semibold text-[#DDA853] transform transition-transform"
               />
-              <span className="text-2xl font-semibold">{stat.symbol}</span>
-              <div className="text-gray-600 text-2xl">{stat.label}</div>
+              <span className="text-h1 text-white font-semibold">
+                {stat.symbol}
+              </span>
+              <div className="text-gray-100 text-sm md:text-lg">
+                {stat.label}
+              </div>
             </div>
           ))}
         </div>

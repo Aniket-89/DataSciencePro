@@ -143,7 +143,7 @@ const Header = () => {
                     )
                   )}
                 </nav>
-                <BookButton text={"Book a call"} gradient={true} />
+                <BookButton text={"Book a call"} />
               </div>
 
               <div className="lg:hidden grid">

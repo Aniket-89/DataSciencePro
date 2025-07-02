@@ -25,17 +25,12 @@ const HomePage = () => {
       transition={{ duration: 0.4 }}
     >
       <Hero />
-      {/* <h1 className="text-h1 max-w-7xl font-bold text-left mx-auto">
-        Our cutting-edge research, predictive analytics, and expert perspectives
-        empower businesses to navigate trends, outpace competitors, and seize
-        growth opportunities.
-        </h1> */}
-      <ServicesOverview />
-      <IndustriesGrid />
       <About />
-      <FastFacts />
+      <IndustriesGrid />
+      <ServicesOverview />
       <Testimonials />
       <WhyChooseUs />
+      <FastFacts />
       <LatestReports />
       <CTA />
     </motion.div>

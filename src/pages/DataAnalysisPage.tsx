@@ -5,6 +5,7 @@ import CTA from "../components/CTA";
 import SmallCard from "../components/SmallCard";
 import BentoCard from "../components/BentoCard";
 import { MarketGraph } from "../assets/assets";
+import { StarIcon } from "@heroicons/react/16/solid";
 
 export default function DataAnalysisPage() {
   return (
@@ -20,7 +21,7 @@ export default function DataAnalysisPage() {
 
       {/* What We Offer Section */}
 
-      <section className="py-12 md:py-24 rounded-3xl max-w-7xl m-2 lg:mx-auto bg-[#DDA853]">
+      <section className="py-12 md:py-24 rounded-3xl max-w-[1600px] m-2 lg:mx-auto bg-[#DDA853]">
         <div className="container grid gap-3 mx-auto w-full">
           <div className="max-w-2xl grid md:grid-cols-2 gap-2 w-full mx-auto text-center">
             <motion.div
@@ -28,7 +29,7 @@ export default function DataAnalysisPage() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.3, delay: 0 }}
               viewport={{ once: true }}
-              className="text-h1 flex flex-col items-center justify-center font-bold text-gray-900 mb-4"
+              className="text-cta flex flex-col items-center justify-center leading-thin font-bold text-gray-900 mb-4"
             >
               <span className="font-bold">What</span>
               <br />
@@ -37,8 +38,9 @@ export default function DataAnalysisPage() {
               <span className="text-gray-300">Offer</span>
             </motion.div>
             <SmallCard
-              text="End-to-end data analytics solutions for business insights"
-              color="bg-white"
+              text="Creating automated workflows and dashboards using tools like
+                  Python, KNIME, and Power BI"
+              color="bg-blue-100"
             />
           </div>
 
@@ -49,9 +51,8 @@ export default function DataAnalysisPage() {
               color="bg-red-100"
             />
             <SmallCard
-              text="Creating automated workflows and dashboards using tools like
-                  Python, KNIME, and Power BI"
-              color="bg-blue-100"
+              text="End-to-end data analytics solutions for business insights"
+              color="bg-white"
             />
           </div>
         </div>
@@ -125,57 +126,153 @@ export default function DataAnalysisPage() {
       </section>
 
       {/* Data Automation Tool Section */}
-      <section className="py-22 max-w-7xl rounded-3xl bg-[#dbeafe] m-2 xl:mx-auto">
-        <div className="container grid grid-cols-2 mx-auto px-4 ">
-          <h2 className="text-h3 text-gray-900 mb-4">
+      <section className="py-22 my-12 max-w-[1600px] rounded-3xl bg-[#dbeafe] m-2 xl:mx-auto">
+        <div className="container grid md:grid-cols-2 mx-auto px-4 ">
+          <motion.div
+            initial={{ opacity: 0.1, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true }}
+            className="text-h3 text-gray-900 mb-6"
+          >
             Data Automation Tool: <br />
-            <span className="text-hero text-nowrap font-bold">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.3 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-hero text-nowrap font-bold"
+            >
               Pull Algorithm
-            </span>
-          </h2>
+            </motion.div>
+          </motion.div>
 
-          <div className="max-w-3xl text-gray-900 mx-auto text-lg text-gray-700">
-            <p className="mb-4">
+          <div className="max-w-3xl text-gray-900 mx-auto text-sm md:text-lg text-gray-600">
+            <motion.div
+              initial={{ opacity: 0, x: -80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.2, delay: 0.5 }}
+              className="mb-4"
+            >
               Developed a daily automation tool to pull and analyze Open
               Interest (OI) data for stock markets directly into Excel after
               market hours.
-            </p>
-            <p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.2, delay: 0.5 }}
+              className="mb-4"
+            >
               This tool is now used across the team for faster strategy
               execution based on real-time OI-price correlations.
-            </p>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center mb-10">
-            <h2 className="text-3xl font-light text-gray-900 mb-4">
-              💬 Testimonials
+      <section className="pt-12 lg:pt-24 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="mx-auto text-center mb-2 lg:mb-10">
+            <h2 className="text-cta font-light text-gray-900 lg:mb-4">
+              Testimonials
             </h2>
           </div>
-          <div className="max-w-2xl mx-auto space-y-10">
-            <div className="bg-gray-50 p-8 rounded shadow-sm">
-              <div className="text-2xl mb-4">
-                ⭐ “His dashboards beautifully distill complex data.”
+          <div className="mx-auto grid gap-2">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="rounded-3xl m-2  bg-[#ffe2e2] p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="flex items-start space-x-4">
+                <img
+                  src=""
+                  alt="Atmaram P. img"
+                  className="w-12 h-12 rounded-full mr-4 flex-shrink-0"
+                />
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-lg font-semibold text-[#183B4E] truncate">
+                    Atmaram P.
+                  </h3>
+                  <p className="text-gray-600 text-xs">Power BI Dashboard</p>
+                </div>
               </div>
-              <div className="text-gray-700 text-right font-mono">
-                — Atmaram P., Power BI Dashboard{" "}
-                <span className="text-gray-400">(Sep 2023)</span>
+
+              <div className="flex space-x-1 mt-3 mb-3 md:mt-4 md:mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <StarIcon
+                    key={i}
+                    className="w-4 h-4 md:w-5 md:h-5 text-[#DDA853]"
+                  />
+                ))}
               </div>
-            </div>
-            <div className="bg-gray-50 p-8 rounded shadow-sm">
-              <div className="text-2xl mb-4">
-                ⭐ “Innovative thinking and proactive communication made our ML
-                project seamless.”
+
+              <p className="text-gray-600 italic text-sm md:text-base">
+                &ldquo;I had the pleasure of working closely with Anmol S, and I
+                must say that his services as a Data Analyst and Data Scientist
+                are truly exceptional. Anmol not only possesses an impressive
+                analytical skill set but also demonstrates an incredible knack
+                for creative writing that adds a unique dimension to his work.
+                What sets Anmol apart is his unwavering commitment to delivering
+                top-notch results consistently, often well before the deadlines.
+                His ability to craft insightful dashboards that beautifully
+                distill complex data is truly commendable. Anmol's dedication,
+                professionalism, and creativity make him an invaluable asset to
+                any team or project, and I wholeheartedly recommend his
+                services.&rdquo;
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="rounded-3xl m-2 bg-[#dbeafe] p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="flex items-start space-x-4">
+                <img
+                  src=""
+                  alt="Rohit Singh R. img"
+                  className="w-12 h-12 rounded-full mr-4 flex-shrink-0"
+                />
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-lg font-semibold text-[#183B4E] truncate">
+                    Rohit Singh R.
+                  </h3>
+                  <p className="text-gray-600 text-xs">
+                    ML Algorithms (Sep 2023)
+                  </p>
+                </div>
               </div>
-              <div className="text-gray-700 text-right font-mono">
-                — Rohit Singh R., ML Algorithms{" "}
-                <span className="text-gray-400">(Sep 2023)</span>
+
+              <div className="flex space-x-1 mt-3 mb-3 md:mt-4 md:mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <StarIcon
+                    key={i}
+                    className="w-4 h-4 md:w-5 md:h-5 text-[#DDA853]"
+                  />
+                ))}
               </div>
-            </div>
+
+              <p className="text-gray-600 italic text-sm md:text-base">
+                &ldquo;It was a pleasure working with Anmol on our recent
+                Machine Learning project. I found his expertise in the subject
+                matter to be thorough and his commitment to the project
+                commendable. The way he approached problems, and his proactive
+                communication ensured that the project progressed smoothly. His
+                flexibility in accommodating feedback and making necessary
+                adjustments was truly professional. What stood out the most for
+                me was his innovative thinking and his ability to provide
+                solutions that were both effective and efficient. I would highly
+                recommend Anmol to any potential clients on Upwork. His skills
+                and dedication make him a valuable asset for any project.
+                Looking forward to collaborating with him again in the
+                future.&rdquo;
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -188,7 +285,7 @@ export default function DataAnalysisPage() {
               Projects
             </h2>
           </div>
-          <div className="max-w-7xl min-h-screen grid lg:grid-cols-3 md:grid-cols-2 gap-2 mx-auto">
+          <div className="max-w-[1600px] min-h-screen grid lg:grid-cols-3 md:grid-cols-2 gap-2 mx-auto">
             {/* <div className="bg-gray-50 p-8 rounded shadow-sm">
               <div className="flex items-center mb-2">
                 <span className="text-2xl mr-2">🧠</span>

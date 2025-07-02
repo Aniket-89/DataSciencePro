@@ -21,31 +21,31 @@ const industries = [
   { icon: ShoppingBagIcon, name: "Consumer & Retail" },
   { icon: TruckIcon, name: "Automotive" },
   { icon: DeviceTabletIcon, name: "Semiconductors & Electronics" },
-  { icon: Square3Stack3DIcon, name: "Agriculture" },
+  { icon: CubeIcon, name: "Packaging & Transport" },
   { icon: RocketLaunchIcon, name: "Aerospace & Defense" },
   { icon: GlobeAltIcon, name: "ICT" },
-  { icon: CubeIcon, name: "Packaging & Transport" },
+  { icon: Square3Stack3DIcon, name: "Agriculture" },
   { icon: BuildingOfficeIcon, name: "Construction" },
   { icon: BanknotesIcon, name: "BFSI" },
 ];
 
 const IndustriesGrid = () => {
   return (
-    <section className="py-24 bg-[#F3F3E0] m-2 rounded-3xl max-w-7xl mx-auto">
+    <section className="py-12 lg:py-16 bg-[#F3F3E0] m-2 rounded-3xl max-w-[1600px] xl:mx-auto">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="text-3xl font-semibold text-[#183B4E] mb-4">
+          <h2 className="text-h3 font-semibold text-[#183B4E] mb-4">
             Industries We Cover
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto place-content-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-6 max-w-6xl mx-auto place-content-center">
           {industries.map((industry, index) => (
             <motion.div
               key={industry.name}
@@ -58,11 +58,13 @@ const IndustriesGrid = () => {
               }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="p-6 rounded-3xl bg-white group flex items-center gap-2 hover:bg-gray-100 hover:shadow-lg transition-colors"
+              className="p-4 aspect-[2] md:p-6 rounded-3xl bg-white group flex items-center gap-2 hover:bg-gray-100 hover:shadow-lg transition-colors"
             >
-              <industry.icon className="h-10 w-10 text-gray-900 transform group-hover:scale-110 transition-transform" />
+              <industry.icon className="hidden md:block size-4 md:size-10 text-gray-900 transform group-hover:scale-110 transition-transform" />
 
-              <h3 className="text-[#183B4E] font-light">{industry.name}</h3>
+              <h3 className="text-[#183B4E] text-sm font-light">
+                {industry.name}
+              </h3>
             </motion.div>
           ))}
         </div>

@@ -4,45 +4,44 @@ import Button from "./Button";
 
 const CTA = () => {
   return (
-    <section className="py-24 bg-gray-900 text-white rounded-3xl m-2">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center"
-        >
-          <h2 className="text-3xl font-light mb-6">
-            Ready to Transform Your Data Strategy?
-          </h2>
-          <p className="text-gray-300 text-lg mb-12 max-w-2xl mx-auto">
-            Schedule a consultation with our experts or reach out to learn more
-            about how we can help your business succeed.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-6 items-center">
+    <div className="w-full bg-gray-900 p-2 rounded-t-3xl">
+      <section className="py-24 bg-white rounded-3xl m-2">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl font-semibold text-h3 mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
               viewport={{ once: true }}
+              className="text-h3 font-bold text-[#183B4E] mb-6"
             >
-              <BookButton text="Book a Call" gradient={true} />
+              Ready to Transform Your Data Strategy?
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 80 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-gray-300  mb-12 mx-auto"
+            >
+              Schedule a consultation with our experts or reach out to learn
+              more about how{" "}
+              <span className="text-gray-900">
+                we can help your business succeed.
+              </span>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <Button to="/contact">Contact Us</Button>
-            </motion.div>
+            <div className="flex flex-wrap justify-center gap-6 items-center">
+              <BookButton text="Book a Call" gradient={false} />
+
+              <Button to="/contact" color="[#DDA853]" vibe="dark">
+                Contact Us
+              </Button>
+            </div>
           </div>
-        </motion.div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </div>
   );
 };
 

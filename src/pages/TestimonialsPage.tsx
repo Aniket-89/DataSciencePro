@@ -1,38 +1,38 @@
-import { GrainyGradient2 } from '../assets/assets';
-import CTA from '../components/CTA';
+import { GrainyGradient2 } from "../assets/assets";
+import CTA from "../components/CTA";
 
 const testimonials = [
   {
-    name: 'Jon Ben',
-    role: 'Director of Strategy',
+    name: "Jon Ben",
+    role: "Director of Strategy",
     content:
       "Your team’s analysis pinpointed untapped niches in the Latin American SaaS market, directly influencing our expansion roadmap.",
     image:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&w=128&h=128&q=80',
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&w=128&h=128&q=80",
   },
   {
-    name: 'Gregg',
-    role: 'Market Access Director, Global Pharma Firm',
+    name: "Gregg",
+    role: "Market Access Director, Global Pharma Firm",
     content:
       "Our drug pricing forecast for emerging markets was spot-on. It enabled us to negotiate better distribution partnerships and avoid a $2M pricing misstep in Southeast Asia.",
     image:
-      'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&w=128&h=128&q=80',
+      "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&w=128&h=128&q=80",
   },
   {
-    name: 'Tomer',
-    role: 'CMO, Fashion Retail Chain',
+    name: "Tomer",
+    role: "CMO, Fashion Retail Chain",
     content:
       "We used your consumer sentiment data to redesign our loyalty program. Result? A 50% boost in repeat purchases among Gen Z shoppers—exactly as predicted.",
     image:
-      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=facearea&w=128&h=128&q=80',
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=facearea&w=128&h=128&q=80",
   },
   {
-    name: 'Alex De Sousa',
-    role: 'COO, Digital Payments Platform',
+    name: "Alex De Sousa",
+    role: "COO, Digital Payments Platform",
     content:
       "The fintech regulatory risk assessment saved us 9 months of compliance headaches. Your team flagged state-level licensing hurdles we hadn’t even considered.",
     image:
-      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=facearea&w=128&h=128&q=80',
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=facearea&w=128&h=128&q=80",
   },
 ];
 
@@ -42,10 +42,17 @@ const TestimonialsPage = () => {
       {/* Hero Section */}
       <section className="mb-12">
         <div className="mx-auto text-center mb-16 h-96 w-full flex flex-col justify-center items-center relative overflow-hidden">
-            <img src={GrainyGradient2} alt="" className='absolute top-0 left-0 object-cover -z-10'/>
-          <h1 className="text-4xl font-bold text-white mb-4">What Our Clients Say</h1>
+          <img
+            src={GrainyGradient2}
+            alt=""
+            className="absolute top-0 left-0 object-cover -z-10"
+          />
+          <h1 className="text-4xl font-bold text-white mb-4">
+            What Our Clients Say
+          </h1>
           <p className="text-lg text-gray-900">
-            Here’s what business leaders across industries are saying about our work.
+            Here’s what business leaders across industries are saying about our
+            work.
           </p>
         </div>
 
@@ -56,7 +63,9 @@ const TestimonialsPage = () => {
               key={index}
               className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition"
             >
-              <p className="text-gray-700 text-base mb-6 italic">“{t.content}”</p>
+              <p className="text-gray-700 text-base mb-6 italic">
+                “{t.content}”
+              </p>
               <div className="flex items-center gap-4">
                 <img
                   src={t.image}
@@ -64,7 +73,9 @@ const TestimonialsPage = () => {
                   className="w-12 h-12 rounded-full object-cover border"
                 />
                 <div>
-                  <p className="text-sm font-semibold text-[#27548A]">{t.name}</p>
+                  <p className="text-sm font-semibold text-[#27548A]">
+                    {t.name}
+                  </p>
                   <p className="text-sm text-gray-500">{t.role}</p>
                 </div>
               </div>
@@ -76,7 +87,9 @@ const TestimonialsPage = () => {
       {/* Trust Stats Section */}
       <section className="bg-[#FDF6EC] py-16 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Why Businesses Trust Us</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">
+            Why Businesses Trust Us
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-xl font-semibold text-[#27548A]">
             <div>
               <p className="text-3xl">90%</p>
@@ -101,11 +114,25 @@ const TestimonialsPage = () => {
       {/* Client Logos Section */}
       <section className="bg-white py-12 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-lg text-gray-700 mb-6">Trusted by Teams Across the Globe</h2>
+          <h2 className="text-lg text-gray-700 mb-6">
+            Trusted by Teams Across the Globe
+          </h2>
           <div className="flex justify-center gap-8 flex-wrap items-center">
-            <img src="/logos/client1.svg" alt="Client 1" className="h-10 grayscale opacity-80 hover:opacity-100" />
-            <img src="/logos/client2.svg" alt="Client 2" className="h-10 grayscale opacity-80 hover:opacity-100" />
-            <img src="/logos/client3.svg" alt="Client 3" className="h-10 grayscale opacity-80 hover:opacity-100" />
+            <img
+              src="/logos/client1.svg"
+              alt="Client 1"
+              className="h-10 grayscale opacity-80 hover:opacity-100"
+            />
+            <img
+              src="/logos/client2.svg"
+              alt="Client 2"
+              className="h-10 grayscale opacity-80 hover:opacity-100"
+            />
+            <img
+              src="/logos/client3.svg"
+              alt="Client 3"
+              className="h-10 grayscale opacity-80 hover:opacity-100"
+            />
             {/* Add or remove as needed */}
           </div>
         </div>

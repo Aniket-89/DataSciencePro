@@ -15,7 +15,7 @@ const Hero = () => {
           <Threads amplitude={1} distance={0} enableMouseInteraction={true} />
         </div>
       </div>
-      <div className="container mx-auto max-w-7xl px-4 py-16">
+      <div className="container mx-auto max-w-[1600px] px-4 py-16">
         <div className="w-full gap-12 justify-between items">
           <motion.div className="z-50">
             <h1 className="text-hero text-white text-center leading-thin md:text-6xl font-normal text-primary mb-8">

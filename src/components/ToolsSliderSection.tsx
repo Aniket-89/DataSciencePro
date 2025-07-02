@@ -62,7 +62,7 @@ export default function ToolsSliderSection() {
 
     let animationFrame: number;
     let start: number | null = null;
-    const speed = 80; // px per second
+    const speed = 30; // px per second
 
     const animate = (timestamp: number) => {
       if (start === null) start = timestamp;
@@ -78,10 +78,10 @@ export default function ToolsSliderSection() {
 
   return (
     <section className="py-12 bg-white">
-      <div className="container mx-auto px-4">
-        {/* <h2 className="text-2xl font-semibold text-center mb-8">
+      <div className="max-w-[1600px] mx-auto flex px-4">
+        <h2 className="text-sm font-light text-left mb-8">
           Tools & Technologies
-        </h2> */}
+        </h2>
         <div
           ref={sliderRef}
           className="w-full overflow-hidden"

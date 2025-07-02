@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import SplitText from "../../blocks/TextAnimations/SplitText/SplitText";
+import Button from "../Button";
 
 const About = () => {
   return (
@@ -11,7 +11,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center max-w-7xl mx-auto mb-16"
+          className="text-center max-w-[1600px] mx-auto mb-16"
         >
           <h2 className="text-4xl font-semibold text-[#183B4E] mb-6">
             Who We Are
@@ -39,19 +39,9 @@ const About = () => {
             textAlign="justify"
           />
           <br />
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <Link
-              to="/about"
-              className="inline-flex px-8 py-3 bg-[#183B4E] text-white hover:bg-gray-800 transition-colors"
-            >
-              Learn More About Us →
-            </Link>
-          </motion.div>
+          <Button to="/about" vibe="dark" color="blue-500">
+            Learn more about us
+          </Button>
         </motion.div>
       </div>
     </section>

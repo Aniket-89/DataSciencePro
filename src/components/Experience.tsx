@@ -1,56 +1,52 @@
-import { motion } from 'framer-motion';
-import { FaClock, FaProjectDiagram, FaSmile, FaAws } from 'react-icons/fa';
-import { 
-  SiPython, 
-  SiR, 
-  SiTensorflow
-} from 'react-icons/si';
+import { motion } from "framer-motion";
+import { FaClock, FaProjectDiagram, FaSmile, FaAws } from "react-icons/fa";
+import { SiPython, SiR, SiTensorflow } from "react-icons/si";
 
 const statsData = [
   {
     icon: FaClock,
-    value: '8+',
-    label: 'Years of Experience',
+    value: "8+",
+    label: "Years of Experience",
   },
   {
     icon: FaProjectDiagram,
-    value: '150+',
-    label: 'Projects Completed',
+    value: "150+",
+    label: "Projects Completed",
   },
   {
     icon: FaSmile,
-    value: '95%',
-    label: 'Client Satisfaction',
+    value: "95%",
+    label: "Client Satisfaction",
   },
 ];
 
 const techStack = [
   {
     icon: SiPython,
-    label: 'Python',
-    color: '#3776AB',
+    label: "Python",
+    color: "#3776AB",
   },
   {
     icon: SiR,
-    label: 'R',
-    color: '#276DC3',
+    label: "R",
+    color: "#276DC3",
   },
   {
     icon: SiTensorflow,
-    label: 'TensorFlow',
-    color: '#FF6F00',
+    label: "TensorFlow",
+    color: "#FF6F00",
   },
   {
     icon: FaAws,
-    label: 'AWS',
-    color: '#232F3E',
+    label: "AWS",
+    color: "#232F3E",
   },
 ];
 
 const Experience = () => {
   return (
     <section className="py-32 bg-white">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-[1600px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,9 +54,12 @@ const Experience = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-semibold text-gray-900 mb-4">Experience & Expertise</h2>
+          <h2 className="text-4xl font-semibold text-gray-900 mb-4">
+            Experience & Expertise
+          </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Delivering excellence in data science solutions with proven expertise and cutting-edge technology
+            Delivering excellence in data science solutions with proven
+            expertise and cutting-edge technology
           </p>
         </motion.div>
 
@@ -75,8 +74,9 @@ const Experience = () => {
               viewport={{ once: true }}
               className="text-center p-6"
             >
-
-              <h3 className="text-5xl font-medium text-gray-900 mb-2">{stat.value}</h3>
+              <h3 className="text-5xl font-medium text-gray-900 mb-2">
+                {stat.value}
+              </h3>
               <p className="text-gray-600">{stat.label}</p>
             </motion.div>
           ))}
@@ -94,8 +94,8 @@ const Experience = () => {
               className="text-center p-6 group"
             >
               <div className="inline-block p-4 bg-white transition-colors duration-300 mb-4">
-                <tech.icon 
-                  className="w-12 h-12 transition-transform duration-300 group-hover:scale-110" 
+                <tech.icon
+                  className="w-12 h-12 transition-transform duration-300 group-hover:scale-110"
                   style={{ color: tech.color }}
                 />
               </div>

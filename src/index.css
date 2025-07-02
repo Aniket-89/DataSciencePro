@@ -74,6 +74,13 @@ h6 {
   letter-spacing: -0.02em;
   text-wrap: balance;
 }
+.text-cta {
+  font-weight: 500;
+  line-height: 1;
+  font-family: PP Neue Montreal, sans-serif;
+  font-size: clamp(2rem, 1.25rem + 3.75vw, 5rem);
+  letter-spacing: -0.025em;
+}
 .text-h3 {
   /* font-weight: 500; */
   line-height: 1;

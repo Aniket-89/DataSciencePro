@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { industryReports } from "../../data/industryReports";
 import BentoCard from "../BentoCard";
+import Button from "../Button";
 
 // Flatten all reports with their industry slug for linking
 const allReports = Object.entries(industryReports).flatMap(
@@ -15,32 +15,22 @@ const LatestReports = () => {
 
   return (
     <section className="py-24 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-end mb-16">
+      <div className="max-w-[1600px] mx-auto px-4">
+        <div className="flex justify-between items-end mb-8">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-light text-[#183B4E]">
+            <h2 className="text-h3 font-light text-[#183B4E]">
               Latest Publications
             </h2>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <Link
-              to="/reports/semiconductors"
-              className="text-[#183B4E] hover:text-gray-600 transition-colors"
-            >
-              View All Reports →
-            </Link>
-          </motion.div>
+          <Button to="/reports/semiconductors" color="blue-500" vibe="dark">
+            View All Reports
+          </Button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 min-h-screen">
