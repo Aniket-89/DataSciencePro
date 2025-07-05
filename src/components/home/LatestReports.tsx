@@ -29,7 +29,7 @@ const LatestReports = () => {
           </motion.div>
 
           <Button to="/reports/semiconductors" color="blue-500" vibe="dark">
-            View All Reports
+            Explore
           </Button>
         </div>
 

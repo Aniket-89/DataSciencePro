@@ -21,6 +21,7 @@ const BookButton: React.FC<BookButtonProps> = ({
       initial={{ scale: 0 }}
       whileInView={{ scale: 1 }}
       transition={{ type: "spring", duration: 1, delay: delay, damping: 9 }}
+      viewport={{once: true}}
     >
       <PopupButton
         url="https://calendly.com/databitzy/30min"

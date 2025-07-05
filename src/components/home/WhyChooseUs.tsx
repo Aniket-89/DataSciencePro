@@ -15,7 +15,7 @@ const reasons = [
 const WhyChooseUs = () => {
   return (
     <section className="py-24 max-w-[1600px] m-2 2xl:mx-auto bg-white">
-      <div className="grid md:grid-cols-2">
+      <div className="flex flex-col-reverse md:flex-row">
 
         <div className="grid gap-2 mx-auto">
           {reasons.map((reason, index) => (
@@ -37,7 +37,7 @@ const WhyChooseUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-left mb-16 bg-blue-100 w-fit rounded-3xl p-8 shadow-lg"
+          className="text-left mb-16 bg-blue-100 md:w-fit rounded-3xl p-8 shadow-sm"
         >
           <h2 className="text-h3 font-light text-[#183B4E]">
             Why Clients Choose <span className='block'>DATAbitzy</span>
