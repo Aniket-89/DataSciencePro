@@ -55,9 +55,9 @@ const Header = () => {
         transition={{ duration: 0.2, delay: 1 }}
       >
         <header
-          className="fixed left-1/2 -translate-x-1/2 top-4 mt-2 w-[95vw] max-w-7xl
+          className="fixed left-1/2 -translate-x-1/2 top-4 mt-2 w-[90vw] max-w-7xl
   rounded-[2rem] z-40 md:px-4
-  bg-white/60 backdrop-blur border-white/30 shadow-sm hover:shadow-lg
+  bg-white/80  backdrop-blur border-white/30 shadow-sm hover:shadow-lg
   transition-all"
         >
           <div className="max-w-7xl mx-auto px-4">
@@ -66,9 +66,9 @@ const Header = () => {
                 <img src={Logo} alt="" className="size-16" />
                 <Link
                   to="/"
-                  className="text-xl md:text-2xl font-semibold text-[#14B8A6]"
+                  className="text-xl md:text-2xl font-semibold text-[#27548A]"
                 >
-                  <span className="text-[#27548A]">DATA</span>BITZY
+                  DATA<span className="text-[#14B8A6]">bit</span>zy
                 </Link>
               </div>
 

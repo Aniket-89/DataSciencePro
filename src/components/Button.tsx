@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({
   vibe,
 }) => {
   return (
-    <FadeContent duration={500} delay={300}>
+    <FadeContent duration={500} delay={700}>
       <Link
         to={to}
         className={

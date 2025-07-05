@@ -4,9 +4,9 @@ import Button from "./Button";
 
 const CTA = () => {
   return (
-    <div className="w-full bg-gray-900 p-2 rounded-t-3xl">
+    <div className="w-full bg-gray-900 py-1 rounded-t-3xl">
       <section className="py-24 bg-white rounded-3xl m-2">
-        <div className="container mx-auto px-4">
+        <div className=" mx-auto px-4">
           <div className="max-w-7xl font-semibold text-h3 mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 80 }}

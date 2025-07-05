@@ -6,6 +6,7 @@ import {
   WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline";
 import Button from "../Button";
+import EllipseCard from "../EllipseCard";
 
 const services = [
   {
@@ -82,7 +83,12 @@ const ServicesOverview = () => {
             How We Help Businesses
           </h2>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1600px] mx-auto">
+        <div className="flex gap-2 w-full mx-auto">
+          {services.map((service, index) => (
+            <EllipseCard title={service.title} desc={service.description} />
+          ))}
+        </div>
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1600px] mx-auto">
           {services.map((service, index) => (
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
@@ -126,7 +132,7 @@ const ServicesOverview = () => {
               </SpotlightCard>
             </motion.div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -31,7 +31,7 @@ const industries = [
 
 const IndustriesGrid = () => {
   return (
-    <section className="py-12 lg:py-16 bg-[#F3F3E0] m-2 rounded-3xl max-w-[1600px] xl:mx-auto">
+    <section className="py-12 lg:py-16 bg-[#F3F3E0] m-2 soft-shadow rounded-3xl max-w-[1600px] xl:mx-auto">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

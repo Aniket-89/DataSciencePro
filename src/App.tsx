@@ -17,6 +17,7 @@ import { FaComments } from "react-icons/fa";
 import IndustryPage from "./pages/IndustryPage";
 import ReportsListPage from "./pages/ReportsListPage";
 import ReportDetailPage from "./pages/ReportDetailPage";
+import CaseStudyPage from "./pages/CaseStudyPage";
 
 function App() {
   const [chatbotOpen, setChatbotOpen] = useState(false);
@@ -59,6 +60,7 @@ function App() {
               />
               <Route path="/services/reports" element={<ReportsPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/case" element={<CaseStudyPage />} />
               <Route path="/reports/:slug" element={<IndustryPage />}>
                 <Route index element={<ReportsListPage />} />
                 <Route path=":reportId" element={<ReportDetailPage />} />

@@ -43,7 +43,7 @@ const Hero = () => {
             >
               Unlock actionable market intelligence tailored to your industry.
             </motion.div>
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
@@ -52,32 +52,14 @@ const Hero = () => {
                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
               }}
               className="flex gap-4 justify-center"
-            >
-              <BookButton text={"Book a call"} color={"#DDA853"} />
-              {/* <RouterLink
-                to="/services"
-                className="inline-block bg-white text-gray-900 font-normal px-2 lg:px-8 py-3 border-2 border-[#183B4E] hover:bg-[#183B4E] hover:text-white transform transition-all duration-300 cursor-pointer"
-              >
-                View Services
-              </RouterLink> */}
+            > */}
+            <div className="flex gap-4 justify-center">
+              <BookButton text={"Book a call"} delay={0.8} color={"#DDA853"} />
+
               <Button to="/services">View Services</Button>
-            </motion.div>
-          </motion.div>
-          {/* <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="relative h-fit lg:h-[360px] bg-transparent w-auto overflow-hidden rounded-lg">
-              <img
-                src={Dashboard}
-                alt="Data Analytics Visualization"
-                className="object-contain w-full h-auto"
-              />
-              <div className="absolute inset-0 bg-gray-900/10"></div>
             </div>
-          </motion.div> */}
+            {/* </motion.div> */}
+          </motion.div>
         </div>
       </div>
     </section>

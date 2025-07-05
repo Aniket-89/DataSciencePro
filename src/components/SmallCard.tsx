@@ -20,7 +20,12 @@ const SmallCard: React.FC<SmallCardProps> = ({
     <motion.div
       initial={{ scale: 0 }}
       whileInView={{ scale: 1 }}
-      transition={{ duration: duration, delay: delay }}
+      transition={{
+        type: "spring",
+        damping: 12,
+        duration: duration,
+        delay: delay,
+      }}
       viewport={{ once: true }}
       className={`rounded-3xl shadow-lg aspect-square p-6 flex justify-content 
         items-center w-full h-full flex flex-col gap-2 items-start justify-center text-gray-700 text-lg 

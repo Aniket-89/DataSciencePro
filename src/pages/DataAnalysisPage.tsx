@@ -6,6 +6,7 @@ import SmallCard from "../components/SmallCard";
 import BentoCard from "../components/BentoCard";
 import { MarketGraph } from "../assets/assets";
 import { StarIcon } from "@heroicons/react/16/solid";
+import CaseStudySection from "../components/CaseStudySection";
 
 export default function DataAnalysisPage() {
   return (
@@ -21,7 +22,7 @@ export default function DataAnalysisPage() {
 
       {/* What We Offer Section */}
 
-      <section className="py-12 md:py-24 rounded-3xl max-w-[1600px] m-2 lg:mx-auto bg-[#DDA853]">
+      <section className="py-12 md:py-24 soft-shadow rounded-3xl max-w-[1600px] m-2 lg:mx-auto bg-[#DDA853]">
         <div className="container grid gap-3 mx-auto w-full">
           <div className="max-w-2xl grid md:grid-cols-2 gap-2 w-full mx-auto text-center">
             <motion.div
@@ -32,9 +33,7 @@ export default function DataAnalysisPage() {
               className="text-cta flex flex-col items-center justify-center leading-thin font-bold text-gray-900 mb-4"
             >
               <span className="font-bold">What</span>
-              <br />
               <span className="text-gray-800">We</span>
-              <br />
               <span className="text-gray-300">Offer</span>
             </motion.div>
             <SmallCard
@@ -59,71 +58,7 @@ export default function DataAnalysisPage() {
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-light text-gray-900 mb-4">
-              📊 Real-World Case Study
-            </h2>
-            <h3 className="text-2xl font-medium text-gray-800 mb-2">
-              Predicting Customer Churn for ABC Telecom
-            </h3>
-          </div>
-          <div className="max-w-3xl mx-auto bg-white p-10 rounded shadow-sm">
-            <div className="mb-8">
-              <div className="flex items-center mb-2">
-                <span className="text-xl mr-2">🧠</span>
-                <span className="text-xl font-semibold text-gray-900">
-                  Objective
-                </span>
-              </div>
-              <p className="text-gray-700 text-lg ml-7">
-                Develop a machine learning model to predict churn and reduce
-                customer attrition.
-              </p>
-            </div>
-            <div className="mb-8">
-              <div className="flex items-center mb-2">
-                <span className="text-xl mr-2">🔧</span>
-                <span className="text-xl font-semibold text-gray-900">
-                  Approach:
-                </span>
-              </div>
-              <ul className="list-disc ml-12 text-gray-700 text-lg space-y-2">
-                <li>
-                  <span className="font-semibold">Data Preprocessing:</span>{" "}
-                  Cleaned and analyzed customer demographics & usage.
-                </li>
-                <li>
-                  <span className="font-semibold">Feature Engineering:</span>{" "}
-                  Tenure, contract type, feedback scores.
-                </li>
-                <li>
-                  <span className="font-semibold">Modeling:</span> Logistic
-                  Regression, Random Forest, and Gradient Boosting with
-                  hyperparameter tuning.
-                </li>
-                <li>
-                  <span className="font-semibold">Evaluation:</span> Achieved
-                  85% accuracy, 78% precision, and 82% recall.
-                </li>
-              </ul>
-            </div>
-            <div>
-              <div className="flex items-center mb-2">
-                <span className="text-xl mr-2">🎯</span>
-                <span className="text-xl font-semibold text-gray-900">
-                  Impact
-                </span>
-              </div>
-              <p className="text-gray-700 text-lg ml-7">
-                Churn reduced by 15% in 6 months → Significant revenue
-                retention.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CaseStudySection />
 
       {/* Data Automation Tool Section */}
       <section className="py-22 my-12 max-w-[1600px] rounded-3xl bg-[#dbeafe] m-2 xl:mx-auto">
@@ -279,28 +214,13 @@ export default function DataAnalysisPage() {
 
       {/* Sample Freelance Projects Section */}
       <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-10">
             <h2 className="text-h1 font-semibold text-gray-900 mb-4">
               Projects
             </h2>
           </div>
           <div className="max-w-[1600px] min-h-screen grid lg:grid-cols-3 md:grid-cols-2 gap-2 mx-auto">
-            {/* <div className="bg-gray-50 p-8 rounded shadow-sm">
-              <div className="flex items-center mb-2">
-                <span className="text-2xl mr-2">🧠</span>
-                <span className="font-semibold">
-                  Stock Market Prediction with KNIME
-                </span>
-              </div>
-              <div className="mb-2">
-                Predicted 2021 opening price using ML models like LSTM &
-                tree-based algorithms.
-              </div>
-              <a href="#" className="text-purple-700 underline">
-                [View project]
-              </a>
-            </div> */}
             <BentoCard
               title="Stock Market Prediction with KNIME"
               industrySlug="Stock Market"

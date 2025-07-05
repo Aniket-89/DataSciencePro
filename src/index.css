@@ -88,6 +88,56 @@ h6 {
   letter-spacing: -0.025em;
 }
 
+.headline-gradient {
+  font-size: min(20rem, 20vh);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 6px;
+  background: linear-gradient(90deg, #fff -4.91%, #101820 49.03%, #fff 104.02%);
+  background-clip: border-box;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: min(8.3rem, 8.3vh);
+  padding-inline: 7rem;
+}
+
+.approach-card-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  flex-grow: 1;
+  height: 28rem;
+  border-radius: 3rem;
+  background: #fff6;
+  box-shadow: 15px 19px 76.6px #0000000f;
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
+  padding: 2.9rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: min(10rem, 10vh);
+  overflow: hidden;
+}
+.approach-card-ellipse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22.3rem;
+  height: 22.3rem;
+  background: #ffaa52;
+  border-radius: 100%;
+  opacity: 0.7;
+  z-index: -1;
+  filter: blur(80px);
+}
+
+.soft-shadow {
+  box-shadow: 15px 19px 76.6px #0000000f;
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
+}
+
 .gradient-hero {
   background-image: linear-gradient(
     to right bottom,
