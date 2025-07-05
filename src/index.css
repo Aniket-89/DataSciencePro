@@ -106,7 +106,7 @@ h6 {
   position: relative;
   flex-shrink: 0;
   flex-grow: 1;
-  height: 28rem;
+  /* height: 28rem; */
   border-radius: 3rem;
   background: #fff6;
   box-shadow: 15px 19px 76.6px #0000000f;
@@ -118,6 +118,8 @@ h6 {
   gap: min(10rem, 10vh);
   overflow: hidden;
 }
+
+
 .approach-card-ellipse {
   position: absolute;
   top: 50%;

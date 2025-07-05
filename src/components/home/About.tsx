@@ -4,16 +4,16 @@ import Button from "../Button";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 my-8 bg-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center max-w-[1600px] mx-auto mb-16"
+          className="grid md:grid-cols-2 max-w-[1600px] mx-auto mb-16"
         >
-          <h2 className="text-4xl font-semibold text-[#183B4E] mb-6">
+          <h2 className="text-h1 font-semibold text-[#183B4E] mb-6">
             Who We Are
           </h2>
           <SplitText
@@ -28,15 +28,15 @@ const About = () => {
             we transform data into direction—empowering your business to lead
             with clarity and precision."
             className="text-lg text-justify text-gray-600 leading-relaxed mb-8"
-            delay={100}
-            duration={0.6}
+            // delay={300}
+            duration={0.3}
             ease="power3.out"
             splitType="lines"
             from={{ opacity: 0, y: 40 }}
             to={{ opacity: 1, y: 0 }}
             threshold={0.1}
             rootMargin="-100px"
-            textAlign="justify"
+            textAlign="left"
           />
           <br />
           <Button to="/about" vibe="dark" color="blue-500">

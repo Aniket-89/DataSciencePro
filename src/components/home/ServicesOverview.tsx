@@ -1,11 +1,9 @@
 import { motion } from "framer-motion";
-import SpotlightCard from "../../blocks/Components/SpotlightCard/SpotlightCard";
 import {
   ChartBarIcon,
   PresentationChartLineIcon,
   WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline";
-import Button from "../Button";
 import EllipseCard from "../EllipseCard";
 
 const services = [
@@ -83,56 +81,11 @@ const ServicesOverview = () => {
             How We Help Businesses
           </h2>
         </motion.div>
-        <div className="flex gap-2 w-full mx-auto">
+        <div className="grid lg:grid-cols-3 gap-2 w-full mx-auto">
           {services.map((service, index) => (
-            <EllipseCard title={service.title} desc={service.description} />
+            <EllipseCard key={index} title={service.title} desc={service.description} tags={service.deliverables} to={service.link} list={true}/>
           ))}
         </div>
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1600px] mx-auto">
-          {services.map((service, index) => (
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="grid"
-            >
-              <SpotlightCard
-                key={index}
-                className="custom-spotlight-card shadow-sm bg-white  border-none flex flex-col justify-between"
-                spotlightColor={service.spotlight}
-              >
-                <div className="mb-6">
-                  <service.icon className="h-12 w-12 transform group-hover:scale-110 transition-transform" />
-                </div>
-
-                <h3 className="text-h3 font-bold text-[#183B4E] mb-4">
-                  {service.title}
-                </h3>
-
-                <p className="text-gray-700 font-normal mb-6">
-                  {service.description}
-                </p>
-
-                <ul className="space-y-3 mb-8 flex-grow">
-                  {service.deliverables.map((item, i) => (
-                    <li key={i} className="flex items-center text-gray-700">
-                      <span className="mr-2">•</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-
-                <Button
-                  to={service.link}
-                  color={service.color}
-                  // vibe={service.vibe}
-                >
-                  {service.buttonText}
-                </Button>
-              </SpotlightCard>
-            </motion.div>
-          ))}
-        </div> */}
       </div>
     </section>
   );
