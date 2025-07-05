@@ -2,18 +2,21 @@ import { FiSliders } from "react-icons/fi";
 
 const CaseStudyPage = () => {
   return (
-    <div className=" text-white my-24 max-w-[1600px] mx-auto">
+    <div className=" text-white my-24 m-2 max-w-[1600px] 2xl:mx-auto">
       {/* 💡 Utility container for spacing */}
       <h1 className="text-h1 text-black text-center my-12">CHURN ANALYSIS</h1>
+      <div className="">
+
       <img
         src="https://images.unsplash.com/photo-1552365955-29ca04d444ea?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt=""
-        className="rounded-3xl w-full aspect-[16/9]"
-      />
+        className="rounded-3xl w-full aspect-[16/9] soft-shadow"
+        />
+        </div>
       <div className="mx-auto space-y-32 py-24">
         {/* 🌟 Overview */}
-        <section className="text-black rounded-3xl">
-          <h2 className="text-2xl font-extrabold tracking-tight mb-6">
+        <section className="text-black rounded-3xl px-8">
+          <h2 className="text-md md:text-lg font-extrabold tracking-tight mb-2 lg:mb-6">
             Project Overview
           </h2>
           <p className="text-h3 text-gray-300 font-light leading-relaxed">
@@ -41,7 +44,7 @@ const CaseStudyPage = () => {
           <h2 className="headline-gradient mx-auto font-extrabold tracking-tight mb-6 text-center">
             The Approach
           </h2>
-          <div className="flex gap-2 w-full">
+          <div className="flex gap-2 w-full overflow-auto py-8 scroll-hidden">
             <div className="relative approach-card-wrapper col-span-1 overflow-hidden h-fit aspect-square">
               <div className="approach-card-ellipse"></div>
               <div className="flex justify-between items-center">
@@ -93,7 +96,7 @@ const CaseStudyPage = () => {
         </section>
 
         {/* ⚔️ Challenges */}
-        <section className="bg-[#111111] rounded-3xl p-12 shadow-xl">
+        <section className="bg-[#111111] grid md:grid-cols-2 rounded-3xl p-12 shadow-xl">
           <h2 className="text-5xl font-extrabold tracking-tight mb-6">
             Challenges
           </h2>
@@ -106,8 +109,8 @@ const CaseStudyPage = () => {
         </section>
 
         {/* 🧠 Impact */}
-        <section className="grid grid-cols-2 text-gray-900 rounded-3xl">
-          <h2 className="text-hero font-semibold tracking-tight mb-6">
+        <section className="grid md:grid-cols-2 text-gray-900 rounded-3xl p-8">
+          <h2 className="text-h3 font-semibold tracking-tight mb-6">
             The Impact
           </h2>
           <p className="text-h3 text-gray-300 leading-relaxed">
@@ -116,6 +119,16 @@ const CaseStudyPage = () => {
             annual revenue leakage. Internal teams adopted the dashboard as a
             critical decision-making tool.
           </p>
+        </section>
+        <section className="mx-auto w-full m-2 p-8">
+          <h3 className="text-h1 text-gray-900 mb-12">The Tech</h3>
+          <div className="flex gap-2">
+            <div className="bg-[#ffffef] size-24 rounded-3xl"></div>
+            <div className="bg-[#ffffef] size-24 rounded-3xl"></div>
+            <div className="bg-[#ffffef] size-24 rounded-3xl"></div>
+            <div className="bg-[#ffffef] size-24 rounded-3xl"></div>
+
+          </div>
         </section>
       </div>
     </div>

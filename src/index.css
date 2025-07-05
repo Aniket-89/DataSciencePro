@@ -102,6 +102,15 @@ h6 {
   padding-inline: 7rem;
 }
 
+@media screen and (max-width: 977px) {
+  .headline-gradient {
+    font-size: 3rem;
+    letter-spacing: 1.5px;
+    padding-inline: 3rem;
+    margin-bottom: 0rem;
+  }
+}
+
 .approach-card-wrapper {
   position: relative;
   flex-shrink: 0;
