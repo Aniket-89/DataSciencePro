@@ -26,7 +26,7 @@ const CaseStudySection = () => {
             transition={{ duration: 0.6, ease: "easeInOut" }}
             exit={{ scaleX: 1 }}
             viewport={{ amount: 0.5 }}
-            className="aspect-[16/7] rounded-3xl bg-transparent mx-auto overflow-hidden relative"
+            className="aspect-[9/16] max-h-screen md:aspect-[16/7] rounded-3xl bg-transparent mx-auto overflow-hidden relative"
           >
             <img
               src="https://images.unsplash.com/photo-1552365955-29ca04d444ea?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

@@ -141,21 +141,9 @@ h6 {
 }
 
 .gradient-hero {
-  background-image: linear-gradient(
-    to right bottom,
-    #e6e2ee,
-    #cac2e0,
-    #aba2d3,
-    #8a85c6,
-    #6569ba,
-    #5259aa,
-    #3d4a9a,
-    #273b8a,
-    #2a3374,
-    #292c5e,
-    #262549,
-    #211e36
-  );
+  background-image: url('./assets/gray-gradient.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .test-bg {

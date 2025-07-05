@@ -22,8 +22,8 @@ export default function DataAnalysisPage() {
 
       {/* What We Offer Section */}
 
-      <section className="py-12 md:py-24 soft-shadow rounded-3xl max-w-[1600px] m-2 lg:mx-auto bg-[#DDA853]">
-        <div className="container grid gap-3 mx-auto w-full">
+      <section className="py-12 md:py-24 soft-shadow rounded-3xl max-w-[1600px] m-2 2xl:mx-auto bg-[#DDA853]">
+        <div className="grid gap-3 mx-auto w-full">
           <div className="max-w-2xl grid md:grid-cols-2 gap-2 w-full mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 120, scale: 0.9 }}
@@ -256,145 +256,38 @@ export default function DataAnalysisPage() {
               classname="lg:col-span-3 md:col-span-2 row-span-1"
               img="https://img.freepik.com/free-vector/gradient-brain-background_23-2150441899.jpg"
             />
-            {/* <div className="bg-gray-50 p-8 rounded shadow-sm">
-              <div className="flex items-center mb-2">
-                <span className="text-2xl mr-2">🏙️</span>
-                <span className="font-semibold">
-                  Transportation Network Analysis
-                </span>
-              </div>
-              <div className="mb-2">
-                Merged and analyzed traffic CSVs using Python to generate
-                pie/bar charts.
-              </div>
-              <a href="#" className="text-purple-700 underline">
-                [View data]
-              </a>
-            </div>
-            <div className="bg-gray-50 p-8 rounded shadow-sm">
-              <div className="flex items-center mb-2">
-                <span className="text-2xl mr-2">📈</span>
-                <span className="font-semibold">
-                  Marketing Campaign Optimization for P&G
-                </span>
-              </div>
-              <div className="mb-2">
-                Identified profitable stores using geospatial ML modeling. Built
-                a Power BI dashboard.
-              </div>
-              <a href="#" className="text-purple-700 underline">
-                [View solution]
-              </a>
-            </div>
-            <div className="bg-gray-50 p-8 rounded shadow-sm">
-              <div className="flex items-center mb-2">
-                <span className="text-2xl mr-2">🌍</span>
-                <span className="font-semibold">
-                  Mode of Transport Prediction using GPS logs
-                </span>
-              </div>
-              <div className="mb-2">
-                Used GeoLife dataset with ML model based on 10-minute interval
-                GPS data.
-              </div>
-              <a href="#" className="text-purple-700 underline">
-                [View notebook]
-              </a>
-            </div>
-            <div className="bg-gray-50 p-8 rounded shadow-sm">
-              <div className="flex items-center mb-2">
-                <span className="text-2xl mr-2">🧪</span>
-                <span className="font-semibold">
-                  Adversarial ML for NLP & Image Processing
-                </span>
-              </div>
-              <div className="mb-2">
-                Presentation crafted for senior executives from 3 core research
-                papers.
-              </div>
-              <a href="#" className="text-purple-700 underline">
-                [Presentation]
-              </a>
-            </div> */}
+            
           </div>
         </div>
       </section>
 
-      {/* Certification & Experience Section */}
-      {/* <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-light text-gray-900 mb-4">
-              📚 Certification
-            </h2>
-            <div className="bg-white p-8 rounded shadow-sm text-lg text-gray-700 mb-6">
-              <div className="font-semibold text-gray-900 mb-2">
-                Data Science Professional Training
-              </div>
-              <div className="text-gray-500 mb-4">(Dec 2018 – Apr 2019)</div>
-              <div className="mb-2 font-semibold">Topics covered:</div>
-              <ul className="list-disc ml-8 space-y-1">
-                <li>Data Cleaning & Exploration</li>
-                <li>Predictive Modeling</li>
-                <li>Real-life dataset projects reviewed by industry experts</li>
-              </ul>
-            </div>
-            <h2 className="text-3xl font-light text-gray-900 mb-4">
-              💼 Experience
-            </h2>
-            <div className="bg-white p-8 rounded shadow-sm text-lg text-gray-700">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-semibold mb-2">
-                <div>Role</div>
-                <div>Company</div>
-                <div>Duration</div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-gray-200 py-2">
-                <div>Data Analyst / BI Developer</div>
-                <div>HDFC</div>
-                <div>June 2023 – Present</div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-gray-200 py-2">
-                <div>Freelance Data Scientist</div>
-                <div>Afcodex Pvt Ltd</div>
-                <div>Aug 2020 – June 2023</div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-gray-200 py-2">
-                <div>Freelancer</div>
-                <div>Demansold Tech Pvt Ltd</div>
-                <div>July 2022 – Aug 2022</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Summary Block Section */}
-      <section className="py-16 bg-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+      <section className="pb-16 md:pt-16 mb-4 md:mt-4 md:mb-28 mx-auto">
+        <div className="mx-auto px-4">
+          <div className="mx-auto">
+            <div className="grid grid-cols-3 gap-2 md:gap-8 text-center">
               <div className="flex flex-col items-center">
-                <span className="text-3xl mb-2">🧠</span>
-                <span className="text-white text-xl font-semibold">
-                  30+ freelance projects
+                <span className="text-h1 text-[#DDA853] font-bold mb-2">30+</span>
+                <span className="text-gray-900 text-md md:text-2xl font-semibold">
+                  Projects
                 </span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-3xl mb-2">💼</span>
-                <span className="text-white text-xl font-semibold">
-                  5+ years of experience
+                <span className="text-h1 text-blue-400 font-bold mb-2">5+</span>
+                <span className="text-gray-900 text-md md:text-2xl font-semibold">
+                  Years of Experience
                 </span>
               </div>
-              <div className="flex flex-col items-center">
+              {/* <div className="flex flex-col items-center">
                 <span className="text-3xl mb-2">📍</span>
                 <span className="text-white text-xl font-semibold">
                   Expertise: Machine Learning, BI Dashboards, Data Pipelines
                 </span>
-              </div>
+              </div> */}
               <div className="flex flex-col items-center">
-                <span className="text-3xl mb-2">🔗</span>
-                <span className="text-white text-xl font-semibold">
-                  10+ verified testimonials
+                <span className="text-h1 text-[#27548A] font-bold mb-2">10+</span>
+                <span className="text-gray-900 text-md md:text-2xl font-semibold">
+                  Verified Clients
                 </span>
               </div>
             </div>

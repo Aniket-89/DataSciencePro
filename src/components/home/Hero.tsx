@@ -54,7 +54,7 @@ const Hero = () => {
               className="flex gap-4 justify-center"
             > */}
             <div className="flex gap-4 justify-center">
-              <BookButton text={"Book a call"} delay={0.8} color={"#DDA853"} />
+              <BookButton text={"Book a call"} delay={0.8} />
 
               <Button to="/services">View Services</Button>
             </div>
