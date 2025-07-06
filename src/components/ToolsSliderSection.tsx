@@ -1,16 +1,4 @@
 // Example usage in a page or section
-import { FaPython } from "react-icons/fa";
-import {
-  SiR,
-  SiFlask,
-  SiDjango,
-  SiTensorflow,
-  SiPytorch,
-  SiFastapi,
-  //   SiMicrosoftexcel,
-  SiScikitlearn,
-  //   SiApachemxnet,
-} from "react-icons/si";
 import {
   DjangoSVG,
   FastApiLogo,
