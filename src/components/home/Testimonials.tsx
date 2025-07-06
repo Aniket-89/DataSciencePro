@@ -40,9 +40,9 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="py-2 max-w-[1600px] m-2 2xl:mx-auto rounded-3xl bg-[#F3F3E0]"
+      className="py-2 max-w-[1600px] m-2 2xl:mx-auto rounded-3xl bg-[#F3F3E0] soft-shadow"
     >
-      <div className="p-8 place-content-center items-center grid md:grid-cols-2">
+      <div className="p-4 place-content-center items-center grid lg:grid-cols-2">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -7,8 +7,23 @@ import BentoCard from "../components/BentoCard";
 import { MarketGraph } from "../assets/assets";
 import { StarIcon } from "@heroicons/react/16/solid";
 import CaseStudySection from "../components/CaseStudySection";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useRef } from "react";
 
 export default function DataAnalysisPage() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -400, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 400, behavior: "smooth" });
+    }
+  };
   return (
     <div className="">
       {/* Hero Section */}
@@ -22,9 +37,9 @@ export default function DataAnalysisPage() {
 
       {/* What We Offer Section */}
 
-      <section className="py-12 md:py-24 soft-shadow rounded-3xl max-w-[1600px] m-2 2xl:mx-auto bg-[#DDA853]">
+      <section className="py-12 md:py-24 soft-shadow rounded-3xl max-w-[1600px] mx-2 2xl:mx-auto bg-[#DDA853]">
         <div className="grid gap-3 mx-auto w-full">
-          <div className="max-w-2xl grid md:grid-cols-2 gap-2 w-full mx-auto text-center">
+          <div className="max-w-2xl grid md:grid-cols-2 gap-2 w-full mx-auto m-2 text-center">
             <motion.div
               initial={{ opacity: 0, y: 120, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -43,7 +58,7 @@ export default function DataAnalysisPage() {
             />
           </div>
 
-          <div className="max-w-2xl grid md:grid-cols-2 gap-3 mx-auto">
+          <div className="max-w-2xl grid md:grid-cols-2 gap-3 mx-2 mx-auto">
             <SmallCard
               text="Building smart machine learning models to solve real-world
                   problems"
@@ -53,6 +68,44 @@ export default function DataAnalysisPage() {
               text="End-to-end data analytics solutions for business insights"
               color="bg-white"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Summary Block Section */}
+      <section className="my-28 mx-auto">
+        <div className="mx-auto px-4">
+          <div className="mx-auto">
+            <div className="grid grid-cols-3 gap-2 md:gap-8 text-center">
+              <div className="flex flex-col items-center">
+                <span className="text-h1 text-[#DDA853] font-bold mb-2">
+                  30+
+                </span>
+                <span className="text-gray-900 text-md md:text-2xl font-semibold">
+                  Projects
+                </span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-h1 text-blue-400 font-bold mb-2">5+</span>
+                <span className="text-gray-900 text-md md:text-2xl font-semibold">
+                  Years of Experience
+                </span>
+              </div>
+              {/* <div className="flex flex-col items-center">
+                <span className="text-3xl mb-2">📍</span>
+                <span className="text-white text-xl font-semibold">
+                  Expertise: Machine Learning, BI Dashboards, Data Pipelines
+                </span>
+              </div> */}
+              <div className="flex flex-col items-center">
+                <span className="text-h1 text-[#27548A] font-bold mb-2">
+                  10+
+                </span>
+                <span className="text-gray-900 text-md md:text-2xl font-semibold">
+                  Verified Clients
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -114,7 +167,7 @@ export default function DataAnalysisPage() {
               Testimonials
             </h2>
           </div>
-          <div className="mx-auto grid gap-2">
+          <div className="mx-auto grid md:grid-cols-2 gap-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -213,105 +266,76 @@ export default function DataAnalysisPage() {
       </section>
 
       {/* Sample Freelance Projects Section */}
-      <section className="py-24 bg-white">
+
+      <section className="py-24 bg-white max-w-[1600px] mx-auto ">
         <div className="mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-10">
-            <h2 className="text-h1 font-semibold text-gray-900 mb-4">
-              Projects
-            </h2>
+          {/* Title and Scroll Arrows */}
+          <div className=" flex items-center justify-between mb-10">
+            <h2 className="text-h1 font-semibold text-gray-900">Projects</h2>
+            <div className="hidden md:flex gap-2">
+              <button
+                onClick={scrollLeft}
+                className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition"
+                aria-label="Scroll Left"
+              >
+                <FaChevronLeft className="w-5 h-5 text-gray-800" />
+              </button>
+              <button
+                onClick={scrollRight}
+                className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition"
+                aria-label="Scroll Right"
+              >
+                <FaChevronRight className="w-5 h-5 text-gray-800" />
+              </button>
+            </div>
           </div>
-          <div className="max-w-[1600px] min-h-screen grid lg:grid-cols-3 md:grid-cols-2 gap-2 mx-auto">
+
+          {/* Scrollable Project Cards */}
+          <div
+            ref={scrollRef}
+            className="flex flex-row gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-4 px-4 pb-4"
+            style={{ WebkitOverflowScrolling: "touch" }}
+          >
+            {/* Add BentoCard components here */}
             <BentoCard
               title="Stock Market Prediction with KNIME"
-              industrySlug="Stock Market"
-              slug="#"
-              classname="lg:col-span-1 lg:row-span-1"
+              industrySlug="stock-market"
+              slug="knime-stock"
+              classname="shrink-0 w-[85vw] sm:w-[65vw] md:w-[45vw] lg:w-[400px] snap-center"
               img={MarketGraph}
             />
             <BentoCard
               title="Transportation Network Analysis"
-              industrySlug="Data Analysis"
-              slug="#"
-              classname="lg:col-span-2 lg:row-span-1"
+              industrySlug="data-analysis"
+              slug="transport-network"
+              classname="shrink-0 w-[85vw] sm:w-[65vw] md:w-[45vw] lg:w-[400px] snap-center"
               img="https://img.freepik.com/free-photo/transport-logistics-products_23-2151541830.jpg"
             />
             <BentoCard
               title="Marketing Campaign Optimization for P&G"
-              industrySlug="Data Analysis"
-              slug="#"
-              classname="lg:col-span-2 lg:row-span-1"
+              industrySlug="marketing"
+              slug="pg-campaign"
+              classname="shrink-0 w-[85vw] sm:w-[65vw] md:w-[45vw] lg:w-[400px] snap-center"
               img="https://res.cloudinary.com/people-matters/image/upload/q_auto,f_auto/v1749120623/1749120621.jpg"
             />
             <BentoCard
               title="Mode of Transport Prediction using GPS logs"
-              industrySlug="Data Analysis"
-              slug="#"
-              classname="lg:col-span-1 lg:row-span-1"
+              industrySlug="transport"
+              slug="gps-prediction"
+              classname="shrink-0 w-[85vw] sm:w-[65vw] md:w-[45vw] lg:w-[400px] snap-center"
               img="https://img.freepik.com/free-photo/traffic-vehicle-urban-reflections-city_1112-973.jpg"
             />
             <BentoCard
               title="Adversarial ML for NLP & Image Processing"
-              industrySlug="Data Analysis"
-              slug="#"
-              classname="lg:col-span-3 md:col-span-2 row-span-1"
+              industrySlug="machine-learning"
+              slug="adversarial-ml"
+              classname="shrink-0 w-[85vw] sm:w-[65vw] md:w-[45vw] lg:w-[400px] snap-center"
               img="https://img.freepik.com/free-vector/gradient-brain-background_23-2150441899.jpg"
             />
-            
           </div>
         </div>
       </section>
 
-      {/* Summary Block Section */}
-      <section className="pb-16 md:pt-16 mb-4 md:mt-4 md:mb-28 mx-auto">
-        <div className="mx-auto px-4">
-          <div className="mx-auto">
-            <div className="grid grid-cols-3 gap-2 md:gap-8 text-center">
-              <div className="flex flex-col items-center">
-                <span className="text-h1 text-[#DDA853] font-bold mb-2">30+</span>
-                <span className="text-gray-900 text-md md:text-2xl font-semibold">
-                  Projects
-                </span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="text-h1 text-blue-400 font-bold mb-2">5+</span>
-                <span className="text-gray-900 text-md md:text-2xl font-semibold">
-                  Years of Experience
-                </span>
-              </div>
-              {/* <div className="flex flex-col items-center">
-                <span className="text-3xl mb-2">📍</span>
-                <span className="text-white text-xl font-semibold">
-                  Expertise: Machine Learning, BI Dashboards, Data Pipelines
-                </span>
-              </div> */}
-              <div className="flex flex-col items-center">
-                <span className="text-h1 text-[#27548A] font-bold mb-2">10+</span>
-                <span className="text-gray-900 text-md md:text-2xl font-semibold">
-                  Verified Clients
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      {/* <section className="py-32 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-light text-gray-900 mb-6">
-              Ready to Transform Your Data?
-            </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              Schedule a consultation with our data analytics experts and
-              discover how we can help you make better decisions with data.
-            </p>
-            <button className="bg-gray-900 text-white py-3 px-8 hover:bg-gray-800 transition-colors">
-              Schedule Consultation
-            </button>
-          </div>
-        </div>
-      </section> */}
       <CTA />
     </div>
   );

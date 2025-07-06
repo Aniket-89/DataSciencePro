@@ -17,15 +17,15 @@ const IndustryPage = () => {
           </span>
         </div> */}
       {/* </div> */}
-      <div className="grid md:grid-cols-4 my-12 rounded-3xl max-w-[1600px] gap-4 min-h-[60vh] bg-[#F3F3E0] mx-auto">
+      <div className="grid lg:grid-cols-4 my-12 rounded-3xl m-2 max-w-[1600px] gap-4 min-h-[60vh] bg-[#F3F3E0] 2xl:mx-auto">
         {/* Sidebar: 1/4 width */}
-        <div className="md:col-span-1 h-fit">
+        <div className="lg:col-span-1 h-fit">
           <div className="md:sticky md:top-24">
             <IndustryCategoriesSidebar />
           </div>
         </div>
         {/* Main Content: 3/4 width */}
-        <main className="md:col-span-3 lg:p-8 p-2 flex-1 min-w-0">
+        <main className="lg:col-span-3 lg:p-8 p-2 flex-1 min-w-0">
           {/* Here you can render either a list of reports or report details via nested routes */}
           <Outlet />
         </main>

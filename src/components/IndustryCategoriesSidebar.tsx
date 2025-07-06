@@ -15,9 +15,9 @@ const IndustryCategoriesSidebar = () => {
   return (
     <>
       {/* Mobile: Collapsible Button */}
-      <div className="md:hidden px-4 pt-4">
+      <div className="lg:hidden px-4 pt-4">
         <button
-          className="w-full bg-[#27548A] text-white font-semibold py-2 px-4 rounded-none flex items-center justify-between focus:outline-none"
+          className="bg-[#27548A] rounded-3xl text-white font-semibold py-2 px-4 flex items-center justify-between focus:outline-none"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="industry-sidebar-mobile"
@@ -32,14 +32,14 @@ const IndustryCategoriesSidebar = () => {
         {open && (
           <div
             id="industry-sidebar-mobile"
-            className="bg-white border border-[#DDE6F2] rounded-none shadow-sm mt-2 p-4"
+            className="bg-white border border-[#DDE6F2] rounded-3xl shadow-sm mt-2 p-4"
           >
             <ul className="space-y-2">
               {industryList.map((item) => (
                 <li key={item.slug}>
                   <Link
                     to={`/reports/${item.slug}`}
-                    className={`block px-3 py-2 rounded-none text-sm transition-colors
+                    className={`block px-3 py-2 rounded-3xl text-sm transition-colors
                       ${
                         slug === item.slug
                           ? "bg-[#E9F1FA] text-[#27548A] font-semibold"
@@ -56,8 +56,8 @@ const IndustryCategoriesSidebar = () => {
         )}
       </div>
       {/* Desktop: Sidebar */}
-      <aside className="hidden md:block py-8 px-4 rounded-3xl m-2">
-        <div className="sticky top-24 bg-white border border-[#DDE6F2] rounded-none shadow-sm p-4">
+      <aside className="hidden lg:block py-8 px-4 m-2">
+        <div className="sticky top-24 bg-white border rounded-3xl border-[#DDE6F2] shadow-sm p-4">
           <h3 className="text-lg font-semibold text-[#27548A] mb-4">
             All Industries
           </h3>
@@ -66,7 +66,7 @@ const IndustryCategoriesSidebar = () => {
               <li key={item.slug}>
                 <Link
                   to={`/reports/${item.slug}`}
-                  className={`block px-3 py-2 rounded-none text-sm transition-colors
+                  className={`block px-3 py-2 text-sm rounded-3xl overflow-hidden transition-colors
                     ${
                       slug === item.slug
                         ? "bg-[#E9F1FA] text-[#27548A] font-semibold"

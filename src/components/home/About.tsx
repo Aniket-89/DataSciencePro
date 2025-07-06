@@ -4,16 +4,16 @@ import Button from "../Button";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 md:my-8 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="about" className="pt-20 pb-12 md:pb-20 md:my-8 bg-white">
+      <div className="mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 max-w-[1600px] mx-auto mb-16"
+          className="grid lg:grid-cols-2 max-w-[1600px] mx-auto mb-16"
         >
-          <h2 className="text-h1 font-semibold text-[#183B4E] mb-6">
+          <h2 className="text-h3 font-semibold text-[#183B4E] mb-6">
             Who We Are
           </h2>
           <SplitText
@@ -32,7 +32,7 @@ const About = () => {
             duration={0.3}
             ease="power3.out"
             splitType="lines"
-            from={{ opacity: 0, y: 40 }}
+            from={{ opacity: 0, y: 20 }}
             to={{ opacity: 1, y: 0 }}
             threshold={0.1}
             rootMargin="-100px"

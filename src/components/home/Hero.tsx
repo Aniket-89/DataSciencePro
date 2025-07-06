@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="container mx-auto max-w-[1600px] px-4 py-16">
         <div className="w-full gap-12 justify-between items">
           <motion.div className="z-50">
-            <h1 className="text-hero text-white text-center leading-thin md:text-6xl font-normal text-primary mb-8">
+            <h1 className="text-hero text-black text-center leading-thin md:text-6xl font-normal text-primary mb-8">
               <motion.div
                 initial={{ opacity: 0, y: 300 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="text-xl text-gray-50 mb-12 text-center"
+              className="text-xl text-gray-700 mb-12 text-center"
             >
               Unlock actionable market intelligence tailored to your industry.
             </motion.div>

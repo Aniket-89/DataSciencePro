@@ -123,11 +123,11 @@ h6 {
   backdrop-filter: blur(100px);
   padding: 2.9rem 3.5rem;
   display: flex;
+
   flex-direction: column;
   gap: min(10rem, 10vh);
   overflow: hidden;
 }
-
 
 .approach-card-ellipse {
   position: absolute;
@@ -150,7 +150,7 @@ h6 {
 }
 
 .gradient-hero {
-  background-image: url('./assets/gray-gradient.jpg');
+  background-image: url("./assets/gray-gradient.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }

@@ -14,8 +14,8 @@ const ReportsListPage = () => {
   }
 
   return (
-    <div>
-      <h2 className="text-h3 font-normal mb-6">
+    <div className="py-8">
+      <h2 className="text-h3 font-normal my-6">
         Reports in {reports[0]?.industry}
       </h2>
       <ul className="grid md:grid-cols-2 gap-6">

@@ -27,15 +27,15 @@ const SmallCard: React.FC<SmallCardProps> = ({
         delay: delay,
       }}
       viewport={{ once: true }}
-      className={`rounded-3xl shadow-lg aspect-square p-6 flex justify-content 
-        items-center w-full h-full flex flex-col gap-2 items-start justify-center text-gray-700 text-lg 
+      className={`rounded-3xl shadow-lg lg:aspect-square p-6 flex justify-content 
+        items-center m-2 flex flex-col gap-2 items-start justify-center text-gray-700 text-lg 
         font-semibold hover:shadow-xl transition-shadow duration-300 hover:bg-gray-50 ${
           color ? color : "bg-white"
         }`}
     >
       <TbDeviceDesktopAnalytics className="size-24" />
       <div className="flex items-center">
-        <span className="text-sm md:text-xl text-left">{text}</span>
+        <span className="text-xl text-left">{text}</span>
       </div>
     </motion.div>
   );

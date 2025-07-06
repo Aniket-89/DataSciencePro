@@ -1,23 +1,34 @@
-import { motion } from 'framer-motion';
-import { CheckBadgeIcon } from '@heroicons/react/24/outline';
+import { motion } from "framer-motion";
+import { CheckBadgeIcon } from "@heroicons/react/24/outline";
 
 const reasons = [
-  'Unmatched Depth & Accuracy',
-  'Primary Research-First Approach',
-  'Emerging Markets Expertise',
-  'Scenario Planning + Forecasting (10-year models)',
-  'Data Triangulation from Verified Sources',
-  'Strategic Frameworks for Decision-Making',
-  'Customization at Scale',
-  'Transparent, Evidence-Based Methodology'
+  "Unmatched Depth & Accuracy",
+  "Primary Research-First Approach",
+  "Emerging Markets Expertise",
+  "Scenario Planning + Forecasting (10-year models)",
+  "Data Triangulation from Verified Sources",
+  "Strategic Frameworks for Decision-Making",
+  "Customization at Scale",
+  "Transparent, Evidence-Based Methodology",
 ];
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-24 max-w-[1600px] m-2 2xl:mx-auto bg-white">
-      <div className="flex flex-col-reverse md:flex-row">
-
-        <div className="grid gap-2 mx-auto">
+    <section className="py-24 max-w-5xl m-2 2xl:mx-auto bg-white">
+      <div className="flex flex-col md:flex-row gap-8 w-full justify-between">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-left mb-16 md:w-fit"
+        >
+          <h2 className="text-h3 font-normal text-[#183B4E]">
+            Why Clients Choose{" "}
+            <span className="block text-h1 font-bold">DATAbitzy</span>
+          </h2>
+        </motion.div>
+        <div className="grid gap-2 mx-auto bg-blue-100 p-4 md:p-8 rounded-3xl shadow-sm">
           {reasons.map((reason, index) => (
             <motion.div
               key={index}
@@ -25,24 +36,15 @@ const WhyChooseUs = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="flex bg-white group hover:bg-gray-100 transition-colors"
+              className="flex group transition-colors font-semibold"
             >
               <CheckBadgeIcon className="h-6 w-6 text-[#183B4E] mr-3 flex-shrink-0 transform group-hover:scale-110 transition-transform" />
-              <span className="text-gray-700">{reason}</span>
+              <span className="text-gray-700 text-sm md:text-md lg:text-lg">
+                {reason}
+              </span>
             </motion.div>
           ))}
         </div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-left mb-16 bg-blue-100 md:w-fit rounded-3xl p-8 shadow-sm"
-        >
-          <h2 className="text-h3 font-light text-[#183B4E]">
-            Why Clients Choose <span className='block'>DATAbitzy</span>
-          </h2>
-        </motion.div>
       </div>
     </section>
   );

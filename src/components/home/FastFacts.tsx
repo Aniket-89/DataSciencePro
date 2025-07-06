@@ -15,23 +15,23 @@ const stats = [
 
 const FastFacts = () => {
   return (
-    <section className="py-24 bg-[#183B4E] m-2 my-12 rounded-3xl max-w-[1600px] 2xl:mx-auto">
+    <section className="py-8 lg:py-20 bg-[#183B4E] m-2 my-12 rounded-3xl max-w-[1600px] 2xl:mx-auto">
       <div className="px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="text-h1 font-medium text-white">
+          <h2 className="text-h3 font-medium text-white">
             Quick Facts About DATABITZY
           </h2>
         </motion.div>
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-8 max-w-7xl mx-auto">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center p-8 transition-colors">
+            <div key={index} className="text-center p-4 transition-colors">
               {/* <div className="text-4xl mb-4 transform transition-transform">
                 {stat.icon}
               </div> */}
@@ -43,7 +43,7 @@ const FastFacts = () => {
                 duration={1}
                 className="count-up-text text-h1 mb-4 font-semibold text-[#DDA853] transform transition-transform"
               />
-              <span className="text-h1 text-white font-semibold">
+              <span className="text-h3 text-white font-semibold">
                 {stat.symbol}
               </span>
               <div className="text-gray-100 text-sm md:text-lg">
