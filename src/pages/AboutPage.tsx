@@ -1,4 +1,3 @@
-import Banner from "../components/about/Banner";
 import Brief from "../components/about/Brief";
 import Founders from "../components/about/Founders";
 // import Team from '../components/about/Team';
