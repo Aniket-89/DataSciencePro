@@ -43,9 +43,9 @@ const ReportDetailPage = () => {
             <span className="ml-auto text-sm text-[#DDA853] font-medium uppercase tracking-wider absolute bottom-5 right-10">Market Report</span>
         </div>
       </div> */}
-        <div className="flex gap-8 lg:p-8 p-2 mx-auto md:my-12 my-4 max-w-[1600px]">
+        <div className="flex gap-8 lg:p-8 lg:p-2 mx-auto md:my-12 my-4 max-w-[1600px]">
           {/* Main Content */}
-          <div className="flex-1 min-w-0 lg:p-">
+          <div className="flex-1 min-w-0 lg:p-2">
             <div className="max-w-5xl mx-auto">
               <h1 className="text-xl md:text-3xl font-bold text-[#27548A] mb-2">
                 {report.title}
@@ -67,7 +67,7 @@ const ReportDetailPage = () => {
                   </button>
                 ))}
               </div>
-              <div className="bg-white rounded-3xl p-2 lg:p-12 min-h-[400px] shadow-sm ">
+              <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-12 min-h-[400px] shadow-sm ">
                 {/* Report Description */}
                 {activeTab === "description" && (
                   <div className="animate-fadein">

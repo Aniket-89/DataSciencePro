@@ -5,7 +5,7 @@ import Button from "./Button";
 
 type BannerProps = {
   title: string;
-  subtitle: string;
+  subtitle?: string;
 };
 
 const TopBanner: React.FC<BannerProps> = ({ title, subtitle }) => {

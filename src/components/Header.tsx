@@ -56,9 +56,9 @@ const Header = () => {
       >
         <header
           className="fixed left-1/2 -translate-x-1/2 top-4 mt-2 w-[90vw] max-w-7xl
-  rounded-[2rem] z-40 md:px-4
-  bg-white/80  backdrop-blur border-white/30 shadow-sm hover:shadow-lg
-  transition-all"
+            rounded-[2rem] z-40 md:px-4
+            bg-white/80  backdrop-blur border-white/30 shadow-xs hover:shadow-sm
+            transition-all"
         >
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-center justify-between">

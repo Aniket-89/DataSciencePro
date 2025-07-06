@@ -11,6 +11,15 @@ import {
   SiScikitlearn,
   //   SiApachemxnet,
 } from "react-icons/si";
+import {
+  DjangoSVG,
+  FastApiLogo,
+  FlaskLogo,
+  PythonLogo,
+  PytorchLogo,
+  ScikitLearnLogo,
+  TensorFlowLogo,
+} from "../assets/assets";
 // import { TbBrandNlp } from "react-icons/tb";
 import { MdOutlineDashboardCustomize } from "react-icons/md";
 import { GiArtificialIntelligence } from "react-icons/gi";
@@ -25,13 +34,25 @@ import { useRef, useEffect } from "react";
 
 // You can add more icons or swap as needed for your stack
 const techIcons = [
-  <FaPython size={40} title="Python" />,
-  <SiR size={40} title="R" />,
-  <SiFlask size={40} title="Flask" />,
-  <SiDjango size={40} title="Django" />,
-  <SiTensorflow size={40} title="TensorFlow" />,
-  <SiPytorch size={40} title="PyTorch" />,
-  <SiFastapi size={40} title="fastai" />,
+  // <FaPython size={40} title="Python" />,
+  // <SiR size={40} title="R" />,
+  // <SiFlask size={40} title="Flask" />,
+  // <SiDjango size={40} title="Django" />,
+  <img src={DjangoSVG} className="h-full" />,
+  <img src={FlaskLogo} className="h-full" />,
+
+  <img
+    src="https://img.icons8.com/?size=100&id=ddMdoLrkgZkC&format=png&color=000000"
+    className="h-full w-full"
+  />,
+  <img src={TensorFlowLogo} className="h-full" />,
+  <img src={PythonLogo} className="h-full" />,
+  // <SiTensorflow size={40} title="TensorFlow" />,
+  // <SiPytorch size={40} title="PyTorch" />,
+  <img src={PytorchLogo} className="h-full" />,
+  <img src={FastApiLogo} className="h-full" />,
+  <img src={ScikitLearnLogo} className="h-full" />,
+  // <SiFastapi size={40} title="fastai" />,
   //   <TbBrandNlp size={40} title="NLP" />,
   <GiArtificialIntelligence size={40} title="CNN/DNN" />,
   <MdOutlineDashboardCustomize size={40} title="Clustering" />,
@@ -40,7 +61,7 @@ const techIcons = [
   //   <SiMicrosoftexcel size={40} title="Excel" />,
   <BsBarChartFill size={40} title="Matplotlib" />,
   <PiChartLineUpBold size={40} title="Seaborn" />,
-  <SiScikitlearn size={40} title="Scikit-learn" />,
+  // <SiScikitlearn size={40} title="Scikit-learn" />,
   //   <SiApachemxnet size={40} title="MXNet" />,
   <span style={{ fontSize: 40, fontWeight: "bold" }} title="TfLite">
     TfLite
