@@ -20,7 +20,7 @@ const FastFacts = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.2 }}
           viewport={{ once: true }}
           className="text-center mb-8"
         >
@@ -40,7 +40,7 @@ const FastFacts = () => {
                 to={stat.value}
                 separator=","
                 direction="up"
-                duration={1}
+                duration={0.5}
                 className="count-up-text text-h1 mb-4 font-semibold text-[#DDA853] transform transition-transform"
               />
               <span className="text-h3 text-white font-semibold">

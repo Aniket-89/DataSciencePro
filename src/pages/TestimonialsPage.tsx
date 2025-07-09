@@ -1,4 +1,3 @@
-import { GrainyGradient2 } from "../assets/assets";
 import CTA from "../components/CTA";
 
 const testimonials = [
@@ -42,11 +41,6 @@ const TestimonialsPage = () => {
       {/* Hero Section */}
       <section className="mb-12">
         <div className="mx-auto text-center mb-16 h-96 w-full flex flex-col justify-center items-center relative overflow-hidden">
-          <img
-            src={GrainyGradient2}
-            alt=""
-            className="absolute top-0 left-0 object-cover -z-10"
-          />
           <h1 className="text-4xl font-bold text-white mb-4">
             What Our Clients Say
           </h1>

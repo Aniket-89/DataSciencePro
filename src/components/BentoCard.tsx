@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Dashboard } from "../assets/assets";
 
 type Report = {
   title: string;
@@ -56,7 +55,7 @@ const BentoCard: React.FC<Report> = ({
         className="block text-[#183B4E] h-full transition-colors md:group-hover:text-gray-600"
       >
         <img
-          src={img || Dashboard}
+          src={img}
           alt=""
           className="absolute top-0 left-0 w-full h-full object-cover z-0 transition-transform duration-500 rounded-3xl md:group-hover:scale-105"
           style={{ opacity: 1 }}

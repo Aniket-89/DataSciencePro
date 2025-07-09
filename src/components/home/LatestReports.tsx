@@ -20,7 +20,7 @@ const LatestReports = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.2 }}
             viewport={{ once: true }}
           >
             <h2 className="text-h3 font-light text-[#183B4E]">

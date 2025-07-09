@@ -1,10 +1,8 @@
-import { motion } from 'framer-motion';
-import { GrainyGradient } from '../../assets/assets';
+import { motion } from "framer-motion";
 
 const Banner = () => {
   return (
     <section className="overflow-hidden py-24 md:py-32 relative bg-no-repeat bg-cover bg-center">
-        <img src={GrainyGradient} alt="" className='w-full h-fit bg-cover absolute top-0 left-0 -z-50 opacity-85'/>
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h1
@@ -21,7 +19,8 @@ const Banner = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-50 leading-relaxed"
           >
-            Transforming businesses through data-driven insights and innovative solutions
+            Transforming businesses through data-driven insights and innovative
+            solutions
           </motion.p>
         </div>
       </div>

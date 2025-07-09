@@ -1,10 +1,8 @@
-import { motion } from 'framer-motion';
-import { GrainyGradient1 } from '../../assets/assets';
+import { motion } from "framer-motion";
 
 const ReportHero = () => {
   return (
     <section className="relative bg-transparent text-white py-24 overflow-hidden">
-      <img src={GrainyGradient1} alt="" className='absolute bottom-0 left-0 object-cover -z-10'/>
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <motion.h1
@@ -21,8 +19,8 @@ const ReportHero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg text-gray-700 mb-8"
           >
-            Access comprehensive industry analyses, market forecasts, and strategic insights
-            across multiple sectors.
+            Access comprehensive industry analyses, market forecasts, and
+            strategic insights across multiple sectors.
           </motion.p>
         </div>
       </div>

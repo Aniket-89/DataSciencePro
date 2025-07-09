@@ -68,7 +68,7 @@ const WhatWeDo = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gray-50 rounded-3xl p-8 flex-1 basis-[280px]  min-w-[280px] group hover:bg-gray-100 transition-colors"
+              className="bg-gray-50 rounded-3xl p-8 flex-1 basis-[280px] min-w-[280px] group hover:bg-gray-100 transition-colors"
             >
               <div className="flex flex-col items-start">
                 <span className="text-4xl mb-6 transform group-hover:scale-110 transition-transform">

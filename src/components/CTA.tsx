@@ -22,11 +22,13 @@ const CTA = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="text-gray-300  mb-12 mx-auto"
+              className="text-gray-400  mb-12 mx-auto"
             >
-              Schedule a consultation with our experts or reach out to learn
-              more about how{" "}
-              <span className="text-gray-900">
+              Schedule a consultation with our experts or{" "}
+              <span className="text-gray-500">
+                reach out to learn more about how{" "}
+              </span>
+              <span className="text-gray-600">
                 we can help your business succeed.
               </span>
             </motion.div>

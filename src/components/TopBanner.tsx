@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { GrainyGradient3 } from "../assets/assets";
 import BookButton from "./BookButton";
 import Button from "./Button";
 
@@ -11,11 +10,6 @@ type BannerProps = {
 const TopBanner: React.FC<BannerProps> = ({ title, subtitle }) => {
   return (
     <section className="relative m-2 rounded-3xl grid place-content-center overflow-hidden py-24 min-h-[70vh] bg-gradient-to-br from-[#183B4E] to-[#27548A]">
-      <img
-        src={GrainyGradient3}
-        alt=""
-        className="absolute bottom-0 right-0 h-full w-full -z-10 object-cover"
-      />
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <motion.h1

@@ -53,7 +53,7 @@ const IndustriesGrid = () => {
               // animate={{ opacity: 1, scale: 1 }}
               transition={{
                 duration: 0.8,
-                delay: index * 0.1,
+                delay: index * 0.01,
                 ease: [0, 0.71, 0.2, 1.01],
               }}
               whileInView={{ opacity: 1, scale: 1 }}

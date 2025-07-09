@@ -52,7 +52,7 @@ const Header = () => {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.2, delay: 1 }}
+        transition={{ duration: 0.2, delay: 0.1 }}
       >
         <header
           className="fixed left-1/2 -translate-x-1/2 top-4 mt-2 w-[90vw] max-w-7xl

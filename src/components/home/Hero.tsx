@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
-import Threads from "../../blocks/Backgrounds/Threads/Threads";
 import BookButton from "../BookButton";
 import Button from "../Button";
-// import SplitText from "../../blocks/TextAnimations/SplitText/SplitText";
 
 const Hero = () => {
   return (
@@ -10,19 +8,19 @@ const Hero = () => {
       id="home"
       className="rounded-3xl soft-shadow m-2 min-h-[90vh] flex items-center relative overflow-hidden relative"
     >
-      <div className="absolute inset-0 -z-10 gradient-hero">
+      {/* <div className="absolute inset-0 -z-10">
         <div style={{ width: "100%", height: "800px", position: "relative" }}>
           <Threads amplitude={1} distance={0} enableMouseInteraction={true} />
         </div>
-      </div>
+      </div> */}
       <div className="container mx-auto max-w-[1600px] px-4 py-16">
         <div className="w-full gap-12 justify-between items">
-          <motion.div className="z-50">
+          <div className="z-50">
             <h1 className="text-hero text-black text-center leading-thin md:text-6xl font-normal text-primary mb-8">
-              <motion.div
-                initial={{ opacity: 0, y: 300 }}
+              {/* <motion.div
+                initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
               >
                 Data-Driven Insights for{" "}
               </motion.div>
@@ -33,12 +31,14 @@ const Hero = () => {
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
                 Smarter Decisions
-              </motion.div>
+              </motion.div> */}
+              <div className="">Data-Driven Insights for</div>
+              <div className="">Smarter Decisions</div>
             </h1>
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               className="text-xl text-gray-700 mb-12 text-center"
             >
               Unlock actionable market intelligence tailored to your industry.
@@ -54,12 +54,12 @@ const Hero = () => {
               className="flex gap-4 justify-center"
             > */}
             <div className="flex gap-4 justify-center">
-              <BookButton text={"Book a call"} delay={0.8} />
+              <BookButton text={"Book a call"} delay={0.2} />
 
               <Button to="/services">View Services</Button>
             </div>
             {/* </motion.div> */}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

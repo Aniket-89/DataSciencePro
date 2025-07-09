@@ -8,7 +8,7 @@ const testimonials = [
     content:
       "Your team’s analysis pinpointed untapped niches in the Latin American SaaS market, directly influencing our expansion roadmap.",
     image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&w=128&h=128&q=80",
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&w=48&h=48&q=80",
   },
   {
     name: "Gregg",
@@ -16,7 +16,7 @@ const testimonials = [
     content:
       "our drug pricing forecast for emerging markets was spot-on. It enabled us to negotiate better distribution partnerships and avoid a $2M pricing misstep in Southeast Asia.",
     image:
-      "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&w=128&h=128&q=80",
+      "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&w=48&h=48&q=80",
   },
   {
     name: "Tomer",
@@ -24,7 +24,7 @@ const testimonials = [
     content:
       "We used your consumer sentiment data to redesign our loyalty program. Result? A 50% boost in repeat purchases among Gen Z shoppers—exactly as predicted.",
     image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=facearea&w=128&h=128&q=80",
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=facearea&w=48&h=48&q=80",
   },
   {
     name: "Alex De Sousa",
@@ -32,7 +32,7 @@ const testimonials = [
     content:
       "The fintech regulatory risk assessment saved us 9 months of compliance headaches. Your team flagged state-level licensing hurdles we hadn’t even considered.",
     image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=facearea&w=128&h=128&q=80",
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=facearea&w=48&h=48&q=80",
   },
 ];
 
@@ -46,7 +46,7 @@ const Testimonials = () => {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
           viewport={{ once: true }}
           className="text-h1 font-semibold text-center text-[#183B4E] mb-8 md:mb-12"
         >
@@ -56,9 +56,9 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
-              initial={{ opacity: 0, y: 20, scale: 0 }}
+              initial={{ opacity: 0, y: 20, scale: 0.8 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              transition={{ duration: 0.8, delay: index * 0.02 }}
               viewport={{ once: true }}
               className="w-full rounded-3xl bg-white p-4 md:p-6 shadow-lg hover:shadow-xl transition-shadow"
             >

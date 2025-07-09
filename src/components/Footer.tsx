@@ -3,12 +3,18 @@ import { Logo } from "../assets/assets";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gray-900 min-h-[300px] text-white py-12">
       <div className="max-w-[1600px] mx-auto px-4">
         <div className="flex flex-col lg:flex-row justify-between gap-8">
           <div className="text-black">
             <div className="flex items-center">
-              <img src={Logo} alt="" className="size-20" />
+              <img
+                src={Logo}
+                alt=""
+                className="size-20"
+                width={90}
+                height={90}
+              />
               <h1 className="text-h3 font-semibold text-[#14B8A6]">
                 <span className="text-[#27548A]">DATA</span>BITZY
               </h1>

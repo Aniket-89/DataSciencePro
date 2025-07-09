@@ -20,9 +20,9 @@ const BookButton: React.FC<BookButtonProps> = ({
     <motion.div
       initial={{ scale: 0 }}
       whileInView={{ scale: 1 }}
-      transition={{ type: "spring", duration: 1, delay: delay, damping: 9 }}
-      viewport={{once: true}}
-      whileHover={{scale: 0.96}}
+      transition={{ type: "spring", duration: 0.2, delay: delay, damping: 10 }}
+      viewport={{ once: true }}
+      whileHover={{ scale: 0.96 }}
     >
       <PopupButton
         url="https://calendly.com/databitzy/30min"
