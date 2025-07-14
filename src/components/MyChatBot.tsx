@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"; // make sure useRef is imported
+import React, { useRef } from "react"; // make sure useRef is imported
 import Chatbot from "react-chatbot-kit";
 import "react-chatbot-kit/build/main.css";
 
@@ -629,13 +629,13 @@ const MessageParserWrapper: React.FC<MessageParserWrapperProps> = ({
 
 // Main Component
 const ServicesChatbot: React.FC = () => {
-  const [userData, setUserData] = useState<UserData>({
-    serviceType: "",
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-  });
+  // const [userData, setUserData] = useState<UserData>({
+  //   serviceType: "",
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   company: "",
+  // });
   const stateRef = useRef<ChatBotState>({
     messages: [],
     userData: {

@@ -12,7 +12,7 @@ type Report = {
 };
 
 const ReportDetailPage = () => {
-  const { slug, reportId } = useParams();
+  const { reportId } = useParams();
   const [report, setReport] = useState<Report | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
