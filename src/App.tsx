@@ -1,10 +1,11 @@
-import { useState, Suspense, lazy, useEffect } from "react";
+// import { useState, Suspense, lazy, useEffect } from "react";
+import { Suspense, lazy } from "react";
 import { AnimatePresence } from "framer-motion";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-import { FaComments } from "react-icons/fa";
+// import { FaComments } from "react-icons/fa";
 // import ServicesChatbot from "./components/MyChatBot";
 
 // Lazy load pages
@@ -21,13 +22,13 @@ const ReportDetailPage = lazy(() => import("./pages/ReportDetailPage"));
 const ReportsListPage = lazy(() => import("./pages/ReportsListPage"));
 
 function App() {
-  const [chatbotOpen, setChatbotOpen] = useState(false);
-  const [showChatbot, setShowChatbot] = useState(false);
+  // const [chatbotOpen, setChatbotOpen] = useState(false);
+  // const [showChatbot, setShowChatbot] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setShowChatbot(true), 2500);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => setShowChatbot(true), 2500);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <Router>
