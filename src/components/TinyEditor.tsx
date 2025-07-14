@@ -1,5 +1,5 @@
 import { Editor } from "@tinymce/tinymce-react";
-import { useRef } from "react";
+// import { useRef } from "react";
 
 type Props = {
   value: string;
@@ -7,7 +7,7 @@ type Props = {
 };
 
 export default function TinyEditor({ value, onChange }: Props) {
-  const editorRef = useRef<any>(null);
+  // const editorRef = useRef<any>(null);
 
   return (
     <Editor
