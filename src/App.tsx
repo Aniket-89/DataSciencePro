@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import { FaComments } from "react-icons/fa";
-import ServicesChatbot from "./components/MyChatBot";
+// import ServicesChatbot from "./components/MyChatBot";
 
 // Lazy load pages
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -19,7 +19,6 @@ const AddReportPage = lazy(() => import("./pages/AddReportPage"));
 const CaseStudyPage = lazy(() => import("./pages/CaseStudyPage"));
 const ReportDetailPage = lazy(() => import("./pages/ReportDetailPage"));
 const ReportsListPage = lazy(() => import("./pages/ReportsListPage"));
-const ChatbotComp = lazy(() => import("./components/ChatbotComp"));
 
 function App() {
   const [chatbotOpen, setChatbotOpen] = useState(false);
@@ -36,7 +35,7 @@ function App() {
         <Header />
 
         {/* Chatbot floating button & popup */}
-        {showChatbot && (
+        {/* {showChatbot && (
           <>
             {chatbotOpen && (
               <div className="fixed bottom-10 right-10 z-50 flex flex-col items-end">
@@ -55,7 +54,7 @@ function App() {
               <FaComments size={24} />
             </button>
           </>
-        )}
+        )} */}
 
         <main className="flex-grow">
           <ScrollToTop />
