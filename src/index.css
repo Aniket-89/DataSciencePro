@@ -25,6 +25,17 @@ h6 {
   font-style: bold;
 }
 
+.btn {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.btn:hover {
+  background: #f0f0f0;
+}
+
 .container {
   max-width: 1360px;
   margin: 0 auto;

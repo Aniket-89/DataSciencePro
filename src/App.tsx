@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import { FaComments } from "react-icons/fa";
+import ServicesChatbot from "./components/MyChatBot";
 
 // Lazy load pages
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -14,18 +15,16 @@ const DataAnalysisPage = lazy(() => import("./pages/DataAnalysisPage"));
 const MachineLearningPage = lazy(() => import("./pages/MachineLearningPage"));
 const ReportsPage = lazy(() => import("./pages/ReportsPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
-const TestimonialsPage = lazy(() => import("./pages/TestimonialsPage"));
+const AddReportPage = lazy(() => import("./pages/AddReportPage"));
 const CaseStudyPage = lazy(() => import("./pages/CaseStudyPage"));
-const IndustryPage = lazy(() => import("./pages/IndustryPage"));
-const ReportsListPage = lazy(() => import("./pages/ReportsListPage"));
 const ReportDetailPage = lazy(() => import("./pages/ReportDetailPage"));
+const ReportsListPage = lazy(() => import("./pages/ReportsListPage"));
 const ChatbotComp = lazy(() => import("./components/ChatbotComp"));
 
 function App() {
   const [chatbotOpen, setChatbotOpen] = useState(false);
   const [showChatbot, setShowChatbot] = useState(false);
 
-  // Lazy load chatbot after delay
   useEffect(() => {
     const timer = setTimeout(() => setShowChatbot(true), 2500);
     return () => clearTimeout(timer);
@@ -42,7 +41,7 @@ function App() {
             {chatbotOpen && (
               <div className="fixed bottom-10 right-10 z-50 flex flex-col items-end">
                 <Suspense fallback={null}>
-                  <ChatbotComp onClose={() => setChatbotOpen(false)} />
+                  <ServicesChatbot />
                 </Suspense>
               </div>
             )}
@@ -80,11 +79,14 @@ function App() {
                 <Route path="/services/reports" element={<ReportsPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/case" element={<CaseStudyPage />} />
-                <Route path="/testimonials" element={<TestimonialsPage />} />
-                <Route path="/reports/:slug" element={<IndustryPage />}>
-                  <Route index element={<ReportsListPage />} />
-                  <Route path=":reportId" element={<ReportDetailPage />} />
-                </Route>
+                <Route path="/admin" element={<AddReportPage />} />
+
+                {/* Simplified Reports System */}
+                <Route path="/reports" element={<ReportsListPage />} />
+                <Route
+                  path="/reports/:reportId"
+                  element={<ReportDetailPage />}
+                />
               </Routes>
             </AnimatePresence>
           </Suspense>

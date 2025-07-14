@@ -28,11 +28,7 @@ const LatestReports = () => {
             </h2>
           </motion.div>
 
-          <Button
-            to="/reports/semiconductor_electronics"
-            color="blue-500"
-            vibe="dark"
-          >
+          <Button to="/reports" color="blue-500" vibe="dark">
             Explore
           </Button>
         </div>

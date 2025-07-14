@@ -1,41 +1,97 @@
-import { useParams, Link } from "react-router-dom";
-import { industryReports } from "../data/industryReports";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { db } from "../firebaseConfig";
+import { collection, getDocs } from "firebase/firestore";
+import TopBanner from "../components/TopBanner";
 
+type Report = {
+  id: string;
+  title: string;
+  industry: string;
+  industryslug: string;
+};
 const ReportsListPage = () => {
-  const { slug } = useParams();
-  const reports = industryReports[slug as keyof typeof industryReports] || [];
+  const [reports, setReports] = useState<Report[]>([]);
+  const [filteredReports, setFilteredReports] = useState<Report[]>([]);
+  const [industries, setIndustries] = useState<string[]>([]);
 
-  if (!reports.length) {
-    return (
-      <div className="p-8 text-center text-lg">
-        No reports found for this industry.
-      </div>
-    );
-  }
+  const [selectedIndustry, setSelectedIndustry] = useState("all");
+
+  useEffect(() => {
+    const fetchReports = async () => {
+      const querySnapshot = await getDocs(collection(db, "reports"));
+      const reportsData: Report[] = querySnapshot.docs.map((doc) => {
+        const data = doc.data() as Report;
+        return {
+          ...data,
+          id: doc.id, // ✅ ensures the URL uses Firestore doc ID
+        };
+      });
+
+      setReports(reportsData);
+      setFilteredReports(reportsData);
+
+      const uniqueIndustries = Array.from(
+        new Set(reportsData.map((r) => r.industryslug))
+      );
+      setIndustries(uniqueIndustries);
+    };
+
+    fetchReports();
+  }, []);
+
+  useEffect(() => {
+    if (selectedIndustry === "all") {
+      setFilteredReports(reports);
+    } else {
+      setFilteredReports(
+        reports.filter((r) => r.industryslug === selectedIndustry)
+      );
+    }
+  }, [selectedIndustry, reports]);
 
   return (
-    <div className="py-8">
-      <h2 className="text-h3 font-normal my-6">
-        Reports in {reports[0]?.industry}
-      </h2>
-      <ul className="grid md:grid-cols-2 gap-6">
-        {reports.map((report, idx) => (
-          <li
-            key={idx}
-            className="bg-white p-4 rounded-3xl grid shadow-sm border border-gray-200 flex flex-col gap-2"
+    <div className="">
+      <TopBanner title="Research Reports" subtitle="Market Report" />
+      <div className="max-w-5xl min-h-[70vh] mx-auto p-6">
+        <h1 className="text-2xl font-bold mb-4">All Reports</h1>
+
+        <div className="mb-4">
+          <label className="mr-2 font-semibold">Filter by Industry:</label>
+          <select
+            value={selectedIndustry}
+            onChange={(e) => setSelectedIndustry(e.target.value)}
+            className="border p-2 rounded"
           >
-            <Link
-              to={`/reports/${slug}/${report.slug}`}
-              className="text-lg font-semibold text-[#27548A] hover:underline"
-            >
-              {report.title}
-            </Link>
-            <p className="text-gray-700 text-sm mb-2 line-clamp-3">
-              {report.overview}
-            </p>
-          </li>
-        ))}
-      </ul>
+            <option value="all">All</option>
+            {industries.map((ind) => (
+              <option key={ind} value={ind}>
+                {ind.charAt(0).toUpperCase() + ind.slice(1)}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {filteredReports.length === 0 ? (
+          <p>No reports available.</p>
+        ) : (
+          <ul className="space-y-4">
+            {filteredReports.map((report) => (
+              <li key={report.id} className="border p-4 rounded shadow">
+                <Link
+                  to={`/reports/${report.id}`}
+                  className="text-blue-700 font-semibold text-lg hover:underline"
+                >
+                  {report.title}
+                </Link>
+                <p className="text-sm text-gray-600">
+                  Industry: {report.industry}
+                </p>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };
