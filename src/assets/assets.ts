@@ -8,6 +8,9 @@ import PythonLogo from "./python.svg";
 import PytorchLogo from "./pytorch.svg";
 import TensorFlowLogo from "./tensorflow.svg";
 
+let Placeholder =
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1280px-Placeholder_view_vector.svg.png";
+
 export {
   MarketGraph,
   Logo,
@@ -18,4 +21,5 @@ export {
   PytorchLogo,
   PythonLogo,
   TensorFlowLogo,
+  Placeholder,
 };

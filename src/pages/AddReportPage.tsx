@@ -3,15 +3,40 @@ import { db } from "../firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
 import TinyEditor from "../components/TinyEditor";
 
+const INDUSTRY_OPTIONS = [
+  { label: "Automotive", slug: "automotive" },
+  { label: "Agriculture", slug: "agriculture" },
+  { label: "Construction", slug: "construction" },
+  { label: "Semiconductor & Electronics", slug: "semiconductor-electronics" },
+  { label: "Aerospace & Defense", slug: "aerospace-defense" },
+  { label: "BFSI", slug: "bfsi" },
+  { label: "ICT", slug: "ict" },
+  { label: "Energy & Power", slug: "energy-power" },
+  { label: "Consumer & Retail", slug: "consumer-retail" },
+  { label: "Packaging & Transport", slug: "packaging-transport" },
+  { label: "Food, Beverage & Nutrition", slug: "food-beverage" },
+  { label: "Industrial Automation", slug: "industrial-automation" },
+];
+
 const AddReportPage = () => {
   const [title, setTitle] = useState("");
   const [industry, setIndustry] = useState("");
   const [industryslug, setIndustryslug] = useState("");
-  const [content, setContent] = useState(""); // HTML from Tiptap
+  const [content, setContent] = useState("");
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+
+  const handleIndustryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selected = INDUSTRY_OPTIONS.find(
+      (option) => option.label === e.target.value
+    );
+    if (selected) {
+      setIndustry(selected.label);
+      setIndustryslug(selected.slug);
+    }
+  };
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -41,7 +66,7 @@ const AddReportPage = () => {
   };
 
   return (
-    <div className="max-w-5xl mt-24 mx-auto p-6 bg-white rounded shadow">
+    <div className="max-w-[1600px] mt-28 my-24 mx-auto p-2 lg:p-6 bg-white rounded shadow">
       <h1 className="text-2xl font-bold mb-4">Add New Report</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
@@ -49,25 +74,22 @@ const AddReportPage = () => {
           placeholder="Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="w-full border p-2"
+          className="border p-2"
           required
         />
-        <input
-          type="text"
-          placeholder="Industry"
+        <select
           value={industry}
-          onChange={(e) => setIndustry(e.target.value)}
-          className="w-full border p-2"
+          onChange={handleIndustryChange}
+          className="block border p-2"
           required
-        />
-        <input
-          type="text"
-          placeholder="Industry Slug"
-          value={industryslug}
-          onChange={(e) => setIndustryslug(e.target.value)}
-          className="w-full border p-2"
-          required
-        />
+        >
+          <option value="">Select Industry</option>
+          {INDUSTRY_OPTIONS.map((option) => (
+            <option key={option.slug} value={option.label}>
+              {option.label}
+            </option>
+          ))}
+        </select>
         <TinyEditor value={content} onChange={setContent} />
         <button
           type="submit"

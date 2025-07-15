@@ -23,6 +23,34 @@ h5,
 h6 {
   font-weight: 600;
   font-style: bold;
+  font-family: "Montserrat", sans-serif;
+}
+
+.report h2 {
+  margin-top: 1.2rem;
+  font-size: 2rem;
+  color: #27548a;
+  line-height: 1.8;
+}
+.report h3 {
+  margin-top: 0.7rem;
+  font-size: 1.2rem;
+  color: #16365d;
+  line-height: 1.1;
+}
+
+.report ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.report li {
+  list-style: disc;
+  margin-left: 1.25rem;
+}
+
+strong {
+  color: #183b4e;
 }
 
 .btn {
