@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { db } from "../firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
-import TopBanner from "../components/TopBanner";
 import { Placeholder } from "../assets/assets";
 
 type Report = {
