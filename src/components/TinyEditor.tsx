@@ -8,10 +8,49 @@ type Props = {
 
 export default function TinyEditor({ value, onChange }: Props) {
   // const editorRef = useRef<any>(null);
+  const template = `
+    <h2>Overview</h2>
+    <p>Write an overview here...</p>
+
+    <h2>Executive Summary</h2>
+    <p>Write the executive summary here...</p>
+
+    <h2>Drivers, Restraints, Opportunities & Challenges</h2>
+    <h3>Drivers:</h3>
+    <ul>
+      <li>Example driver 1</li>
+      <li>Example driver 2</li>
+    </ul>
+
+    <h3>Restraints:</h3>
+    <ul>
+      <li>Example restraint 1</li>
+    </ul>
+
+    <h2>Segmentation</h2>
+    <p><strong>Product Types:</strong> </p>
+    <ul>
+      <li>Product A</li>
+      <li>Product B</li>
+    </ul>
+
+    <h2>Key Players</h2>
+    <ul>
+      <li>Company A</li>
+      <li>Company B</li>
+    </ul>
+    <h2>Recent Development</h2>
+    <ul>
+      <li><strong>XX:</strong> ...</li>
+    </ul>
+    <h2>Regional Outlook</h2>
+    <p>Write regional analysis here...</p>
+  `;
 
   return (
     <Editor
       apiKey={import.meta.env.VITE_TINYMCE_API_KEY}
+      initialValue={template}
       value={value}
       onEditorChange={onChange}
       init={{
