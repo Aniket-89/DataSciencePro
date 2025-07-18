@@ -9,6 +9,7 @@ type Report = {
   industry: string;
   industryslug: string;
   content: string; // HTML string
+  thumbnail: string;
   createdAt?: string;
 };
 
@@ -50,9 +51,13 @@ const ReportDetailPage = () => {
   if (error) return <div className="p-8 text-red-600">{error}</div>;
 
   return (
-    <div className="max-w-5xl mt-24 mx-auto p-8">
+    <div className="max-w-5xl mt-24 mx-auto p-2">
       <div className="rounded-3xl overflow-hidden aspect-[16/9]">
-        <img src={Placeholder} alt="" className="object-cover h-full w-full" />
+        <img
+          src={report?.thumbnail ? report.thumbnail : Placeholder}
+          alt=""
+          className="object-cover h-full w-full"
+        />
       </div>
       <div className="flex gap-4">
         <span>7 min read</span>
@@ -69,7 +74,7 @@ const ReportDetailPage = () => {
         className="report prose prose-lg max-w-none text-red-500"
         dangerouslySetInnerHTML={{ __html: report?.content || "" }}
       />
-      <div className="grid shadow-sm grid-cols-2 gap-2 md:grid-cols-3 w-fit bg-blue-50 rounded-2xl mb-8 mt-4">
+      <div className="grid p-2 shadow-sm grid-cols-2 gap-2 md:grid-cols-3 w-fit bg-blue-50 rounded-2xl mb-8 mt-4">
         {TABS.map((tab) => (
           <button
             key={tab.key}

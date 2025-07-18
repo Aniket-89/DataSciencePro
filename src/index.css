@@ -25,28 +25,162 @@ h6 {
   font-style: bold;
   font-family: "Montserrat", sans-serif;
 }
+.report {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+  font-size: 1rem;
+  color: #222;
+}
 
-.report h2 {
-  margin-top: 1.2rem;
+.report * {
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: normal !important; /* ❗ overrides inline pre styles */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* HEADINGS */
+.report h1,
+.report h2,
+.report h3,
+.report h4,
+.report h5,
+.report h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #16365d;
+}
+
+.report h1 {
   font-size: 2rem;
+}
+.report h2 {
+  font-size: 1.75rem;
   color: #27548a;
-  line-height: 1.8;
 }
 .report h3 {
-  margin-top: 0.7rem;
-  font-size: 1.2rem;
-  color: #16365d;
-  line-height: 1.1;
+  font-size: 1.5rem;
+}
+.report h4 {
+  font-size: 1.25rem;
+}
+.report h5 {
+  font-size: 1rem;
+}
+.report h6 {
+  font-size: 0.875rem;
+}
+
+/* PARAGRAPHS */
+.report p {
+  margin-bottom: 1rem;
+}
+
+/* LISTS */
+.report ul,
+.report ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .report ul {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  list-style-type: disc;
+}
+.report ol {
+  list-style-type: decimal;
 }
 .report li {
-  list-style: disc;
-  margin-left: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* IMAGES */
+.report img {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+/* LINKS */
+.report a {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* TABLES */
+.report table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+.report table th,
+.report table td {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  text-align: left;
+}
+.report table th {
+  background-color: #f8fafc;
+  font-weight: 600;
+}
+
+/* BLOCKQUOTES */
+.report blockquote {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-left: 4px solid #3b82f6;
+  background-color: #f0f9ff;
+  color: #1e3a8a;
+  font-style: italic;
+}
+
+/* CODE */
+.report pre,
+.report code {
+  background-color: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+}
+
+/* MOBILE FRIENDLY */
+@media (max-width: 768px) {
+  .report {
+    font-size: 0.95rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .report h1 {
+    font-size: 1.5rem;
+  }
+
+  .report h2 {
+    font-size: 1.25rem;
+  }
+
+  .report h3 {
+    font-size: 1.1rem;
+  }
+
+  .report table,
+  .report pre {
+    overflow-x: auto;
+    display: block;
+  }
 }
 
 strong {

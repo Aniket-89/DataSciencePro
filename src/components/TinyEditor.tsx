@@ -15,7 +15,7 @@ export default function TinyEditor({ value, onChange }: Props) {
       value={value}
       onEditorChange={onChange}
       init={{
-        height: 400,
+        height: 700,
         menubar: false,
         plugins: [
           "lists",

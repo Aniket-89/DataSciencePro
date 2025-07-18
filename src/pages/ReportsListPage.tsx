@@ -10,6 +10,7 @@ type Report = {
   title: string;
   industry: string;
   industryslug: string;
+  thumbnail: string;
 };
 
 const ReportsListPage = () => {
@@ -127,15 +128,14 @@ const ReportsListPage = () => {
                 {filteredReports.map((report) => (
                   <li
                     key={report.id}
-                    className="p-2 rounded-2xl shadow-sm max-w-fit space-y-2 gap-2"
+                    className="p-2 rounded-2xl shadow-sm space-y-2 gap-2"
                   >
                     <img
-                      src={Placeholder}
-                      alt=""
-                      width={280}
-                      height={200}
-                      className="rounded-xl object-cover object-center w-full"
+                      src={report.thumbnail ? report.thumbnail : Placeholder}
+                      alt="Thumbnail"
+                      className="h-40 w-full object-cover rounded mb-2"
                     />
+
                     <Link
                       to={`/reports/${report.id}`}
                       className="text-blue-400 font-semibold text-lg hover:underline"
