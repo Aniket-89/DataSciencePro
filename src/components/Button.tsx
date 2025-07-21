@@ -26,8 +26,8 @@ const Button: React.FC<ButtonProps> = ({
             : `inline-flex items-center px-6 bg-${
                 color ? color : "white"
               } shadow-sm shadow-black/20 text-sm md:text-lg text-${
-                vibe && vibe === "dark" ? "white" : "[#183B4E]"
-              } group rounded-3xl py-2 font-bod hover:bg-[#DDA853] hover:text-gray-50 hover:shadow-none transition-[box-shadow] duration-400 transition-colors`
+                vibe && vibe === "dark" ? "black" : "[#183B4E]"
+              } group rounded-3xl py-2 font-bod hover:bg-black hover:text-white hover:shadow-none transition-[box-shadow] duration-400 transition-colors`
         }
       >
         {children}

@@ -1,0 +1,15 @@
+export const industriesList = [
+  "Automotive",
+  "Agriculture",
+  "Chemicals",
+  "Construction",
+  "Semiconductor & Electronics",
+  "Aerospace & Defense",
+  "BFSI",
+  "ICT",
+  "Energy & Power",
+  "Consumer & Retail",
+  "Packaging & Transport",
+  "Food, Beverage & Nutrition",
+  "Industrial Automation",
+];

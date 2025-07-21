@@ -6,6 +6,7 @@ import TinyEditor from "../components/TinyEditor";
 const INDUSTRY_OPTIONS = [
   { label: "Automotive", slug: "automotive" },
   { label: "Agriculture", slug: "agriculture" },
+  { label: "Chemicals", slug: "chemicals" },
   { label: "Construction", slug: "construction" },
   { label: "Semiconductor & Electronics", slug: "semiconductor-electronics" },
   { label: "Aerospace & Defense", slug: "aerospace-defense" },

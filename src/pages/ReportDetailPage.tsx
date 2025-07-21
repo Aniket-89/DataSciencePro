@@ -14,6 +14,7 @@ type Report = {
 };
 
 const TABS = [
+  { key: "description", label: "Report Description" },
   { key: "scope", label: "Report Scope" },
   { key: "methodology", label: "Methodology" },
   { key: "region", label: "Major Region" },
@@ -21,7 +22,7 @@ const TABS = [
 
 const ReportDetailPage = () => {
   const { reportId } = useParams();
-  const [activeTab, setActiveTab] = useState("");
+  const [activeTab, setActiveTab] = useState("description");
   const [report, setReport] = useState<Report | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -63,18 +64,14 @@ const ReportDetailPage = () => {
         <span>7 min read</span>
         <span>Jan 23</span>
       </div>
-      <h1 className="text-4xl mt-8 font-bold mb-2 text-[#DDA853]">
+      <h1 className="text-h3 mt-8 font-bold mb-2 text-[#DDA853]">
         {report?.title}
       </h1>
       <div className="text-gray-500 mb-6">
         <span className="mr-2">Industry:</span>
         <span className="font-medium">{report?.industry}</span>
       </div>
-      <div
-        className="report prose prose-lg max-w-none text-red-500"
-        dangerouslySetInnerHTML={{ __html: report?.content || "" }}
-      />
-      <div className="grid p-2 shadow-sm grid-cols-2 gap-2 md:grid-cols-3 w-fit bg-blue-50 rounded-2xl mb-8 mt-4">
+      <div className="grid p-2 shadow-sm grid-cols-2 gap-2 sm:grid-cols-4 w-fit bg-blue-50 rounded-2xl mb-8 mt-4">
         {TABS.map((tab) => (
           <button
             key={tab.key}
@@ -90,6 +87,13 @@ const ReportDetailPage = () => {
           </button>
         ))}
       </div>
+      {/* Report Description */}
+      {activeTab === "description" && (
+        <div
+          className="report prose prose-lg max-w-none text-red-500"
+          dangerouslySetInnerHTML={{ __html: report?.content || "" }}
+        />
+      )}
       {/* Report Scope */}
       {activeTab === "scope" && (
         <div className="animate-fadein">

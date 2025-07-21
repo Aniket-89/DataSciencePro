@@ -1,12 +1,12 @@
-// import { useState, Suspense, lazy, useEffect } from "react";
-import { Suspense, lazy } from "react";
+import { useState, Suspense, lazy, useEffect } from "react";
+// import { Suspense, lazy } from "react";
 import { AnimatePresence } from "framer-motion";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-// import { FaComments } from "react-icons/fa";
-// import ServicesChatbot from "./components/MyChatBot";
+
+import ChatbotWidget from "./chatbot/ChatBotWidget";
 
 // Lazy load pages
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -22,40 +22,21 @@ const ReportDetailPage = lazy(() => import("./pages/ReportDetailPage"));
 const ReportsListPage = lazy(() => import("./pages/ReportsListPage"));
 
 function App() {
-  // const [chatbotOpen, setChatbotOpen] = useState(false);
-  // const [showChatbot, setShowChatbot] = useState(false);
+  const [showChatbot, setShowChatbot] = useState(false);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => setShowChatbot(true), 2500);
-  //   return () => clearTimeout(timer);
-  // }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => setShowChatbot(true), 2500);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <Router>
       <div className="min-h-screen flex flex-col">
         <Header />
 
-        {/* Chatbot floating button & popup */}
-        {/* {showChatbot && (
-          <>
-            {chatbotOpen && (
-              <div className="fixed bottom-10 right-10 z-50 flex flex-col items-end">
-                <Suspense fallback={null}>
-                  <ServicesChatbot />
-                </Suspense>
-              </div>
-            )}
+        {showChatbot && <ChatbotWidget />}
 
-            <button
-              onClick={() => setChatbotOpen(true)}
-              aria-label="Open Chatbot"
-              className="fixed bottom-10 right-10 z-40 bg-[#27548A] text-white rounded-full shadow-lg p-4 hover:bg-[#183B4E] transition-colors focus:outline-none"
-              style={{ display: chatbotOpen ? "none" : "block" }}
-            >
-              <FaComments size={24} />
-            </button>
-          </>
-        )} */}
+        {/* Main content area */}
 
         <main className="flex-grow">
           <ScrollToTop />
