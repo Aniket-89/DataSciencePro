@@ -1,10 +1,20 @@
-import { LoaderAnimation } from "../assets/assets";
+import { LoaderAnimation, LoaderSpinner } from "../assets/assets";
 import Lottie from "lottie-react";
 
-const Loader = () => {
+type LoaderProps = {
+  variant?: "animation" | "spinner";
+};
+
+const Loader: React.FC<LoaderProps> = ({ variant }) => {
   return (
     <div className="fixed inset-0 z-50 bg-white flex justify-center items-center">
-      <Lottie animationData={LoaderAnimation} loop style={{ height: 150 }} />
+      <Lottie
+        animationData={
+          variant === "animation" ? LoaderAnimation : LoaderSpinner
+        }
+        loop
+        style={{ height: 200 }}
+      />
     </div>
   );
 };

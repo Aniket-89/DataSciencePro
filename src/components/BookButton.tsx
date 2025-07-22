@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { PopupButton } from "react-calendly";
+import Loader from "./Loader";
 
 type BookButtonProps = {
   text: string;
@@ -21,12 +22,17 @@ const BookButton: React.FC<BookButtonProps> = ({
       initial={{ scale: 0 }}
       whileInView={{ scale: 1 }}
       transition={{ duration: 0.1, delay: delay }}
-      whileHover={{ scale: 0.96 }}
+      whileHover={{ scale: 0.97 }}
     >
       <PopupButton
         url="https://calendly.com/databitzy/30min"
         rootElement={root}
         text={text}
+        LoadingSpinner={() => (
+          <div className="flex items-center justify-center">
+            <Loader variant="spinner" />
+          </div>
+        )}
         className={`px-6 cursor-pointer rounded-3xl py-2 max-w-fit text-sm md:text-lg font-semibold text-white hover:bg-[#00A0DC] transition-colors items-center
           ${color ? `bg-[${color}]` : "bg-[#0077B5]"} +
           ${

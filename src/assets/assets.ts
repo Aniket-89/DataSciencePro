@@ -7,6 +7,7 @@ import FastApiLogo from "./fastapi-logo.webp";
 import PythonLogo from "./python.svg";
 import PytorchLogo from "./pytorch.svg";
 import LoaderAnimation from "./Loader.json";
+import LoaderSpinner from "./LoadingSpinner.json";
 import TensorFlowLogo from "./tensorflow.svg";
 
 let Placeholder =
@@ -24,4 +25,5 @@ export {
   TensorFlowLogo,
   Placeholder,
   LoaderAnimation,
+  LoaderSpinner,
 };

@@ -52,7 +52,7 @@ function MainLayout() {
 
   return (
     <>
-      {loading && <Loader />}
+      {loading && <Loader variant="animation" />}
 
       <div
         className={`${
