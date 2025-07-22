@@ -6,6 +6,7 @@ import ScikitLearnLogo from "./scikit-learn.svg";
 import FastApiLogo from "./fastapi-logo.webp";
 import PythonLogo from "./python.svg";
 import PytorchLogo from "./pytorch.svg";
+import LoaderAnimation from "./Loader.json";
 import TensorFlowLogo from "./tensorflow.svg";
 
 let Placeholder =
@@ -22,4 +23,5 @@ export {
   PythonLogo,
   TensorFlowLogo,
   Placeholder,
+  LoaderAnimation,
 };

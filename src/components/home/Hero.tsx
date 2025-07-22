@@ -54,7 +54,7 @@ const Hero = () => {
               className="flex gap-4 justify-center"
             > */}
             <div className="flex gap-4 justify-center">
-              <BookButton text={"Book a call"} delay={0.2} />
+              <BookButton text={"Book a call"} />
 
               <Button to="/services">View Services</Button>
             </div>

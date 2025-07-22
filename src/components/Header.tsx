@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 // import { ChatBubbleBottomCenterTextIcon } from '@heroicons/react/24/outline';
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+
 import {
   Bars3Icon,
   XMarkIcon,
@@ -56,25 +58,25 @@ const Header = () => {
         transition={{ duration: 0.2, delay: 0.1 }}
       >
         <header
-          className="fixed left-1/2 -translate-x-1/2 top-4 mt-2 w-[90vw] max-w-7xl
-            rounded-[2rem] z-40 md:px-4
+          className="fixed left-1/2 -translate-x-1/2 top-2 lg:top-4 mt-1 md:mt-2 w-[90vw] max-w-7xl
+            rounded-[2rem] z-40 lg:px-4
             bg-white/80  backdrop-blur border-white/30 shadow-xs hover:shadow-sm
             transition-all"
         >
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <img src={Logo} alt="" className="size-16" />
+                <img src={Logo} alt="" className="size-12 md:size-16" />
                 <Link
                   to="/"
-                  className="text-xl md:text-2xl font-semibold text-[#27548A]"
+                  className="text-lg md:text-xl lg:text-xl font-semibold text-[#0077B5]"
                 >
                   DATA<span className="text-[#14B8A6]">bit</span>zy
                 </Link>
               </div>
 
-              <div className="hidden lg:flex items-center gap-8 px-4">
-                <nav className="flex items-center gap-8">
+              <div className="hidden lg:flex items-center gap-6 px-4">
+                <nav className="flex items-center gap-6">
                   {menuItems.map((item) =>
                     item.hasDropdown ? (
                       <div
@@ -86,11 +88,11 @@ const Header = () => {
                       >
                         <Link
                           to="/services"
-                          className={`flex items-center h-full py-1 font-bold ${
+                          className={`flex items-center h-full py-1 font-semibold ${
                             isActive("/services") ||
                             location.pathname.startsWith("/services/")
-                              ? "text-[#183B4E] "
-                              : "text-black hover:text-[#183B4E]"
+                              ? "text-[#86888A] "
+                              : "text-black hover:text-[#313335]"
                           } transition-colors`}
                         >
                           {item.name}
@@ -103,7 +105,7 @@ const Header = () => {
 
                         {/* Dropdown */}
                         {isServicesOpen && (
-                          <div className="absolute top-full left-0 mt-1 w-52 backdrop-blur bg-white/30 shadow-lg z-50">
+                          <div className="absolute top-full left-0 mt-1 w-52 backdrop-blur bg-white/80 shadow-lg z-50">
                             {servicesItems.map((service) => (
                               <Link
                                 key={service.name}
@@ -111,8 +113,8 @@ const Header = () => {
                                 onClick={() => setIsServicesOpen(false)}
                                 className={`block px-4 py-2 font-medium ${
                                   isActive(service.to)
-                                    ? "bg-gray-50 text-[#183B4E] font-bold"
-                                    : "text-gray-600 hover:bg-gray-50 hover:text-[#183B4E]"
+                                    ? "bg-gray-50 text-[#86888A] font-bold"
+                                    : "text-gray-600 hover:bg-gray-50 hover:text-[#313335]"
                                 } transition-colors`}
                               >
                                 {service.name}
@@ -130,10 +132,10 @@ const Header = () => {
                       <Link
                         key={item.name}
                         to={item.to}
-                        className={`relative py-1 font-bold ${
+                        className={`relative py-1 font-semibold ${
                           isActive(item.to)
-                            ? "text-[#DDA853] font-bold"
-                            : "text-black hover:text-[#183B4E]"
+                            ? "text-[#86888A] font-bold"
+                            : "text-black hover:text-[#313335]"
                         } transition-colors`}
                       >
                         {item.name}
@@ -175,10 +177,10 @@ const Header = () => {
 
       {/* Mobile Menu Panel */}
       <div
-        className={`fixed top-0 left-0 w-[95%] h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 lg:hidden
+        className={`fixed top-0 left-0 w-[95%] h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 lg:hidden rounded-r-3xl
           ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
-        <div className="flex flex-col h-full justify-between pb-12">
+        <div className="flex flex-col h-full item-center w-full justify-between pb-6">
           <div className="flex items-center justify-between p-4 border-b border-gray-200">
             <div className="flex items-center">
               <img src={Logo} alt="" className="size-10" />
@@ -198,60 +200,84 @@ const Header = () => {
               <XMarkIcon className="h-6 w-6" />
             </button>
           </div>
-
-          <nav className="flex-1 px-4 py-6">
-            <div className="flex flex-col space-y-4">
-              {menuItems.map((item) =>
-                item.hasDropdown ? (
-                  <div key={item.name} className="flex flex-col">
-                    <span className="text-lg py-2 text-gray-600 font-semibold">
-                      {item.name}
-                    </span>
-                    <div className="ml-4 flex flex-col space-y-2">
-                      {servicesItems.map((service) => (
-                        <Link
-                          key={service.name}
-                          to={service.to}
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          className={`text-base py-1 pl-2 border-l-2 border-[#27548A] text-[#27548A] hover:underline`}
-                        >
-                          {service.name}
-                        </Link>
-                      ))}
+          <div className="flex flex-col h-full justify-between">
+            <nav className="flex-1 px-4 py-6">
+              <div className="flex flex-col space-y-4">
+                {menuItems.map((item) =>
+                  item.hasDropdown ? (
+                    <div key={item.name} className="flex flex-col">
+                      <span className="text-lg py-2 text-gray-600 font-semibold">
+                        {item.name}
+                      </span>
+                      <div className="ml-4 flex flex-col space-y-2">
+                        {servicesItems.map((service) => (
+                          <Link
+                            key={service.name}
+                            to={service.to}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className={`text-base py-1 pl-2 border-l-2 border-[#27548A] text-[#27548A] hover:underline`}
+                          >
+                            {service.name}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                ) : (
-                  <Link
-                    key={item.name}
-                    to={item.to}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`text-lg py-2 relative ${
-                      isActive(item.to)
-                        ? "text-[#183B4E] font-bold"
-                        : "text-gray-600"
-                    } hover:text-[#183B4E] transition-colors`}
-                  >
-                    {item.name}
-                  </Link>
-                )
-              )}
-            </div>
-          </nav>
-          {/* <Link
+                  ) : (
+                    <Link
+                      key={item.name}
+                      to={item.to}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`text-lg py-2 relative ${
+                        isActive(item.to)
+                          ? "text-[#183B4E] font-bold"
+                          : "text-gray-600"
+                      } hover:text-[#183B4E] transition-colors`}
+                    >
+                      {item.name}
+                    </Link>
+                  )
+                )}
+              </div>
+              <BookButton text={"Book a call"} />
+            </nav>
+            {/* <Link
             to="/contact"
             className="flex mx-12 justify-center items-center py-4 my-2 px-4 bg-[#27548A] text-white hover:bg-[#122B3A] transition-colors"
             >
               <ChatBubbleBottomCenterTextIcon className="h-5 w-5 inline-block mr-2" />
             Contact Us
           </Link> */}
-          {/* <Link
+            {/* <Link
             to="/contact"
             className="flex mx-12 justify-center items-center py-4 px-4 my-2 bg-[#27548A] text-white hover:bg-[#122B3A] transition-colors"
             >
               <ChatBubbleBottomCenterTextIcon className="h-5 w-5 inline-block mr-2" />
             Book a Call
           </Link> */}
-          <BookButton text={"Book a call"} />
+            <div className="flex space-x-4 w-full justify-center mt-4">
+              <a
+                href="#"
+                className="text-black hover:text-[#86888A] transition-colors"
+                aria-label="GitHub"
+              >
+                <FaGithub className="w-6 h-6" />
+              </a>
+              <a
+                href="#"
+                className="text-black hover:text-[#86888A] transition-colors"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin className="w-6 h-6" />
+              </a>
+              <a
+                href="#"
+                className="text-black hover:text-[#86888A] transition-colors"
+                aria-label="Twitter"
+              >
+                <FaTwitter className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { db } from "../firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
 import { Placeholder } from "../assets/assets";
+import Loader from "../components/Loader";
 
 type Report = {
   title: string;
@@ -47,8 +48,7 @@ const ReportDetailPage = () => {
     if (reportId) fetchReport();
   }, [reportId]);
 
-  if (loading)
-    return <div className="p-8 text-gray-600">Loading report...</div>;
+  if (loading) return <Loader />;
   if (error) return <div className="p-8 text-red-600">{error}</div>;
 
   return (

@@ -20,8 +20,7 @@ const BookButton: React.FC<BookButtonProps> = ({
     <motion.div
       initial={{ scale: 0 }}
       whileInView={{ scale: 1 }}
-      transition={{ type: "spring", duration: 0.1, delay: delay, damping: 19 }}
-      viewport={{ once: true }}
+      transition={{ duration: 0.1, delay: delay }}
       whileHover={{ scale: 0.96 }}
     >
       <PopupButton
