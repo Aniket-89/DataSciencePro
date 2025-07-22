@@ -109,7 +109,7 @@ const ReportDetailPage = () => {
                 <th>Details</th>
               </tr>
             </thead>
-            <tbody style={{ backgroundColor: "#F3F3E0" }}>
+            <tbody style={{ backgroundColor: "#CACCCE" }}>
               <tr>
                 <td>Market Size (2025)</td>
                 <td>USD XX.X million</td>
@@ -344,7 +344,7 @@ export default ReportDetailPage;
 //     //   exit="exit"
 //     //   transition={{ duration: 0.4 }}
 //     // >
-//     //   <div className="w-full bg-[#F3F3E0] text-gray-900">
+//     //   <div className="w-full bg-[#CACCCE] text-gray-900">
 //     //     {/* <div className="relative my-8 w-full h-72 rounded-none bg-gradient-to-r from-[#E9F1FA] to-[#FDF6E3] border border-[#DDE6F2] px-6 py-5 flex items-center gap-4">
 //     //     <div className="flex mx-auto items-center justify-between gap-4">
 //     //         <span className="text-3xl font-bold text-[#27548A]">{report.title}</span>
@@ -486,7 +486,7 @@ export default ReportDetailPage;
 //     //                       <th>Details</th>
 //     //                     </tr>
 //     //                   </thead>
-//     //                   <tbody style={{ backgroundColor: "#F3F3E0" }}>
+//     //                   <tbody style={{ backgroundColor: "#CACCCE" }}>
 //     //                     <tr>
 //     //                       <td>Market Size (2025)</td>
 //     //                       <td>USD XX.X million</td>

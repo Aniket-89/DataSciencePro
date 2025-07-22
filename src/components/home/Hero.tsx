@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="rounded-3xl soft-shadow m-2 min-h-[90vh] flex items-center relative overflow-hidden relative"
+      className="rounded-3xl shadow-sm m-2 min-h-[90vh] flex items-center relative overflow-hidden relative"
     >
       {/* <div className="absolute inset-0 -z-10">
         <div style={{ width: "100%", height: "800px", position: "relative" }}>

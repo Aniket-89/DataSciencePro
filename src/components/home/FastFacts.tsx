@@ -15,7 +15,7 @@ const stats = [
 
 const FastFacts = () => {
   return (
-    <section className="py-8 lg:py-20 bg-[#183B4E] m-2 my-12 rounded-3xl max-w-[1600px] 2xl:mx-auto">
+    <section className="py-8 lg:py-20 bg-black m-2 my-12 rounded-3xl max-w-[1600px] 2xl:mx-auto">
       <div className="px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

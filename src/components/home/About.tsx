@@ -3,7 +3,10 @@ import Button from "../Button";
 
 const About = () => {
   return (
-    <section id="about" className="pt-20 pb-12 md:pb-20 md:my-8 bg-white">
+    <section
+      id="about"
+      className="pt-20 pb-12 md:pb-20 md:my-8 bg-white max-w-7xl mx-auto"
+    >
       <div className="mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

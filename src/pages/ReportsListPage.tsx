@@ -4,6 +4,7 @@ import { db } from "../firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 import TopBanner from "../components/TopBanner";
 import { Placeholder } from "../assets/assets";
+import { useSearchParams } from "react-router-dom";
 
 type Report = {
   id: string;
@@ -14,10 +15,13 @@ type Report = {
 };
 
 const ReportsListPage = () => {
+  const [searchParams] = useSearchParams();
+  const defaultIndustry = searchParams.get("industry") || "all";
+
   const [reports, setReports] = useState<Report[]>([]);
   const [filteredReports, setFilteredReports] = useState<Report[]>([]);
   const [industries, setIndustries] = useState<string[]>([]);
-  const [selectedIndustry, setSelectedIndustry] = useState("all");
+  const [selectedIndustry, setSelectedIndustry] = useState(defaultIndustry);
 
   useEffect(() => {
     const fetchReports = async () => {

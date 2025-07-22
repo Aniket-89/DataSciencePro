@@ -3,7 +3,7 @@ import { Logo } from "../assets/assets";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 min-h-[300px] text-white py-12">
+    <footer className="bg-[#313335] min-h-[300px] text-white py-12">
       <div className="max-w-[1600px] mx-auto px-4">
         <div className="flex flex-col lg:flex-row justify-between gap-8">
           <div className="text-black">
@@ -73,21 +73,21 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-[#F3F3E0] hover:text-[#DDA853] transition-colors"
+                className="text-[#CACCCE] hover:text-[#DDA853] transition-colors"
                 aria-label="GitHub"
               >
                 <FaGithub className="w-6 h-6" />
               </a>
               <a
                 href="#"
-                className="text-[#F3F3E0] hover:text-[#DDA853] transition-colors"
+                className="text-[#CACCCE] hover:text-[#DDA853] transition-colors"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="w-6 h-6" />
               </a>
               <a
                 href="#"
-                className="text-[#F3F3E0] hover:text-[#DDA853] transition-colors"
+                className="text-[#CACCCE] hover:text-[#DDA853] transition-colors"
                 aria-label="Twitter"
               >
                 <FaTwitter className="w-6 h-6" />

@@ -27,6 +27,7 @@ const Header = () => {
     { name: "About Us", to: "/about" },
     { name: "Services", to: "#", hasDropdown: true },
     // { name: 'Testimonials', to: '/testimonials' },
+    { name: "Reports", to: "/reports" },
     { name: "Contact Us", to: "/contact" },
   ];
   // Close dropdown when clicking outside

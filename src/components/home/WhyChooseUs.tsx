@@ -28,7 +28,7 @@ const WhyChooseUs = () => {
             <span className="block text-h1 font-bold">DATAbitzy</span>
           </h2>
         </motion.div>
-        <div className="grid gap-2 mx-auto bg-blue-100 p-4 md:p-8 rounded-3xl shadow-sm">
+        <div className="grid gap-2 mx-auto bg-[#00A0DC] p-4 md:p-8 rounded-3xl shadow-sm">
           {reasons.map((reason, index) => (
             <motion.div
               key={index}
@@ -38,8 +38,8 @@ const WhyChooseUs = () => {
               viewport={{ once: true }}
               className="flex group transition-colors font-semibold"
             >
-              <CheckBadgeIcon className="h-6 w-6 text-[#183B4E] mr-3 flex-shrink-0 transform group-hover:scale-110 transition-transform" />
-              <span className="text-gray-700 text-sm md:text-md lg:text-lg">
+              <CheckBadgeIcon className="h-6 w-6 text-white mr-3 flex-shrink-0 transform group-hover:scale-110 transition-transform" />
+              <span className="text-white text-sm md:text-md lg:text-lg">
                 {reason}
               </span>
             </motion.div>

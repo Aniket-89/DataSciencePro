@@ -40,7 +40,7 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="py-2 max-w-[1600px] m-2 2xl:mx-auto rounded-3xl bg-[#F3F3E0] soft-shadow"
+      className="py-2 max-w-[1600px] m-2 2xl:mx-auto rounded-3xl bg-[#CACCCE] soft-shadow"
     >
       <div className="p-4 place-content-center items-center grid lg:grid-cols-2">
         <motion.h2
