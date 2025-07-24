@@ -46,7 +46,7 @@ const Testimonials = () => {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.2 }}
           viewport={{ once: true }}
           className="text-h1 font-semibold text-center text-[#183B4E] mb-8 md:mb-12"
         >
@@ -58,7 +58,7 @@ const Testimonials = () => {
               key={testimonial.name}
               initial={{ opacity: 0, y: 20, scale: 0.8 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: index * 0.02 }}
+              transition={{ duration: 0.3, delay: index * 0.02 }}
               viewport={{ once: true }}
               className="w-full rounded-3xl bg-white p-4 md:p-6 shadow-lg hover:shadow-xl transition-shadow"
             >

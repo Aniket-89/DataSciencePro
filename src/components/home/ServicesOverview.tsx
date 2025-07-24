@@ -74,7 +74,7 @@ const ServicesOverview = () => {
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.2 }}
           viewport={{ once: true }}
           className="text-center my-16"
         >
@@ -88,7 +88,7 @@ const ServicesOverview = () => {
               key={index}
               initial={{ scale: 0.9, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.2, delay: 0.05 }}
+              transition={{ duration: 0.1, delay: 0.05 }}
               className="grid"
             >
               <SpotlightCard
