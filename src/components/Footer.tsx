@@ -1,5 +1,5 @@
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Logo } from "../assets/assets";
+import Button from "./Button";
 
 const Footer = () => {
   return (
@@ -15,8 +15,8 @@ const Footer = () => {
                 width={90}
                 height={90}
               />
-              <h1 className="text-h3 font-semibold text-[#14B8A6]">
-                <span className="text-[#27548A]">DATA</span>BITZY
+              <h1 className="text-h3 text-[#14B8A6]">
+                <span className="text-[#27548A]">DATA</span>bitzy
               </h1>
             </div>
             <p className="text-gray-100">
@@ -31,7 +31,15 @@ const Footer = () => {
                   href="/services/reports"
                   className="text-gray-50 hover:text-[#27548A] hover:underline transition-colors"
                 >
-                  Market Research Reports
+                  Market Research Service
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/services/reports"
+                  className="text-gray-50 hover:text-[#27548A] hover:underline transition-colors"
+                >
+                  Reports
                 </a>
               </li>
               <li>
@@ -63,35 +71,42 @@ const Footer = () => {
           <div className="text-white">
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <ul className="space-y-2 text-gray-50">
-              <li>contact@databitzy.com</li>
+              <li>databitzy@gmail.com</li>
               <li>+1 (555) 123-4567</li>
-              <li>123 Data Street, Analytics City</li>
+              <li>
+                100 Innovation Drive,Tech District
+                <br />
+                San Francisco, CA 94105
+              </li>
             </ul>
           </div>
           <div className="text-white">
             <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
             <div className="flex space-x-4">
-              <a
+              {/* <a
                 href="#"
                 className="text-[#CACCCE] hover:text-[#DDA853] transition-colors"
                 aria-label="GitHub"
               >
                 <FaGithub className="w-6 h-6" />
-              </a>
-              <a
-                href="#"
+              </a> */}
+              {/* <a
+                href="https://linkedin.com/company/databitzy"
                 className="text-[#CACCCE] hover:text-[#DDA853] transition-colors"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="w-6 h-6" />
-              </a>
-              <a
+              </a> */}
+              <Button to="#" variant={"solid"}>
+                Linkedin
+              </Button>
+              {/* <a
                 href="#"
                 className="text-[#CACCCE] hover:text-[#DDA853] transition-colors"
                 aria-label="Twitter"
               >
                 <FaTwitter className="w-6 h-6" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

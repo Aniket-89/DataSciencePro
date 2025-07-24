@@ -148,7 +148,7 @@ const ContactPage = () => {
                       <h3 className="text-lg font-normal text-[#183B4E] mb-1">
                         Email
                       </h3>
-                      <p className="text-gray-600">contact@databitzy.com</p>
+                      <p className="text-gray-600">databitzy@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -158,9 +158,9 @@ const ContactPage = () => {
                         Business Hours
                       </h3>
                       <p className="text-gray-600">
-                        Monday - Friday: 9:00 AM - 6:00 PM PST
+                        Monday - Saturday: 9:00 AM - 6:00 PM PST
                         <br />
-                        Saturday - Sunday: Closed
+                        Sunday: Closed
                       </p>
                     </div>
                   </div>
@@ -173,11 +173,19 @@ const ContactPage = () => {
                 </h2>
                 <div className="flex gap-2 flex-wrap">
                   {[
-                    { name: "LinkedIn", link: "https://www.linkedin.com" },
-                    { name: "Twitter", link: "https://www.x.com" },
-                    { name: "GitHub", link: "http://www.github.com" },
+                    {
+                      name: "LinkedIn",
+                      link: "https://www.linkedin.com/company/databitzy",
+                    },
+                    // { name: "Twitter", link: "https://www.x.com" },
+                    // { name: "GitHub", link: "http://www.github.com" },
                   ].map((social, index) => (
-                    <Button key={index} to={social.link}>
+                    <Button
+                      key={index}
+                      to={social.link}
+                      color="black"
+                      variant="outline"
+                    >
                       {social.name}
                     </Button>
                   ))}

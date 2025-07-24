@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 // import { ChatBubbleBottomCenterTextIcon } from '@heroicons/react/24/outline';
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 import {
   Bars3Icon,
@@ -254,27 +254,13 @@ const Header = () => {
               <ChatBubbleBottomCenterTextIcon className="h-5 w-5 inline-block mr-2" />
             Book a Call
           </Link> */}
-            <div className="flex space-x-4 w-full justify-center mt-4">
-              <a
-                href="#"
-                className="text-black hover:text-[#86888A] transition-colors"
-                aria-label="GitHub"
-              >
-                <FaGithub className="w-6 h-6" />
-              </a>
+            <div className="flex w-full justify-start mx-6 mt-4">
               <a
                 href="#"
                 className="text-black hover:text-[#86888A] transition-colors"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="w-6 h-6" />
-              </a>
-              <a
-                href="#"
-                className="text-black hover:text-[#86888A] transition-colors"
-                aria-label="Twitter"
-              >
-                <FaTwitter className="w-6 h-6" />
               </a>
             </div>
           </div>

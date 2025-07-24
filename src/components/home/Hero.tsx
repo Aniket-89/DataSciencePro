@@ -8,37 +8,19 @@ const Hero = () => {
       id="home"
       className="rounded-3xl shadow-sm m-2 min-h-[90vh] flex items-center relative overflow-hidden relative"
     >
-      {/* <div className="absolute inset-0 -z-10">
-        <div style={{ width: "100%", height: "800px", position: "relative" }}>
-          <Threads amplitude={1} distance={0} enableMouseInteraction={true} />
-        </div>
-      </div> */}
       <div className="container mx-auto max-w-[1600px] px-4 py-16">
         <div className="w-full gap-12 justify-between items">
           <div className="z-50">
             <h1 className="text-hero text-black text-center leading-thin md:text-6xl font-normal text-primary mb-8">
-              {/* <motion.div
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-              >
-                Data-Driven Insights for{" "}
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 400 }}
-                animate={{ opacity: 0.8, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
+              <div className="">
+                Data-Driven Insights for <br />
                 Smarter Decisions
-              </motion.div> */}
-              <div className="">Data-Driven Insights for</div>
-              <div className="">Smarter Decisions</div>
+              </div>
             </h1>
             <motion.div
-              initial={{ opacity: 0, scale: 0 }}
+              initial={{ opacity: 0.7, scale: 0.6 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ duration: 0.2, delay: 0.1 }}
               className="text-xl text-gray-700 mb-12 text-center"
             >
               Unlock actionable market intelligence tailored to your industry.
@@ -56,7 +38,9 @@ const Hero = () => {
             <div className="flex gap-4 justify-center">
               <BookButton text={"Book a call"} />
 
-              <Button to="/services">View Services</Button>
+              <Button to="/services" variant="outline" color="black">
+                View Services
+              </Button>
             </div>
             {/* </motion.div> */}
           </div>

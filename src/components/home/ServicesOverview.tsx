@@ -85,6 +85,7 @@ const ServicesOverview = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1600px] mx-auto">
           {services.map((service, index) => (
             <motion.div
+              key={index}
               initial={{ scale: 0.9, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.2, delay: 0.05 }}
@@ -121,7 +122,8 @@ const ServicesOverview = () => {
 
                 <Button
                   to={service.link}
-                  color={service.color}
+                  color={"black"}
+                  variant="outline"
                   // vibe={service.vibe}
                 >
                   {service.buttonText}

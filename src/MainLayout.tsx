@@ -67,9 +67,7 @@ function MainLayout() {
           <main className="flex-grow">
             <ScrollToTop />
 
-            <Suspense
-              fallback={<div className="text-center py-20">Loading...</div>}
-            >
+            <Suspense fallback={<Loader variant="animation" />}>
               <AnimatePresence mode="wait">
                 <Routes location={location} key={location.pathname}>
                   <Route path="/" element={<HomePage />} />

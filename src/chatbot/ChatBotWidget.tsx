@@ -13,7 +13,7 @@ const ChatbotWidget = () => {
     <div className="fixed bottom-0 lg:bottom-4 right-4 lg:right-6 z-50">
       <div
         className={`grid transition-all duration-300 ease-in-out ${
-          isMinimized ? "h-24 w-12" : "md:w-[420px]"
+          isMinimized ? "h-24 w-12" : "md:w-[360px]"
         }`}
       >
         {/* Minimize Button */}

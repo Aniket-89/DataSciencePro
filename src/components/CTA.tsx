@@ -36,7 +36,7 @@ const CTA = () => {
             <div className="flex flex-wrap justify-center gap-6 items-center">
               <BookButton text="Book a Call" gradient={false} />
 
-              <Button to="/contact" color="[#DDA853]" vibe="dark">
+              <Button to="/contact" color="black">
                 Contact Us
               </Button>
             </div>

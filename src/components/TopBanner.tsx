@@ -28,7 +28,7 @@ const TopBanner: React.FC<BannerProps> = ({ title, subtitle }) => {
             {subtitle}
           </motion.p>
           <div className="flex justify-center mt-8 space-x-4">
-            <BookButton text="Book a Free Consultation" />
+            <BookButton text="Book a Call" />
             <Button to="/contact">Learn more</Button>
           </div>
         </div>

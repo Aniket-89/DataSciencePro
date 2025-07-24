@@ -7,14 +7,15 @@ type ButtonProps = {
   className?: string;
   vibe?: "light" | "dark";
   color?: string;
+  variant?: "outline" | "solid";
 };
 
 const Button: React.FC<ButtonProps> = ({
   to,
   children,
   className,
+  variant,
   color,
-  vibe,
 }) => {
   return (
     <FadeContent duration={500} delay={400}>
@@ -23,11 +24,16 @@ const Button: React.FC<ButtonProps> = ({
         className={
           className
             ? className
-            : `inline-flex items-center px-6 bg-${
-                color ? color : "white"
-              } shadow-sm shadow-black/20 text-sm md:text-lg text-${
-                vibe && vibe === "dark" ? "black" : "[#183B4E]"
-              } group rounded-3xl py-2 font-bod hover:bg-black hover:text-white hover:shadow-none transition-[box-shadow] duration-400 transition-colors`
+            : `inline-flex items-center px-6 ${
+                variant === "solid"
+                  ? "bg-[#0077B5] hover:bg-[#00A0DC] text-white"
+                  : `bg-transparent ${
+                      color === "black"
+                        ? "text-black border-black hover:bg-black hover:text-white"
+                        : "text-white border-white hover:bg-white hover:text-black"
+                    } border `
+              }
+               shadow-none shadow-black/20 text-sm md:text-lg group rounded-3xl py-2 font-bold hover:shadow-sm transition-[box-shadow] duration-400 transition-colors`
         }
       >
         {children}
