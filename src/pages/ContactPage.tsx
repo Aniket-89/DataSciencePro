@@ -112,19 +112,19 @@ const ContactPage = () => {
         <div className="mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Information */}
-            <div className="space-y-12 bg-blue-100 p-4 md:p-8 rounded-3xl soft-shadow h-fit">
+            <div className="space-y-12 bg-[#00A0DC] p-4 md:p-8 rounded-3xl soft-shadow h-fit">
               <div>
-                <h2 className="text-3xl font-medium text-[#183B4E] mb-8">
+                <h2 className="text-3xl font-medium text-white mb-8">
                   Contact Information
                 </h2>
                 <div className="space-y-6 grid md:grid-cols-2">
                   <div className="flex items-start">
-                    <MapPinIcon className="h-6 w-6 text-[#183B4E] mr-4 flex-shrink-0" />
+                    <MapPinIcon className="h-6 w-6 text-yellow-200 mr-4 flex-shrink-0" />
                     <div>
-                      <h3 className="text-lg font-normal text-[#183B4E] mb-1">
+                      <h3 className="text-lg font-normal text-[#313335] mb-1">
                         Office Location
                       </h3>
-                      <p className="text-gray-600">
+                      <p className="text-white font-medium">
                         100 Innovation Drive
                         <br />
                         Tech District
@@ -134,30 +134,38 @@ const ContactPage = () => {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <PhoneIcon className="h-6 w-6 text-[#183B4E] mr-4 flex-shrink-0" />
+                    <PhoneIcon className="h-6 w-6 text-green-300 mr-4 flex-shrink-0" />
                     <div>
-                      <h3 className="text-lg font-normal text-[#183B4E] mb-1">
+                      <h3 className="text-lg font-normal text-[#313335] mb-1">
                         Phone
                       </h3>
-                      <p className="text-gray-600">+1 (555) 123-4567</p>
+                      <p className="text-white font-medium">
+                        +1 (555) 123-4567
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <EnvelopeIcon className="h-6 w-6 text-[#183B4E] mr-4 flex-shrink-0" />
+                    <EnvelopeIcon className="h-6 w-6 text-red-300 mr-4 flex-shrink-0" />
                     <div>
-                      <h3 className="text-lg font-normal text-[#183B4E] mb-1">
+                      <h3 className="text-lg font-normal text-[#313335] mb-1">
                         Email
                       </h3>
-                      <p className="text-gray-600">databitzy@gmail.com</p>
+                      <a
+                        href="mailto:databitzy@gmail.com"
+                        target="_blank"
+                        className="text-white font-medium hover:underline"
+                      >
+                        databitzy@gmail.com
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <ClockIcon className="h-6 w-6 text-[#183B4E] mr-4 flex-shrink-0" />
+                    <ClockIcon className="h-6 w-6 text-white mr-4 flex-shrink-0" />
                     <div>
-                      <h3 className="text-lg font-normal text-[#183B4E] mb-1">
+                      <h3 className="text-lg font-normal text-[#313335] mb-1">
                         Business Hours
                       </h3>
-                      <p className="text-gray-600">
+                      <p className="text-white font-medium">
                         Monday - Saturday: 9:00 AM - 6:00 PM PST
                         <br />
                         Sunday: Closed
@@ -168,7 +176,7 @@ const ContactPage = () => {
               </div>
 
               <div>
-                <h2 className="text-3xl font-medium text-[#183B4E] mb-6">
+                <h2 className="text-3xl font-medium text-[#313335] mb-6">
                   Follow Us
                 </h2>
                 <div className="flex gap-2 flex-wrap">
@@ -183,7 +191,7 @@ const ContactPage = () => {
                     <Button
                       key={index}
                       to={social.link}
-                      color="black"
+                      color="white"
                       variant="outline"
                     >
                       {social.name}

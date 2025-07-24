@@ -51,7 +51,7 @@ const BentoCard: React.FC<Report> = ({
       }`}
     >
       <Link
-        to={`/reports/${industrySlug}/${slug}`}
+        to={`/reports?industry-name=${industrySlug}/${slug}`}
         className="block text-[#183B4E] h-full transition-colors md:group-hover:text-gray-600"
       >
         <img

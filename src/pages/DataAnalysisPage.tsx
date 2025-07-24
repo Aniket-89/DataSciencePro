@@ -37,7 +37,7 @@ export default function DataAnalysisPage() {
 
       {/* What We Offer Section */}
 
-      <section className="py-12 md:py-24 soft-shadow rounded-3xl max-w-[1600px] mx-2 2xl:mx-auto bg-[#DDA853]">
+      <section className="py-12 md:py-24 soft-shadow rounded-3xl max-w-[1600px] mx-2 2xl:mx-auto bg-[#00A0DC]">
         <div className="grid gap-3 mx-auto w-full">
           <div className="max-w-2xl grid md:grid-cols-2 gap-2 w-full mx-auto m-2 text-center">
             <motion.div
@@ -114,7 +114,7 @@ export default function DataAnalysisPage() {
       <CaseStudySection />
 
       {/* Data Automation Tool Section */}
-      <section className="py-22 my-12 max-w-[1600px] rounded-3xl bg-[#dbeafe] m-2 xl:mx-auto">
+      <section className="py-22 my-12 max-w-[1600px] rounded-3xl bg-[#00A0DC] m-2 xl:mx-auto">
         <div className="container grid md:grid-cols-2 mx-auto px-4 ">
           <motion.div
             initial={{ opacity: 0.1, y: 80 }}
@@ -135,7 +135,7 @@ export default function DataAnalysisPage() {
             </motion.div>
           </motion.div>
 
-          <div className="max-w-3xl text-gray-900 mx-auto text-sm md:text-lg text-gray-600">
+          <div className="max-w-3xl text-white font-semibold mx-auto text-sm md:text-lg text-gray-600">
             <motion.div
               initial={{ opacity: 0, x: -80 }}
               whileInView={{ opacity: 1, x: 0 }}

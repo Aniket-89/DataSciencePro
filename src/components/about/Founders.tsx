@@ -29,7 +29,7 @@ const founders: FounderType[] = [
 
 export default function Founders() {
   return (
-    <section className="py-12 lg:py-28 my-12 bg-[#183B4E] rounded-3xl max-w-[1600px] 2xl:mx-auto">
+    <section className="py-12 lg:py-28 my-12 bg-black rounded-3xl max-w-[1600px] 2xl:mx-auto">
       <div className="px-2 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-h3 tracking-tight font-semibold text-white">
@@ -72,7 +72,7 @@ export default function Founders() {
                   {founder.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 rounded-2xl bg-[#F3F3E0] text-gray-600 text-sm font-mono"
+                      className="px-3 py-1 rounded-2xl bg-[#00A0DC] text-white text-sm font-mono"
                     >
                       {skill}
                     </span>

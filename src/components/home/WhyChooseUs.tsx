@@ -19,7 +19,7 @@ const WhyChooseUs = () => {
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.2 }}
           viewport={{ once: true }}
           className="text-left mb-16 md:w-fit"
         >
@@ -34,7 +34,7 @@ const WhyChooseUs = () => {
               key={index}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.01 }}
+              transition={{ duration: 0.1, delay: index * 0.01 }}
               viewport={{ once: true }}
               className="flex group transition-colors font-semibold"
             >
