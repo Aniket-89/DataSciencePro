@@ -19,6 +19,7 @@ const AddReportPage = lazy(() => import("./pages/AddReportPage"));
 const CaseStudyPage = lazy(() => import("./pages/CaseStudyPage"));
 const ReportDetailPage = lazy(() => import("./pages/ReportDetailPage"));
 const ReportsListPage = lazy(() => import("./pages/ReportsListPage"));
+const EditReport = lazy(() => import("./pages/EditReportPage"));
 
 function MainLayout() {
   const [loading, setLoading] = useState(true);
@@ -85,6 +86,10 @@ function MainLayout() {
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/case" element={<CaseStudyPage />} />
                   <Route path="/admin" element={<AddReportPage />} />
+                  <Route
+                    path="/reports/edit/:reportId"
+                    element={<EditReport />}
+                  />
                   <Route path="/reports" element={<ReportsListPage />} />
                   <Route
                     path="/reports/:reportId"
