@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { METRICS_TEMPLATE } from "../assets/assets";
 import { db } from "../firebaseConfig";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import TinyEditor from "../components/TinyEditor";
@@ -21,7 +22,7 @@ const INDUSTRY_OPTIONS = [
 ];
 
 const EditReportPage = () => {
-  const { id } = useParams<{ id: string }>();
+  const { reportId } = useParams<{ reportId: string }>();
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
@@ -29,6 +30,7 @@ const EditReportPage = () => {
   const [industryslug, setIndustryslug] = useState("");
   const [content, setContent] = useState("");
   const [thumbnail, setThumbnail] = useState("");
+  const [metrics, setMetrics] = useState<Record<string, string>>({});
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -37,10 +39,10 @@ const EditReportPage = () => {
   // ✅ Load existing report data
   useEffect(() => {
     const fetchReport = async () => {
-      if (!id) return; // prevent undefined error
+      if (!reportId) return; // prevent undefined error
 
       try {
-        const docRef = doc(db, "reports", id);
+        const docRef = doc(db, "reports", reportId);
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
@@ -50,6 +52,7 @@ const EditReportPage = () => {
           setIndustryslug(data.industryslug || "");
           setContent(data.content || "");
           setThumbnail(data.thumbnail || "");
+          setMetrics(data.metrics || {});
         } else {
           setError("Report not found");
         }
@@ -59,7 +62,7 @@ const EditReportPage = () => {
     };
 
     fetchReport();
-  }, [id]);
+  }, [reportId]);
 
   const handleIndustryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selected = INDUSTRY_OPTIONS.find(
@@ -71,22 +74,27 @@ const EditReportPage = () => {
     }
   };
 
+  const handleMetricChange = (key: string, value: string) => {
+    setMetrics((prev) => ({ ...prev, [key]: value }));
+  };
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    if (!id) return;
+    if (!reportId) return;
 
     setLoading(true);
     setError("");
     setSuccess(false);
 
     try {
-      const docRef = doc(db, "reports", id);
+      const docRef = doc(db, "reports", reportId);
       await updateDoc(docRef, {
         title,
         industry,
         industryslug,
         content,
         thumbnail,
+        metrics, // 👈 add this
         updatedAt: new Date().toISOString(),
       });
 
@@ -132,6 +140,49 @@ const EditReportPage = () => {
           className="w-1/3 border p-2 bg-white text-[#183B4E] font-bold rounded-lg"
         />
         <TinyEditor value={content} onChange={setContent} />
+
+        {/* Metrics Table */}
+        <div className="animate-fadein mt-8">
+          <h2 className="text-2xl font-bold mb-4 text-[#27548A]">
+            Report Scope (Metrics)
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full table-auto border border-gray-300 rounded-lg shadow-sm">
+              <thead className="bg-[#27548A] text-white text-left">
+                <tr>
+                  <th className="px-4 py-3 border border-gray-300">
+                    Attribute
+                  </th>
+                  <th className="px-4 py-3 border border-gray-300">Details</th>
+                </tr>
+              </thead>
+              <tbody className="bg-gray-100 text-gray-800">
+                {METRICS_TEMPLATE.map((metric) => (
+                  <tr
+                    key={metric.key}
+                    className="hover:bg-gray-200 transition-colors"
+                  >
+                    <td className="px-4 py-3 border border-gray-200 font-medium">
+                      {metric.label}
+                    </td>
+                    <td className="px-4 py-3 border border-gray-200">
+                      <input
+                        type="text"
+                        placeholder={metric.placeholder}
+                        value={metrics[metric.key] || ""}
+                        onChange={(e) =>
+                          handleMetricChange(metric.key, e.target.value)
+                        }
+                        className="w-full p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#27548A] focus:outline-none"
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         <button
           type="submit"
           className="bg-blue-700 text-white px-6 py-2 rounded disabled:opacity-50"

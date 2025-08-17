@@ -1,13 +1,12 @@
 import { Editor } from "@tinymce/tinymce-react";
-// import { useRef } from "react";
 
 type Props = {
   value: string;
   onChange: (html: string) => void;
+  isNew?: boolean; // 👈 flag to know if it's a new report
 };
 
-export default function TinyEditor({ value, onChange }: Props) {
-  // const editorRef = useRef<any>(null);
+export default function TinyEditor({ value, onChange, isNew }: Props) {
   const template = `
     <h2>Overview</h2>
     <p>Write an overview here...</p>
@@ -50,7 +49,8 @@ export default function TinyEditor({ value, onChange }: Props) {
   return (
     <Editor
       apiKey={import.meta.env.VITE_TINYMCE_API_KEY}
-      initialValue={template}
+      // only set initialValue if it's a new report
+      initialValue={isNew ? template : undefined}
       value={value}
       onEditorChange={onChange}
       init={{
@@ -68,7 +68,6 @@ export default function TinyEditor({ value, onChange }: Props) {
           "table",
         ],
         toolbar:
-          // 👇 this order matters
           "undo redo | styles | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist | link image | preview code",
         style_formats: [
           { title: "Paragraph", format: "p" },

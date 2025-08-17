@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { db } from "../firebaseConfig";
+import { METRICS_TEMPLATE } from "../assets/assets";
 import { collection, addDoc } from "firebase/firestore";
 import TinyEditor from "../components/TinyEditor";
 
@@ -26,6 +27,10 @@ const AddReportPage = () => {
   const [content, setContent] = useState("");
   const [thumbnail, setThumbnail] = useState("");
 
+  const [metrics, setMetrics] = useState<Record<string, string>>(
+    METRICS_TEMPLATE.reduce((acc, m) => ({ ...acc, [m.key]: "" }), {})
+  );
+
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
@@ -40,6 +45,10 @@ const AddReportPage = () => {
     }
   };
 
+  const handleMetricChange = (key: string, value: string) => {
+    setMetrics((prev) => ({ ...prev, [key]: value }));
+  };
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setLoading(true);
@@ -52,7 +61,8 @@ const AddReportPage = () => {
         industry,
         industryslug,
         content,
-        thumbnail, // ✅ Save the thumbnail URL
+        thumbnail,
+        metrics, // ✅ Save metrics as object in Firestore
         createdAt: new Date().toISOString(),
       });
 
@@ -61,6 +71,10 @@ const AddReportPage = () => {
       setIndustry("");
       setIndustryslug("");
       setContent("");
+      setThumbnail("");
+      setMetrics(
+        METRICS_TEMPLATE.reduce((acc, m) => ({ ...acc, [m.key]: "" }), {})
+      );
     } catch (err: any) {
       setError(err.message || "Error adding report");
     }
@@ -71,7 +85,8 @@ const AddReportPage = () => {
   return (
     <div className="max-w-[1600px] mt-28 my-24 mx-auto p-2 text-white lg:p-6 bg-[#183B4E] rounded shadow">
       <h1 className="text-3xl font-bold mb-4">Add New Report</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Title */}
         <input
           type="text"
           placeholder="Title"
@@ -80,6 +95,8 @@ const AddReportPage = () => {
           className="w-1/3 border bg-white text-[#183B4E] font-bold p-2 rounded-lg"
           required
         />
+
+        {/* Industry */}
         <select
           value={industry}
           onChange={handleIndustryChange}
@@ -93,6 +110,8 @@ const AddReportPage = () => {
             </option>
           ))}
         </select>
+
+        {/* Thumbnail */}
         <input
           type="text"
           placeholder="Thumbnail Image URL"
@@ -100,7 +119,53 @@ const AddReportPage = () => {
           onChange={(e) => setThumbnail(e.target.value)}
           className="w-1/3 border p-2 bg-white text-[#183B4E] font-bold  rounded-lg"
         />
+
+        {/* Metrics Table */}
+        <div className="animate-fadein">
+          <h2 className="text-2xl font-bold mb-4 text-[#27548A]">
+            Report Scope (Metrics)
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full table-auto border border-gray-300 rounded-lg shadow-sm">
+              <thead className="bg-[#27548A] text-white text-left">
+                <tr>
+                  <th className="px-4 py-3 border border-gray-300">
+                    Attribute
+                  </th>
+                  <th className="px-4 py-3 border border-gray-300">Details</th>
+                </tr>
+              </thead>
+              <tbody className="bg-gray-100 text-gray-800">
+                {METRICS_TEMPLATE.map((metric) => (
+                  <tr
+                    key={metric.key}
+                    className="hover:bg-gray-200 transition-colors"
+                  >
+                    <td className="px-4 py-3 border border-gray-200 font-medium">
+                      {metric.label}
+                    </td>
+                    <td className="px-4 py-3 border border-gray-200">
+                      <input
+                        type="text"
+                        placeholder={metric.placeholder}
+                        value={metrics[metric.key]}
+                        onChange={(e) =>
+                          handleMetricChange(metric.key, e.target.value)
+                        }
+                        className="w-full p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#27548A] focus:outline-none"
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Content */}
         <TinyEditor value={content} onChange={setContent} />
+
+        {/* Submit */}
         <button
           type="submit"
           className="bg-blue-700 text-white px-6 py-2 rounded disabled:opacity-50"
@@ -108,10 +173,11 @@ const AddReportPage = () => {
         >
           {loading ? "Adding..." : "Add Report"}
         </button>
+
         {success && (
-          <div className="text-green-600">Report added successfully!</div>
+          <div className="text-green-400 mt-2">Report added successfully!</div>
         )}
-        {error && <div className="text-red-600">{error}</div>}
+        {error && <div className="text-red-400 mt-2">{error}</div>}
       </form>
     </div>
   );
