@@ -60,6 +60,30 @@ const METRICS_TEMPLATE = [
   },
 ];
 
+// regionsTemplate.ts
+const REGIONS_TEMPLATE = [
+  {
+    region: "North America",
+    countries: "U.S., Canada, Mexico, Others",
+  },
+  {
+    region: "Europe",
+    countries: "Germany, UK, France, Others",
+  },
+  {
+    region: "Asia Pacific",
+    countries: "China, India, Japan, South Korea, Others",
+  },
+  {
+    region: "Central & South America",
+    countries: "Brazil, Argentina, Colombia, Others",
+  },
+  {
+    region: "Middle East & Africa",
+    countries: "Saudi Arabia, UAE, Others",
+  },
+];
+
 export {
   MarketGraph,
   Logo,
@@ -74,4 +98,5 @@ export {
   LoaderAnimation,
   LoaderSpinner,
   METRICS_TEMPLATE,
+  REGIONS_TEMPLATE,
 };

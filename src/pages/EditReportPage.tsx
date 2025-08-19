@@ -31,6 +31,9 @@ const EditReportPage = () => {
   const [content, setContent] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [metrics, setMetrics] = useState<Record<string, string>>({});
+  const [regions, setRegions] = useState<{ name: string; countries: string }[]>(
+    []
+  );
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -39,7 +42,7 @@ const EditReportPage = () => {
   // ✅ Load existing report data
   useEffect(() => {
     const fetchReport = async () => {
-      if (!reportId) return; // prevent undefined error
+      if (!reportId) return;
 
       try {
         const docRef = doc(db, "reports", reportId);
@@ -53,6 +56,7 @@ const EditReportPage = () => {
           setContent(data.content || "");
           setThumbnail(data.thumbnail || "");
           setMetrics(data.metrics || {});
+          setRegions(data.regions || []); // ✅ load regions
         } else {
           setError("Report not found");
         }
@@ -78,6 +82,24 @@ const EditReportPage = () => {
     setMetrics((prev) => ({ ...prev, [key]: value }));
   };
 
+  const handleRegionChange = (
+    index: number,
+    field: "name" | "countries",
+    value: string
+  ) => {
+    const updated = [...regions];
+    updated[index][field] = value;
+    setRegions(updated);
+  };
+
+  const addRegionRow = () => {
+    setRegions((prev) => [...prev, { name: "", countries: "" }]);
+  };
+
+  const removeRegionRow = (index: number) => {
+    setRegions((prev) => prev.filter((_, i) => i !== index));
+  };
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     if (!reportId) return;
@@ -94,7 +116,8 @@ const EditReportPage = () => {
         industryslug,
         content,
         thumbnail,
-        metrics, // 👈 add this
+        metrics,
+        regions, // ✅ save regions too
         updatedAt: new Date().toISOString(),
       });
 
@@ -110,7 +133,7 @@ const EditReportPage = () => {
   return (
     <div className="max-w-[1600px] mt-28 my-24 mx-auto p-2 text-white lg:p-6 bg-[#183B4E] rounded shadow">
       <h1 className="text-3xl font-bold mb-4">Edit Report</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-6">
         <input
           type="text"
           placeholder="Title"
@@ -180,6 +203,73 @@ const EditReportPage = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+
+        {/* Regions Table */}
+        <div className="animate-fadein mt-8">
+          <h2 className="text-2xl font-bold mb-4 text-[#27548A]">
+            Regions & Countries Covered
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full border border-gray-300 rounded-lg shadow-sm">
+              <thead className="bg-[#27548A] text-white">
+                <tr>
+                  <th className="px-4 py-3 border border-gray-300">Region</th>
+                  <th className="px-4 py-3 border border-gray-300">
+                    Countries Covered
+                  </th>
+                  <th className="px-4 py-3 border border-gray-300">Actions</th>
+                </tr>
+              </thead>
+              <tbody className="bg-gray-100 text-gray-800">
+                {regions.map((region, index) => (
+                  <tr
+                    key={index}
+                    className="hover:bg-gray-200 transition-colors"
+                  >
+                    <td className="px-4 py-3 border border-gray-200">
+                      <input
+                        type="text"
+                        placeholder="Region Name"
+                        value={region.name}
+                        onChange={(e) =>
+                          handleRegionChange(index, "name", e.target.value)
+                        }
+                        className="w-full p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#27548A] focus:outline-none"
+                      />
+                    </td>
+                    <td className="px-4 py-3 border border-gray-200">
+                      <input
+                        type="text"
+                        placeholder="Countries (comma separated)"
+                        value={region.countries}
+                        onChange={(e) =>
+                          handleRegionChange(index, "countries", e.target.value)
+                        }
+                        className="w-full p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#27548A] focus:outline-none"
+                      />
+                    </td>
+                    <td className="px-4 py-3 border border-gray-200 text-center">
+                      <button
+                        type="button"
+                        onClick={() => removeRegionRow(index)}
+                        className="text-red-600 hover:underline"
+                      >
+                        Remove
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <button
+              type="button"
+              onClick={addRegionRow}
+              className="mt-3 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            >
+              + Add Region
+            </button>
           </div>
         </div>
 

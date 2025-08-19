@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { db } from "../firebaseConfig";
-import { METRICS_TEMPLATE } from "../assets/assets";
+import { METRICS_TEMPLATE, REGIONS_TEMPLATE } from "../assets/assets";
 import { collection, addDoc } from "firebase/firestore";
 import TinyEditor from "../components/TinyEditor";
 
@@ -26,7 +26,7 @@ const AddReportPage = () => {
   const [industryslug, setIndustryslug] = useState("");
   const [content, setContent] = useState("");
   const [thumbnail, setThumbnail] = useState("");
-
+  const [regions, setRegions] = useState(REGIONS_TEMPLATE);
   const [metrics, setMetrics] = useState<Record<string, string>>(
     METRICS_TEMPLATE.reduce((acc, m) => ({ ...acc, [m.key]: "" }), {})
   );
@@ -49,6 +49,12 @@ const AddReportPage = () => {
     setMetrics((prev) => ({ ...prev, [key]: value }));
   };
 
+  const handleRegionChange = (index: number, value: string) => {
+    const updated = [...regions];
+    updated[index].countries = value;
+    setRegions(updated);
+  };
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setLoading(true);
@@ -62,7 +68,8 @@ const AddReportPage = () => {
         industryslug,
         content,
         thumbnail,
-        metrics, // ✅ Save metrics as object in Firestore
+        metrics,
+        regions,
         createdAt: new Date().toISOString(),
       });
 
@@ -120,6 +127,50 @@ const AddReportPage = () => {
           className="w-1/3 border p-2 bg-white text-[#183B4E] font-bold  rounded-lg"
         />
 
+        {/* Content */}
+        <TinyEditor value={content} onChange={setContent} />
+
+        {/* Regions & Countries Covered */}
+        <div className="animate-fadein mt-8">
+          <h2 className="text-2xl font-bold mb-4 text-[#27548A]">
+            Regions & Countries Covered
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full table-auto border border-gray-300 rounded-lg shadow-sm">
+              <thead className="bg-[#27548A] text-white text-left">
+                <tr>
+                  <th className="px-4 py-3 border border-gray-300">Region</th>
+                  <th className="px-4 py-3 border border-gray-300">
+                    Countries Covered
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="bg-gray-100 text-gray-800">
+                {regions.map((row, idx) => (
+                  <tr
+                    key={row.region}
+                    className="hover:bg-gray-200 transition-colors"
+                  >
+                    <td className="px-4 py-3 border border-gray-200 font-medium text-[#27548A]">
+                      {row.region}
+                    </td>
+                    <td className="px-4 py-3 border border-gray-200">
+                      <input
+                        type="text"
+                        value={row.countries}
+                        onChange={(e) =>
+                          handleRegionChange(idx, e.target.value)
+                        }
+                        className="w-full p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#27548A] focus:outline-none"
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         {/* Metrics Table */}
         <div className="animate-fadein">
           <h2 className="text-2xl font-bold mb-4 text-[#27548A]">
@@ -161,10 +212,6 @@ const AddReportPage = () => {
             </table>
           </div>
         </div>
-
-        {/* Content */}
-        <TinyEditor value={content} onChange={setContent} />
-
         {/* Submit */}
         <button
           type="submit"

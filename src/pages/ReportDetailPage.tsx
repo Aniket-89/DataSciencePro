@@ -27,6 +27,7 @@ type Report = {
   thumbnail: string;
   createdAt?: string;
   metrics?: Metrics;
+  regions?: { name: string; countries: string }[];
 };
 
 const TABS = [
@@ -267,6 +268,7 @@ const ReportDetailPage = () => {
               <h2 className="text-3xl font-bold text-[#27548A] mb-6">
                 Regions & Countries Covered
               </h2>
+
               <div className="overflow-x-auto shadow-md rounded-lg">
                 <table className="min-w-full border border-gray-300 text-left text-sm">
                   <thead className="bg-[#27548A] text-white">
@@ -280,46 +282,32 @@ const ReportDetailPage = () => {
                     </tr>
                   </thead>
                   <tbody className="bg-gray-50 text-gray-700">
-                    <tr className="hover:bg-gray-100">
-                      <td className="px-6 py-3 border border-gray-200 font-medium text-[#27548A]">
-                        North America
-                      </td>
-                      <td className="px-6 py-3 border border-gray-200">
-                        U.S., Canada, Mexico, Others
-                      </td>
-                    </tr>
-                    <tr className="hover:bg-gray-100">
-                      <td className="px-6 py-3 border border-gray-200 font-medium text-[#27548A]">
-                        Europe
-                      </td>
-                      <td className="px-6 py-3 border border-gray-200">
-                        Germany, UK, France, Others
-                      </td>
-                    </tr>
-                    <tr className="hover:bg-gray-100">
-                      <td className="px-6 py-3 border border-gray-200 font-medium text-[#27548A]">
-                        Asia Pacific
-                      </td>
-                      <td className="px-6 py-3 border border-gray-200">
-                        China, India, Japan, South Korea, Others
-                      </td>
-                    </tr>
-                    <tr className="hover:bg-gray-100">
-                      <td className="px-6 py-3 border border-gray-200 font-medium text-[#27548A]">
-                        Central & South America
-                      </td>
-                      <td className="px-6 py-3 border border-gray-200">
-                        Brazil, Argentina, Colombia, Others
-                      </td>
-                    </tr>
-                    <tr className="hover:bg-gray-100">
-                      <td className="px-6 py-3 border border-gray-200 font-medium text-[#27548A]">
-                        Middle East & Africa
-                      </td>
-                      <td className="px-6 py-3 border border-gray-200">
-                        Saudi Arabia, UAE, Others
-                      </td>
-                    </tr>
+                    {report?.regions && report.regions.length > 0 ? (
+                      report.regions.map(
+                        (
+                          region: { name: string; countries: string },
+                          index: number
+                        ) => (
+                          <tr key={index} className="hover:bg-gray-100">
+                            <td className="px-6 py-3 border border-gray-200 font-medium text-[#27548A]">
+                              {region.name}
+                            </td>
+                            <td className="px-6 py-3 border border-gray-200">
+                              {region.countries}
+                            </td>
+                          </tr>
+                        )
+                      )
+                    ) : (
+                      <tr>
+                        <td
+                          colSpan={2}
+                          className="text-center py-4 text-gray-500"
+                        >
+                          No regions data available
+                        </td>
+                      </tr>
+                    )}
                   </tbody>
                 </table>
               </div>
